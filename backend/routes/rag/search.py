@@ -1,111 +1,183 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.retrievers import BM25Retriever
-from langchain_classic.retrievers import EnsembleRetriever
 
-load_dotenv(".env")
+load_dotenv()
+
 
 class Searching:
-    def __init__(self, k1, k2, vectorstore, splits):
+    """
+    Hybrid search combining Pinecone vector search and BM25
+    Pure implementation without LangChain EnsembleRetriever
+    """
+    
+    def __init__(self, k1, k2, embedding_instance, splits):
         """
-        Hybrid search with Pinecone vector store and BM25
-        :param k1: number of results for vector search
-        :param k2: number of results for BM25 search
-        :param vectorstore: PineconeVectorStore instance
-        :param splits: document splits for BM25
+        Initialize hybrid search
+        
+        Args:
+            k1: Number of results for vector search
+            k2: Number of results for BM25 search
+            embedding_instance: Embedding class instance (with similarity_search method)
+            splits: Document splits for BM25
         """
         self.k1 = k1
         self.k2 = k2
-        
-        # self.vectorstore = vectorstore
-        
-        # Pinecone retriever
-        self.retriever = vectorstore.as_retriever(search_kwargs={"k": k1})
+        self.embedding = embedding_instance
         
         # BM25 retriever
+        print("🔍 Initializing BM25 retriever...")
         self.bm25_retriever = BM25Retriever.from_documents(splits)
         self.bm25_retriever.k = k2
-        
-        # Ensemble retriever (hybrid search)
-        self.ensemble_retriever = EnsembleRetriever(
-            retrievers=[self.bm25_retriever, self.retriever],
-            weights=[0.7, 0.3]  # 70% BM25, 30% vector search
-        )
-
-    def hybrid_search(self, query):
-        """
-        Perform hybrid search (BM25 + Vector)
-        """
-        print(f"🔍 Hybrid search for: {query}")
-        ensemble_docs = self.ensemble_retriever.invoke(query)
-        return ensemble_docs
-
-    def bm25_search(self, query):
-        """
-        Perform BM25 keyword search only
-        """
-        print(f"🔍 BM25 search for: {query}")
-        bm25_docs = self.bm25_retriever.invoke(query)
-        return bm25_docs
+        print(f"✅ BM25 ready with {len(splits)} documents")
 
     def vector_search(self, query):
         """
-        Perform vector semantic search only (via Pinecone)
+        Perform vector semantic search via Pinecone
+        
+        Args:
+            query: Search query
+        
+        Returns:
+            List of search results
         """
         print(f"🔍 Vector search for: {query}")
-        vector_docs = self.retriever.invoke(query)
-        return vector_docs
+        results = self.embedding.similarity_search(query, k=self.k1)
+        
+        # Convert to LangChain Document format for compatibility
+        from langchain.schema import Document
+        docs = []
+        for result in results:
+            docs.append(Document(
+                page_content=result['text'],
+                metadata=result.get('metadata', {})
+            ))
+        return docs
+
+    def bm25_search(self, query):
+        """
+        Perform BM25 keyword search
+        
+        Args:
+            query: Search query
+        
+        Returns:
+            List of documents
+        """
+        print(f"🔍 BM25 search for: {query}")
+        return self.bm25_retriever.invoke(query)
+
+    def hybrid_search(self, query, vector_weight=0.3, bm25_weight=0.7):
+        """
+        Perform hybrid search (BM25 + Vector)
+        
+        Args:
+            query: Search query
+            vector_weight: Weight for vector search (default: 0.3)
+            bm25_weight: Weight for BM25 search (default: 0.7)
+        
+        Returns:
+            List of documents (merged and deduplicated)
+        """
+        print(f"🔍 Hybrid search for: {query}")
+        
+        # Get results from both methods
+        vector_docs = self.vector_search(query)
+        bm25_docs = self.bm25_search(query)
+        
+        # Simple merge: combine and deduplicate by content
+        seen_content = set()
+        merged_docs = []
+        
+        # Add BM25 results first (higher weight)
+        for doc in bm25_docs[:int(self.k2 * bm25_weight / (vector_weight + bm25_weight))]:
+            content = doc.page_content[:100]  # Use first 100 chars as key
+            if content not in seen_content:
+                seen_content.add(content)
+                merged_docs.append(doc)
+        
+        # Add vector results
+        for doc in vector_docs[:int(self.k1 * vector_weight / (vector_weight + bm25_weight))]:
+            content = doc.page_content[:100]
+            if content not in seen_content:
+                seen_content.add(content)
+                merged_docs.append(doc)
+        
+        print(f"✅ Found {len(merged_docs)} unique documents")
+        return merged_docs
 
     def get_context(self, docs):
         """
         Extract text content from retrieved documents
+        
+        Args:
+            docs: List of documents (either LangChain Documents or dicts)
+        
+        Returns:
+            List of text strings
         """
         context = []
         for doc in docs:
-            context.append(doc.page_content)
+            if hasattr(doc, 'page_content'):
+                # LangChain Document
+                context.append(doc.page_content)
+            elif isinstance(doc, dict) and 'text' in doc:
+                # Dict format from Pinecone
+                context.append(doc['text'])
+            elif isinstance(doc, str):
+                # Plain string
+                context.append(doc)
         return context
 
     def search_with_score(self, query, k=5):
         """
-        Perform similarity search with relevance scores
+        Perform vector search with relevance scores
+        
+        Args:
+            query: Search query
+            k: Number of results
+        
+        Returns:
+            List of dicts with scores
         """
         print(f"🔍 Searching with scores for: {query}")
-        
-        try:
-            # Method 1: Dùng similarity_search_with_score (nếu có)
-            results = self.retriever.vectorstore.similarity_search_with_score(query, k=k)
-            return results
-        except AttributeError:
-            # Method 2: Fallback nếu không có method trên
-            print("⚠️ similarity_search_with_score not available, using similarity_search")
-            docs = self.retriever.vectorstore.similarity_search(query, k=k)
-            # Return docs without scores
-            return [(doc, None) for doc in docs]
+        return self.embedding.similarity_search(query, k=k)
 
 
 # Example usage
 if __name__ == "__main__":
-    from embedding import Embedding
-    from utils import load_corpus
+    try:
+        from embedding import Embedding
+        from utils import load_corpus
+    except ImportError:
+        print("❌ Could not import required modules")
+        exit(1)
 
     # Load corpus
-    _, splits = load_corpus("backend/database/text_corpus")
+    _, splits = load_corpus("text_corpus")
+    print(f"✅ Loaded {len(splits)} document splits")
 
     # Initialize Pinecone embedding
     embedding = Embedding(
         model_name="BAAI/bge-m3",
-        index_name='vie-med-chat',
+        index_name='medical-chatbot',
         pinecone_api_key=os.getenv("PINECONE_API_KEY")
     )
 
-    # Load existing vector store
-    vectorstore = embedding.load_embedding()
-
     # Initialize search
-    search = Searching(k1=5, k2=5, vectorstore=vectorstore, splits=splits)
+    search = Searching(
+        k1=5, 
+        k2=5, 
+        embedding_instance=embedding, 
+        splits=splits
+    )
 
     # Test query
     query = "Tôi bị đau đầu và chóng mặt, có thể là bệnh gì?"
+    
+    print("\n" + "="*60)
+    print("Testing Hybrid Search")
+    print("="*60)
     
     # Hybrid search
     results = search.hybrid_search(query)
@@ -114,3 +186,13 @@ if __name__ == "__main__":
     print("\n📄 Search Results:")
     for i, ctx in enumerate(context, 1):
         print(f"\n{i}. {ctx[:200]}...")
+    
+    print("\n" + "="*60)
+    print("Testing Vector Search with Scores")
+    print("="*60)
+    
+    # Search with scores
+    scored_results = search.search_with_score(query, k=3)
+    for i, result in enumerate(scored_results, 1):
+        print(f"\n{i}. Score: {result['score']:.4f}")
+        print(f"   Text: {result['text'][:150]}...")
