@@ -1,6 +1,5 @@
 """
-LangChain ReAct Agent for Medical Chatbot
-Agent tự động quyết định khi nào cần search documents
+Optimized LangChain ReAct Agent for Medical Chatbot
 """
 import os
 from dotenv import load_dotenv
@@ -17,12 +16,14 @@ load_dotenv()
 
 
 # ==========================================
-# 🤖 Medical Agent Class
+# 🤖 Optimized Medical Agent Class
 # ==========================================
 class MedicalAgent:
     """
-    LangChain ReAct Agent for medical chatbot
-    Automatically decides when to use tools
+    Optimized LangChain ReAct Agent with:
+    - Pre-loaded components
+    - Structured output format
+    - Faster response time
     """
     
     def __init__(self, provider="ollama", model_name="qwen2.5:7b", temperature=0.4, 
@@ -32,7 +33,7 @@ class MedicalAgent:
         
         Args:
             provider: "ollama" or "google"
-            model_name: Model name (auto-select if None)
+            model_name: Model name
             temperature: Generation temperature
             ollama_url: Ollama API endpoint
         """
@@ -60,7 +61,7 @@ class MedicalAgent:
                 model=self.model_name,
                 base_url=ollama_url,
                 temperature=temperature,
-                num_predict=4096,
+                num_predict=2048,  # ✅ GIẢM từ 4096 → 2048 để nhanh hơn
             )
         else:  # google
             self.model_name = model_name or "gemini-1.5-flash"
@@ -73,52 +74,102 @@ class MedicalAgent:
         # Get tools
         self.tools = get_medical_tools()
         
-        # System prompt for agent
-        system_prompt = """Bạn là trợ lý y tế AI thông minh và tận tâm.
+        # ==========================================
+        # ✅ IMPROVED SYSTEM PROMPT với Output Format
+        # ==========================================
+        system_prompt = """Bạn là trợ lý y tế AI thông minh và chuyên nghiệp.
 
-Hướng dẫn:
-1. **Phân tích câu hỏi**: Hiểu rõ người dùng đang hỏi gì
-2. **Quyết định hành động**:
-   - Nếu là chào hỏi đơn giản (xin chào, hi, hello): Trả lời trực tiếp KHÔNG dùng tool
-   - Nếu là câu hỏi y tế (triệu chứng, bệnh, thuốc): SỬ DỤNG tool `search_medical_documents`
-   - Nếu là cảm ơn/tạm biệt: Trả lời lịch sự KHÔNG dùng tool
+🎯 NHIỆM VỤ:
+1. Phân tích câu hỏi người dùng
+2. Quyết định có cần sử dụng tool `search_medical_documents` hay không
+3. Trả lời theo format chuẩn dưới đây
 
-3. **Trả lời câu hỏi y tế** (KHI ĐÃ CÓ THÔNG TIN TỪ TOOL):
-   a) Liệt kê các bệnh/tình trạng có thể liên quan dựa trên context
-   b) Giải thích ngắn gọn TẠI SAO các bệnh đó liên quan (dựa trên triệu chứng trong context)
-   c) Nêu các triệu chứng cụ thể cần chú ý (từ context)
-   d) Đưa ra khuyến nghị: khi nào cần đi khám gấp, cách theo dõi
-   e) Nhắc nhở KHÔNG tự chẩn đoán, cần gặp bác sĩ
+📋 LUẬT SỬ DỤNG TOOL:
+- Câu hỏi y tế (triệu chứng, bệnh, thuốc) → SỬ DỤNG tool
+- Chào hỏi đơn giản (xin chào, hi) → KHÔNG dùng tool
+- Cảm ơn, tạm biệt → KHÔNG dùng tool
 
-**QUAN TRỌNG**:
-- LUÔN sử dụng tool cho câu hỏi y tế
-- SAU KHI nhận Observation từ tool, HÃY phân tích CHI TIẾT từng tài liệu
-- Câu trả lời PHẢI có CẤU TRÚC rõ ràng với các phần: Bệnh liên quan, Giải thích, Triệu chứng cần chú ý, Khuyến nghị
-- Trả lời bằng tiếng Việt, dễ hiểu, có cấu trúc
-- KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ
+📝 FORMAT TRẢ LỜI CỦA BẠN (khi có thông tin y tế):
 
-**Ví dụ câu trả lời tốt**:
-"Dựa trên triệu chứng đau đầu và sốt, có một số tình trạng có thể liên quan:
+**🔍 PHÂN TÍCH TRIỆU CHỨNG**
+[Tóm tắt ngắn gọn triệu chứng người dùng mô tả]
 
-🔸 **Sốt rét**: Thông tin y tế cho thấy sốt rét thường có triệu chứng sốt cao (40-41°C) kèm đau đầu, rét run toàn thân...
+**🏥 CÁC BỆNH/TÌNH TRẠNG CÓ THỂ LIÊN QUAN**
 
-🔸 **Viêm xoang**: Có thể gây đau đầu sau hốc mắt kèm sốt...
+1. **[Tên bệnh 1]**
+   - Giải thích: [Tại sao bệnh này liên quan đến triệu chứng]
+   - Triệu chứng điển hình: [Các triệu chứng chính]
+   - Mức độ nghiêm trọng: [Nhẹ/Trung bình/Nặng]
 
-⚠️ **Dấu hiệu cần đi khám ngay**: Nếu sốt cao trên 39°C kéo dài, đau đầu dữ dội...
+2. **[Tên bệnh 2]**
+   - Giải thích: [...]
+   - Triệu chứng điển hình: [...]
+   - Mức độ nghiêm trọng: [...]
 
-💡 **Khuyến nghị**: Theo dõi thân nhiệt, nghỉ ngơi... và nên đến cơ sở y tế để bác sĩ khám và chẩn đoán chính xác."
+**⚠️ DẤU HIỆU CẦN ĐI KHÁM NGAY**
+- [Dấu hiệu nguy hiểm 1]
+- [Dấu hiệu nguy hiểm 2]
+- [Dấu hiệu nguy hiểm 3]
 
-PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
+**💡 KHUYẾN NGHỊ**
+- Theo dõi: [Hướng dẫn theo dõi triệu chứng]
+- Tự chăm sóc: [Các biện pháp tự chăm sóc tại nhà]
+- Khi nào cần gặp bác sĩ: [Tình huống cần đi khám]
+
+**⚕️ LƯU Ý QUAN TRỌNG**
+Đây chỉ là thông tin tham khảo, KHÔNG phải chẩn đoán y khoa. Hãy gặp bác sĩ để được khám và chẩn đoán chính xác.
+
+---
+
+VÍ DỤ TRẢ LỜI TỐT:
+
+Người dùng: "Tôi bị đau đầu và sốt"
+
+**🔍 PHÂN TÍCH TRIỆU CHỨNG**
+Bạn đang có triệu chứng đau đầu kèm sốt, đây là dấu hiệu phổ biến của nhiều tình trạng nhiễm trúng hoặc viêm nhiễm.
+
+**🏥 CÁC BỆNH/TÌNH TRẠNG CÓ THỂ LIÊN QUAN**
+
+1. **Cảm cúm thông thường**
+   - Giải thích: Virus cảm cúm thường gây sốt 38-39°C kèm đau đầu, đau người
+   - Triệu chứng điển hình: Sốt, đau đầu, nghẹt mũi, ho, mệt mỏi
+   - Mức độ nghiêm trọng: Nhẹ đến trung bình
+
+2. **Viêm xoang**
+   - Giải thích: Viêm xoang gây áp lực ở vùng mặt, dẫn đến đau đầu và có thể sốt nhẹ
+   - Triệu chứng điển hình: Đau đầu vùng trán/má, nghẹt mũi, sốt nhẹ
+   - Mức độ nghiêm trọng: Trung bình
+
+**⚠️ DẤU HIỆU CẦN ĐI KHÁM NGAY**
+- Sốt trên 39.5°C kéo dài quá 3 ngày
+- Đau đầu dữ dội, đột ngột
+- Cứng gáy, lú lẫn, hoặc co giật
+- Nôn mửa liên tục
+
+**💡 KHUYẾN NGHỊ**
+- Theo dõi: Đo nhiệt độ mỗi 4 giờ, ghi chép triệu chứng
+- Tự chăm sóc: Nghỉ ngơi đầy đủ, uống nhiều nước, dùng thuốc hạ sốt (paracetamol)
+- Khi nào cần gặp bác sĩ: Nếu sốt không hạ sau 3 ngày hoặc có dấu hiệu nặng
+
+**⚕️ LƯU Ý QUAN TRỌNG**
+Đây chỉ là thông tin tham khảo, KHÔNG phải chẩn đoán y khoa. Hãy gặp bác sĩ để được khám và chẩn đoán chính xác.
+
+---
+
+QUAN TRỌNG:
+- HÃY tuân thủ CHÍNH XÁC format trên
+- Không được tự ý thay đổi cấu trúc
+- Luôn sử dụng emoji và markdown cho dễ đọc"""
         
-        # Create agent using initialize_agent
+        # Create agent
         self.agent_executor = initialize_agent(
             tools=self.tools,
             llm=self.llm,
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
             handle_parsing_errors=True,
-            max_iterations=8,
-            max_execution_time=120,  # ✅ Tăng thời gian cho Ollama local
+            max_iterations=5,  # ✅ GIẢM từ 8 → 5
+            max_execution_time=60,  # ✅ GIẢM từ 120 → 60 giây
             agent_kwargs={
                 "prefix": system_prompt
             },
@@ -139,29 +190,25 @@ PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
             chat_history: Previous conversation
         
         Returns:
-            dict: {
-                'answer': str,
-                'used_tools': bool,
-                'intermediate_steps': list
-            }
+            dict: {'answer': str, 'used_tools': bool, 'intermediate_steps': list}
         """
         try:
             print(f"\n{'='*60}")
-            print(f"🤖 AGENT PROCESSING QUERY")
+            print(f"🤖 AGENT PROCESSING")
             print(f"{'='*60}")
-            print(f"Query: {query}")
+            print(f"Query: {query[:50]}...")
             
-            # Format chat history
+            # ✅ GIỚI HẠN HISTORY để giảm context
             history_str = ""
             if chat_history:
-                for msg in chat_history[-5:]:  # Last 5 messages
+                for msg in chat_history[-5:]:  # ✅ Chỉ lấy 5 tin nhắn gần nhất
                     role = "User" if msg['role'] == 'user' else "Assistant"
-                    history_str += f"{role}: {msg['content']}\n"
+                    history_str += f"{role}: {msg['content'][:100]}...\n"  # ✅ Cắt ngắn nội dung
             
             # Add history to query if exists
             full_input = query
             if history_str:
-                full_input = f"Lịch sử trò chuyện:\n{history_str}\n\nCâu hỏi mới: {query}"
+                full_input = f"Lịch sử:\n{history_str}\n\nCâu hỏi: {query}"
             
             # Run agent
             result = self.agent_executor.invoke({"input": full_input})
@@ -173,10 +220,7 @@ PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
             # Check if tools were used
             used_tools = len(intermediate_steps) > 0
             
-            print(f"\n{'='*60}")
-            print(f"✅ AGENT COMPLETED")
-            print(f"   Used tools: {used_tools}")
-            print(f"   Steps: {len(intermediate_steps)}")
+            print(f"\n✅ COMPLETED ({len(intermediate_steps)} steps)")
             print(f"{'='*60}\n")
             
             return {
@@ -227,7 +271,7 @@ def chat_with_agent(messages: list) -> str:
         str: Agent's response
     """
     try:
-        # Get agent with Ollama
+        # Get agent (sử dụng singleton đã pre-load)
         agent = get_medical_agent(provider="ollama", model_name="qwen2.5:7b")
         
         # Extract last message

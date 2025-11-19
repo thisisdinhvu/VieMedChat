@@ -171,9 +171,9 @@ class LLM:
     """
     
     def __init__(self, google_api_key=None, groq_api_key=None, 
-                 temperature=0.4, model_name="ollama/qwen2.5:7b", 
-                 ollama_url="http://localhost:11434",
-                 language="vi"):
+                temperature=0.4, model_name="ollama/qwen2.5:7b", 
+                ollama_url="http://localhost:11434",
+                language="vi"):
         """
         Initialize LLM
         
@@ -204,10 +204,10 @@ class LLM:
                 response = requests.get(f"{self.ollama_url}/api/tags", timeout=5)
                 if response.status_code == 200:
                     available_models = [m['name'] for m in response.json().get('models', [])]
-                    print(f"✅ Ollama connected! Available models: {available_models}")
+                    print(f"✅ Ollama connected! Available: {', '.join(available_models[:3])}...")
                     
                     if self.model_id not in available_models:
-                        print(f"⚠️ Model '{self.model_id}' not found locally.")
+                        print(f"⚠️ Model '{self.model_id}' not found.")
                         print(f"   Run: ollama pull {self.model_id}")
                 else:
                     raise Exception(f"Ollama returned status {response.status_code}")
@@ -217,6 +217,7 @@ class LLM:
                 print(f"   Make sure Ollama is running: ollama serve")
                 raise ValueError("Ollama connection failed!")
             
+            # ✅ FIX: Print đúng provider
             print(f"✅ LLM initialized: Ollama - {self.model_id}")
             
         else:  # Default to Gemini
@@ -233,6 +234,7 @@ class LLM:
                     max_output_tokens=4096,
                 )
             )
+            # ✅ FIX: Print đúng provider
             print(f"✅ LLM initialized: Gemini - {self.model_name}")
         
         print(f"   Language: {self.language}")
@@ -375,12 +377,3 @@ class LLM:
         except Exception as e:
             print(f"❌ Streaming error: {e}")
             yield "Xin lỗi, tôi đang gặp sự cố kỹ thuật."
-
-
-# Test
-if __name__ == "__main__":
-    # Test Ollama
-    print("\n🧪 Testing Ollama LLM...")
-    llm = LLM(model_name="ollama/qwen2.5:7b", language="vi")
-    response = llm.chat("Triệu chứng đau đầu và sốt có thể là bệnh gì?")
-    print(f"\n💬 Response:\n{response}")
