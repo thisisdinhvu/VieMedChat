@@ -3,8 +3,8 @@ LangChain Tools for Medical Chatbot
 Agent sẽ tự động chọn tool phù hợp
 """
 from langchain.tools import Tool
-from langchain.pydantic_v1 import BaseModel, Field
-from typing import Optional, Type
+from pydantic import BaseModel, Field  # ✅ FIX: Import từ pydantic v2
+from typing import Optional
 import sys
 import os
 
@@ -115,7 +115,7 @@ def get_medical_tools():
                 Output: Thông tin y tế liên quan
             """,
             args_schema=MedicalSearchInput,
-            return_direct=False  # Agent sẽ xử lý kết quả thêm
+            return_direct=False
         )
     ]
     

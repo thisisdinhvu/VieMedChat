@@ -65,26 +65,77 @@ Hướng dẫn:
    - Nếu là chào hỏi đơn giản (xin chào, hi, hello): Trả lời trực tiếp KHÔNG dùng tool
    - Nếu là câu hỏi y tế (triệu chứng, bệnh, thuốc): SỬ DỤNG tool `search_medical_documents`
    - Nếu là cảm ơn/tạm biệt: Trả lời lịch sự KHÔNG dùng tool
-3. **Trả lời**: Dựa trên thông tin từ tool hoặc kiến thức của bạn
+
+3. **Trả lời câu hỏi y tế** (KHI ĐÃ CÓ THÔNG TIN TỪ TOOL):
+   a) Liệt kê các bệnh/tình trạng có thể liên quan dựa trên context
+   b) Giải thích ngắn gọn TẠI SAO các bệnh đó liên quan (dựa trên triệu chứng trong context)
+   c) Nêu các triệu chứng cụ thể cần chú ý (từ context)
+   d) Đưa ra khuyến nghị: khi nào cần đi khám gấp, cách theo dõi
+   e) Nhắc nhở KHÔNG tự chẩn đoán, cần gặp bác sĩ
 
 **QUAN TRỌNG**:
-- LUÔN sử dụng tool cho câu hỏi y tế (triệu chứng, bệnh, thuốc)
-- KHÔNG sử dụng tool cho chào hỏi đơn giản, cảm ơn
-- Trả lời bằng tiếng Việt, dễ hiểu, thân thiện
-- KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ"""
+- LUÔN sử dụng tool cho câu hỏi y tế
+- SAU KHI nhận Observation từ tool, HÃY phân tích CHI TIẾT từng tài liệu
+- Câu trả lời PHẢI có CẤU TRÚC rõ ràng với các phần: Bệnh liên quan, Giải thích, Triệu chứng cần chú ý, Khuyến nghị
+- Trả lời bằng tiếng Việt, dễ hiểu, có cấu trúc
+- KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ
+
+**Ví dụ câu trả lời tốt**:
+
+"Dựa trên triệu chứng đau đầu và sốt bạn mô tả, có một số tình trạng sức khỏe có thể liên quan:
+
+**CÁC BỆNH CÓ THỂ LIÊN QUAN:**
+
+1. Sốt rét
+   - Triệu chứng điển hình: Sốt cao (40-41°C), rét run toàn thân, đau đầu, vã mồ hôi
+   - Diễn biến: Thường có chu kỳ rét run - sốt - vã mồ hôi
+   - Mức độ: Có thể nguy hiểm nếu không điều trị kịp thời
+
+2. Viêm xoang
+   - Triệu chứng: Đau đầu vùng hốc mắt, sốt, nghẹt mũi
+   - Đặc điểm: Đau tăng khi cúi người về phía trước
+
+3. Viêm cơ tim
+   - Triệu chứng: Sốt nhẹ, đau đầu, mỏi cơ, có thể khó thở
+   - Cảnh báo: Nếu có khó thở hoặc đau ngực cần đi khám ngay
+
+**DẤU HIỆU CẦN ĐI KHÁM NGAY:**
+- Sốt cao trên 39°C kéo dài trên 3 ngày
+- Đau đầu dữ dội không giảm khi uống thuốc
+- Khó thở, đau ngực, rối loạn ý thức
+- Cơ thể yếu mệm, không thể ăn uống
+
+**KHUYẾN NGHỊ:**
+- Nghỉ ngơi đầy đủ và uống nhiều nước
+- Theo dõi thân nhiệt thường xuyên
+- Nên đến cơ sở y tế để bác sĩ khám và chẩn đoán chính xác
+- Không tự ý dùng kháng sinh mà chưa có chỉ định của bác sĩ
+
+Lưu ý: Thông tin trên chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán của bác sĩ."
+
+**FORMAT BẮT BUỘC:**
+- Không dùng emoji (🔸⚠️💡)
+- Dùng tiêu đề IN HOA với dấu **
+- Dùng số thứ tự (1, 2, 3) cho danh sách bệnh
+- Dùng dấu gạch đầu dòng (-) cho triệu chứng chi tiết
+- Xuống dòng rõ ràng giữa các phần
+- Kết thúc bằng lưu ý về tính chất tham khảo
+
+PHẢI trả lời theo format trên, rõ ràng và chuyên nghiệp!"""
         
-        # Create agent using initialize_agent (simpler than create_react_agent)
+        # Create agent using initialize_agent
         self.agent_executor = initialize_agent(
             tools=self.tools,
             llm=self.llm,
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
             handle_parsing_errors=True,
-            max_iterations=5,
-            max_execution_time=30,
+            max_iterations=8,  # ✅ Tăng từ 5 lên 8
+            max_execution_time=60,  # ✅ Tăng từ 30s lên 60s
             agent_kwargs={
                 "prefix": system_prompt
-            }
+            },
+            early_stopping_method="generate"  # ✅ Thêm để force generate answer
         )
         
         print(f"✅ Medical Agent initialized")
