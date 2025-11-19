@@ -5,7 +5,7 @@ Agent tự động quyết định khi nào cần search documents
 import os
 from dotenv import load_dotenv
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
-from langchain_groq import ChatGroq
+from langchain_community.chat_models import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 import sys
@@ -25,25 +25,42 @@ class MedicalAgent:
     Automatically decides when to use tools
     """
     
-    def __init__(self, provider="groq", model_name=None, temperature=0.4):
+    def __init__(self, provider="ollama", model_name="qwen2.5:7b", temperature=0.4, 
+                 ollama_url="http://localhost:11434"):
         """
         Initialize Medical Agent
         
         Args:
-            provider: "groq" or "google"
+            provider: "ollama" or "google"
             model_name: Model name (auto-select if None)
             temperature: Generation temperature
+            ollama_url: Ollama API endpoint
         """
         self.provider = provider
         self.temperature = temperature
+        self.ollama_url = ollama_url
         
         # Select LLM
-        if provider == "groq":
-            self.model_name = model_name or "llama-3.3-70b-versatile"
-            self.llm = ChatGroq(
-                api_key=os.getenv("GROQ_API_KEY"),
+        if provider == "ollama":
+            self.model_name = model_name or "qwen2.5:7b"
+            
+            # Test Ollama connection
+            import requests
+            try:
+                response = requests.get(f"{ollama_url}/api/tags", timeout=5)
+                if response.status_code != 200:
+                    raise Exception(f"Ollama returned status {response.status_code}")
+                print(f"✅ Ollama connected at {ollama_url}")
+            except Exception as e:
+                print(f"❌ Cannot connect to Ollama: {e}")
+                print("   Make sure Ollama is running: ollama serve")
+                raise ValueError("Ollama connection failed!")
+            
+            self.llm = ChatOllama(
                 model=self.model_name,
-                temperature=temperature
+                base_url=ollama_url,
+                temperature=temperature,
+                num_predict=4096,
             )
         else:  # google
             self.model_name = model_name or "gemini-1.5-flash"
@@ -100,12 +117,12 @@ PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
             handle_parsing_errors=True,
-            max_iterations=8,  # ✅ Tăng từ 5 lên 8
-            max_execution_time=60,  # ✅ Tăng từ 30s lên 60s
+            max_iterations=8,
+            max_execution_time=120,  # ✅ Tăng thời gian cho Ollama local
             agent_kwargs={
                 "prefix": system_prompt
             },
-            early_stopping_method="generate"  # ✅ Thêm để force generate answer
+            early_stopping_method="generate"
         )
         
         print(f"✅ Medical Agent initialized")
@@ -185,7 +202,7 @@ PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
 # ==========================================
 _agent_instance = None
 
-def get_medical_agent(provider="groq", model_name=None):
+def get_medical_agent(provider="ollama", model_name=None):
     """Get or create agent singleton"""
     global _agent_instance
     if _agent_instance is None:
@@ -210,8 +227,8 @@ def chat_with_agent(messages: list) -> str:
         str: Agent's response
     """
     try:
-        # Get agent
-        agent = get_medical_agent(provider="groq")
+        # Get agent with Ollama
+        agent = get_medical_agent(provider="ollama", model_name="qwen2.5:7b")
         
         # Extract last message
         last_message = messages[-1]['content'] if messages else ""
@@ -235,29 +252,3 @@ def chat_with_agent(messages: list) -> str:
         import traceback
         traceback.print_exc()
         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
-
-
-# ==========================================
-# 🧪 Testing
-# ==========================================
-if __name__ == "__main__":
-    print("\n🧪 TESTING MEDICAL AGENT\n")
-    
-    agent = MedicalAgent(provider="groq")
-    
-    test_queries = [
-        "xin chào",
-        "tôi bị đau đầu và sốt, có nguy hiểm không?",
-        "cảm ơn bạn"
-    ]
-    
-    for query in test_queries:
-        print(f"\n{'='*60}")
-        print(f"Query: {query}")
-        print('='*60)
-        
-        result = agent.chat(query)
-        
-        print(f"\n💬 Answer:")
-        print(result['answer'])
-        print(f"\n🔧 Used tools: {result['used_tools']}")
