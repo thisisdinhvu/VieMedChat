@@ -143,16 +143,16 @@ def initialize_rag_components():
         # 2. Pre-load Agent (CRITICAL for speed!)
         # ==========================================
         print("\n6️⃣ Pre-loading Medical Agent...")
-        agent = get_medical_agent(provider="google", model_name="gemini-1.5-flash")
+        agent = get_medical_agent(provider="google", model_name="models/gemini-2.0-flash-lite")
         
-        # Warm up agent with a test query
-        print("\n7️⃣ Warming up agent with test query...")
-        test_result = agent.chat(
-            query="xin chào",
-            chat_history=[]
-        )
-        if test_result['answer']:
-            print("   ✅ Agent warmup successful!")
+        # # Warm up agent with a test query
+        # print("\n7️⃣ Warming up agent with test query...")
+        # test_result = agent.chat(
+        #     query="xin chào",
+        #     chat_history=[]
+        # )
+        # if test_result['answer']:
+        #     print("   ✅ Agent warmup successful!")
         
         print("\n" + "="*60)
         print("✅ ALL COMPONENTS PRE-LOADED SUCCESSFULLY!")

@@ -29,7 +29,7 @@
 #             groq_api_key: Groq API key
 #             temperature: Temperature for generation (0-1)
 #             model_name: Model name with provider prefix:
-#                 - "gemini-1.5-flash" (Google)
+#                 - "models/gemini-2.0-flash-lite" (Google)
 #                 - "groq/llama-3.3-70b-versatile" (Groq - BEST FREE)
 #                 - "groq/llama-3.1-8b-instant" (Groq - Fastest)
 #                 - "groq/mixtral-8x7b-32768" (Groq - Long context)
@@ -171,7 +171,7 @@ class LLM:
     """
     
     def __init__(self, google_api_key=None, groq_api_key=None, 
-                temperature=0.4, model_name="gemini-1.5-flash", 
+                temperature=0.4, model_name="models/gemini-2.0-flash-lite", 
                 ollama_url="http://localhost:11434",
                 language="vi"):
         """
@@ -185,7 +185,7 @@ class LLM:
                 - "ollama/qwen2.5:7b" (Ollama - LOCAL, RECOMMENDED)
                 - "ollama/qwen2.5:7b" (Ollama - Fast local)
                 - "ollama/mistral:7b" (Ollama - Good quality)
-                - "gemini-1.5-flash" (Google Cloud)
+                - "models/gemini-2.0-flash-lite" (Google Cloud)
             ollama_url: Ollama API endpoint (default: http://localhost:11434)
             language: 'vi' or 'en'
         """

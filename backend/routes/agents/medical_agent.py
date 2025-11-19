@@ -26,7 +26,7 @@ class MedicalAgent:
     - Faster response time
     """
     
-    def __init__(self, provider="google", model_name="gemini-1.5-flash", temperature=0.4, 
+    def __init__(self, provider="google", model_name="models/gemini-2.0-flash-lite", temperature=0.4, 
                  ollama_url="http://localhost:11434"):
         """
         Initialize Medical Agent
@@ -64,7 +64,7 @@ class MedicalAgent:
                 num_predict=2048,  # ✅ GIẢM từ 4096 → 2048 để nhanh hơn
             )
         else:  # google
-            self.model_name = model_name or "gemini-1.5-flash"
+            self.model_name = model_name or "models/gemini-2.0-flash-lite"
             self.llm = ChatGoogleGenerativeAI(
                 api_key=os.getenv("GOOGLE_API_KEY"),
                 model=self.model_name,
@@ -166,7 +166,7 @@ QUAN TRỌNG:
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
             handle_parsing_errors=True,
-            max_iterations=2,  # ✅ GIẢM từ 8 → 5
+            max_iterations=3,  # ✅ GIẢM từ 8 → 5
             max_execution_time=60,  # ✅ GIẢM từ 120 → 60 giây
             agent_kwargs={
                 "prefix": system_prompt,
@@ -270,7 +270,7 @@ def chat_with_agent(messages: list) -> str:
     """
     try:
         # Get agent (sử dụng singleton đã pre-load)
-        agent = get_medical_agent(provider="google", model_name="gemini-1.5-flash")
+        agent = get_medical_agent(provider="google", model_name="models/gemini-2.0-flash-lite")
         
         # Extract last message
         last_message = messages[-1]['content'] if messages else ""

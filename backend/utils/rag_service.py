@@ -429,7 +429,7 @@ class RAGService:
         if self._llm is None:
             print("🤖 Initializing LLM (Ollama)...")
             self._llm = LLM(
-                model_name="gemini-1.5-flash",  # ✅ SỬ DỤNG OLLAMA
+                model_name="models/gemini-2.0-flash-lite",  # ✅ SỬ DỤNG OLLAMA
                 # ollama_url="http://localhost:11434",
                 temperature=0.4,
                 language="vi"
