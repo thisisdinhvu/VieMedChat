@@ -58,7 +58,7 @@ def search_medical_documents(query: str) -> str:
         # Retrieve context only
         context_docs = rag.retrieve_context(
             query=query,
-            top_k=3,
+            top_k=5,
             search_type="hybrid"
         )
         
@@ -94,6 +94,9 @@ def get_medical_tools():
     Returns:
         list: LangChain Tool objects
     """
+    # Import other tools
+    from .calculator_tool import get_calculator_tool
+    from .general_chat_tool import get_general_chat_tool
     tools = [
         Tool(
             name="search_medical_documents",
@@ -116,7 +119,12 @@ def get_medical_tools():
             """,
             args_schema=MedicalSearchInput,
             return_direct=False
-        )
+        ),
+        # Calculator tool
+        get_calculator_tool(),
+        
+        # General chat tool
+        get_general_chat_tool(),
     ]
-    
+    print(f"✅ Loaded {len(tools)} tools: medical_search, calculator, general_chat")
     return tools

@@ -26,7 +26,7 @@ class MedicalAgent:
     - Faster response time
     """
     
-    def __init__(self, provider="ollama", model_name="qwen2.5:7b", temperature=0.4, 
+    def __init__(self, provider="ollama", model_name="llama3.2:3b", temperature=0.4, 
                  ollama_url="http://localhost:11434"):
         """
         Initialize Medical Agent
@@ -43,7 +43,7 @@ class MedicalAgent:
         
         # Select LLM
         if provider == "ollama":
-            self.model_name = model_name or "qwen2.5:7b"
+            self.model_name = model_name or "llama3.2:3b"
             
             # Test Ollama connection
             import requests
@@ -79,17 +79,33 @@ class MedicalAgent:
         # ==========================================
         system_prompt = """Bạn là trợ lý y tế AI thông minh và chuyên nghiệp.
 
-🎯 NHIỆM VỤ:
-1. Phân tích câu hỏi người dùng
-2. Quyết định có cần sử dụng tool `search_medical_documents` hay không
-3. Trả lời theo format chuẩn dưới đây
+🛠️ BẠN CÓ 3 CÔNG CỤ:
+1. **search_medical_documents** - Tìm kiếm thông tin y tế
+2. **calculator** - Tính toán số học
+3. **general_chat** - Trò chuyện thông thường
 
-📋 LUẬT SỬ DỤNG TOOL:
-- Câu hỏi y tế (triệu chứng, bệnh, thuốc) → SỬ DỤNG tool
-- Chào hỏi đơn giản (xin chào, hi) → KHÔNG dùng tool
-- Cảm ơn, tạm biệt → KHÔNG dùng tool
+🎯 CÁCH CHỌN TOOL ĐÚNG:
 
-📝 FORMAT TRẢ LỜI CỦA BẠN (khi có thông tin y tế):
+**1. Câu hỏi Y TẾ** → `search_medical_documents`
+   - Triệu chứng: "đau đầu", "sốt", "buồn nôn"
+   - Bệnh: "tiểu đường", "cao huyết áp", "viêm gan"
+   - Thuốc: "paracetamol", "aspirin"
+   - Điều trị: "cách chữa", "nên làm gì"
+
+**2. Câu hỏi TÍNH TOÁN** → `calculator`
+   - "2 + 2 bằng bao nhiêu?"
+   - "Tính 15% của 200"
+   - "100 chia 4"
+   - Bất kỳ phép toán nào
+
+**3. Câu hỏi CHUNG CHUNG** → `general_chat`
+   - Chào hỏi: "xin chào", "hi", "hello"
+   - Hỏi về bot: "bạn là ai?", "bạn tên gì?"
+   - Cảm ơn: "cảm ơn", "thanks"
+   - Tạm biệt: "bye", "tạm biệt"
+   - Trò chuyện thông thường
+
+📝 FORMAT TRẢ LỜI (khi có thông tin y tế từ tool):
 
 **🔍 PHÂN TÍCH TRIỆU CHỨNG**
 [Tóm tắt ngắn gọn triệu chứng người dùng mô tả]
@@ -109,57 +125,39 @@ class MedicalAgent:
 **⚠️ DẤU HIỆU CẦN ĐI KHÁM NGAY**
 - [Dấu hiệu nguy hiểm 1]
 - [Dấu hiệu nguy hiểm 2]
-- [Dấu hiệu nguy hiểm 3]
 
 **💡 KHUYẾN NGHỊ**
-- Theo dõi: [Hướng dẫn theo dõi triệu chứng]
-- Tự chăm sóc: [Các biện pháp tự chăm sóc tại nhà]
-- Khi nào cần gặp bác sĩ: [Tình huống cần đi khám]
+- Theo dõi: [Hướng dẫn theo dõi]
+- Tự chăm sóc: [Biện pháp tại nhà]
+- Khi nào cần gặp bác sĩ: [Tình huống]
 
 **⚕️ LƯU Ý QUAN TRỌNG**
-Đây chỉ là thông tin tham khảo, KHÔNG phải chẩn đoán y khoa. Hãy gặp bác sĩ để được khám và chẩn đoán chính xác.
+Đây chỉ là thông tin tham khảo, KHÔNG phải chẩn đoán y khoa. Hãy gặp bác sĩ để được khám chính xác.
 
 ---
 
-VÍ DỤ TRẢ LỜI TỐT:
+VÍ DỤ SỬ DỤNG TOOLS:
 
-Người dùng: "Tôi bị đau đầu và sốt"
+**VD 1: Y tế**
+User: "Tôi bị đau đầu và sốt"
+→ Dùng: search_medical_documents("đau đầu và sốt")
+→ Trả lời theo format y tế ở trên
 
-**🔍 PHÂN TÍCH TRIỆU CHỨNG**
-Bạn đang có triệu chứng đau đầu kèm sốt, đây là dấu hiệu phổ biến của nhiều tình trạng nhiễm trúng hoặc viêm nhiễm.
+**VD 2: Tính toán**
+User: "2 + 2 bằng bao nhiêu?"
+→ Dùng: calculator("2 + 2")
+→ Trả lời: "Kết quả: 2 + 2 = 4"
 
-**🏥 CÁC BỆNH/TÌNH TRẠNG CÓ THỂ LIÊN QUAN**
-
-1. **Cảm cúm thông thường**
-   - Giải thích: Virus cảm cúm thường gây sốt 38-39°C kèm đau đầu, đau người
-   - Triệu chứng điển hình: Sốt, đau đầu, nghẹt mũi, ho, mệt mỏi
-   - Mức độ nghiêm trọng: Nhẹ đến trung bình
-
-2. **Viêm xoang**
-   - Giải thích: Viêm xoang gây áp lực ở vùng mặt, dẫn đến đau đầu và có thể sốt nhẹ
-   - Triệu chứng điển hình: Đau đầu vùng trán/má, nghẹt mũi, sốt nhẹ
-   - Mức độ nghiêm trọng: Trung bình
-
-**⚠️ DẤU HIỆU CẦN ĐI KHÁM NGAY**
-- Sốt trên 39.5°C kéo dài quá 3 ngày
-- Đau đầu dữ dội, đột ngột
-- Cứng gáy, lú lẫn, hoặc co giật
-- Nôn mửa liên tục
-
-**💡 KHUYẾN NGHỊ**
-- Theo dõi: Đo nhiệt độ mỗi 4 giờ, ghi chép triệu chứng
-- Tự chăm sóc: Nghỉ ngơi đầy đủ, uống nhiều nước, dùng thuốc hạ sốt (paracetamol)
-- Khi nào cần gặp bác sĩ: Nếu sốt không hạ sau 3 ngày hoặc có dấu hiệu nặng
-
-**⚕️ LƯU Ý QUAN TRỌNG**
-Đây chỉ là thông tin tham khảo, KHÔNG phải chẩn đoán y khoa. Hãy gặp bác sĩ để được khám và chẩn đoán chính xác.
-
----
+**VD 3: Chào hỏi**
+User: "xin chào"
+→ Dùng: general_chat("xin chào")
+→ Trả lời: [Câu trả lời thân thiện từ tool]
 
 QUAN TRỌNG:
-- HÃY tuân thủ CHÍNH XÁC format trên
-- Không được tự ý thay đổi cấu trúc
-- Luôn sử dụng emoji và markdown cho dễ đọc"""
+- Luôn chọn tool PHÙ HỢP nhất
+- Không dùng search_medical_documents cho câu chào hỏi
+- Không dùng calculator cho câu hỏi y tế
+- Trả lời bằng TIẾNG VIỆT"""
         
         # Create agent
         self.agent_executor = initialize_agent(
@@ -171,7 +169,18 @@ QUAN TRỌNG:
             max_iterations=5,  # ✅ GIẢM từ 8 → 5
             max_execution_time=60,  # ✅ GIẢM từ 120 → 60 giây
             agent_kwargs={
-                "prefix": system_prompt
+                "prefix": system_prompt,
+                "format_instructions": """
+LANGUAGE: Vietnamese ONLY
+FORMAT:
+Thought: [Vietnamese thought]
+Action: [tool name]
+Action Input: [Vietnamese input]
+Observation: [result]
+... (repeat as needed)
+Thought: [Vietnamese final thought]
+Final Answer: [Vietnamese answer with Vietnamese markdown headers]
+        """
             },
             early_stopping_method="generate"
         )
@@ -272,7 +281,7 @@ def chat_with_agent(messages: list) -> str:
     """
     try:
         # Get agent (sử dụng singleton đã pre-load)
-        agent = get_medical_agent(provider="ollama", model_name="qwen2.5:7b")
+        agent = get_medical_agent(provider="ollama", model_name="")
         
         # Extract last message
         last_message = messages[-1]['content'] if messages else ""

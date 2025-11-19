@@ -171,7 +171,7 @@ class LLM:
     """
     
     def __init__(self, google_api_key=None, groq_api_key=None, 
-                temperature=0.4, model_name="ollama/qwen2.5:7b", 
+                temperature=0.4, model_name="ollama/llama3.2:3b", 
                 ollama_url="http://localhost:11434",
                 language="vi"):
         """
@@ -182,7 +182,7 @@ class LLM:
             groq_api_key: Groq API key (deprecated)
             temperature: Temperature for generation (0-1)
             model_name: Model name with provider prefix:
-                - "ollama/qwen2.5:7b" (Ollama - LOCAL, RECOMMENDED)
+                - "ollama/llama3.2:3b" (Ollama - LOCAL, RECOMMENDED)
                 - "ollama/llama3.2:3b" (Ollama - Fast local)
                 - "ollama/mistral:7b" (Ollama - Good quality)
                 - "gemini-1.5-flash" (Google Cloud)

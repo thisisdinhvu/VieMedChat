@@ -429,7 +429,7 @@ class RAGService:
         if self._llm is None:
             print("🤖 Initializing LLM (Ollama)...")
             self._llm = LLM(
-                model_name="ollama/qwen2.5:7b",  # ✅ SỬ DỤNG OLLAMA
+                model_name="ollama/llama3.2:3b",  # ✅ SỬ DỤNG OLLAMA
                 ollama_url="http://localhost:11434",
                 temperature=0.4,
                 language="vi"
