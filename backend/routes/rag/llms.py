@@ -171,7 +171,7 @@ class LLM:
     """
     
     def __init__(self, google_api_key=None, groq_api_key=None, 
-                temperature=0.4, model_name="gemini-2.0-flash", 
+                temperature=0.4, model_name="gemini-1.5-flash", 
                 ollama_url="http://localhost:11434",
                 language="vi"):
         """
@@ -185,7 +185,7 @@ class LLM:
                 - "ollama/qwen2.5:7b" (Ollama - LOCAL, RECOMMENDED)
                 - "ollama/qwen2.5:7b" (Ollama - Fast local)
                 - "ollama/mistral:7b" (Ollama - Good quality)
-                - "gemini-2.0-flash" (Google Cloud)
+                - "gemini-1.5-flash" (Google Cloud)
             ollama_url: Ollama API endpoint (default: http://localhost:11434)
             language: 'vi' or 'en'
         """
