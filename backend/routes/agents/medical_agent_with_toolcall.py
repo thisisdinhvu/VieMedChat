@@ -66,10 +66,11 @@ class MedicalAgentToolCalling:
             agent=self.agent,
             tools=self.tools,
             verbose=True,
-            max_iterations=3,  # Reduced from 5
+            max_iterations=5,  # Reduced from 5
             max_execution_time=45,  # Reduced from 60
             return_intermediate_steps=True,
-            handle_parsing_errors=True
+            handle_parsing_errors=True,
+            early_stopping_method="force"
         )
         
         print(f"✅ Tool Calling Agent initialized")
@@ -86,45 +87,60 @@ class MedicalAgentToolCalling:
 Phân tích câu hỏi và chọn ĐÚNG công cụ để trả lời.
 
 🛠️ CÁC CÔNG CỤ:
-
 1. **search_medical_documents** - Tìm kiếm thông tin y tế
-   Dùng khi: Hỏi về triệu chứng, bệnh, thuốc, điều trị
-   Ví dụ: "đau đầu", "viêm gan", "paracetamol"
-
-2. **calculator** - Tính toán số học
-   Dùng khi: Phép tính, số học
-   Ví dụ: "2+2", "15% của 200"
-
+2. **calculator** - Tính toán số học  
 3. **general_chat** - Trò chuyện thông thường
-   Dùng khi: Chào hỏi, hỏi về bot, cảm ơn
-   Ví dụ: "xin chào", "bạn là ai"
 
-⚡ QUY TẮC QUAN TRỌNG:
-- LUÔN gọi tool trước, KHÔNG trả lời trực tiếp
-- CHỈ gọi 1 tool mỗi lần
-- SAU KHI có kết quả tool, tổng hợp câu trả lời
-- Trả lời bằng TIẾNG VIỆT, rõ ràng, dễ hiểu
+⚡ QUY TRÌNH TRẢ LỜI (BẮT BUỘC TUÂN THỦ):
 
-📋 FORMAT TRẢ LỜI Y TẾ (sau khi có thông tin từ tool):
+**BƯỚC 1:** Phân tích câu hỏi → Chọn tool
+**BƯỚC 2:** Gọi tool → Nhận kết quả
+**BƯỚC 3:** ✅ **VIẾT CÂU TRẢ LỜI CUỐI CÙNG** cho người dùng
+
+📌 QUY TẮC QUAN TRỌNG:
+- SAU KHI tool trả kết quả, BẠN PHẢI viết câu trả lời hoàn chỉnh
+- KHÔNG dừng lại sau khi gọi tool
+- Câu trả lời phải RÕ RÀNG, ĐẦY ĐỦ, DỄ HIỂU
+- Trả lời bằng TIẾNG VIỆT
+
+---
+
+📋 FORMAT TRẢ LỜI Y TẾ (khi dùng search_medical_documents):
 
 **🔍 PHÂN TÍCH**
 [Tóm tắt triệu chứng]
 
 **🏥 CÁC TÌNH TRẠNG CÓ THỂ**
 1. **[Bệnh 1]**
-   - Giải thích: [Tại sao]
-   - Triệu chứng: [Điển hình]
+   - Giải thích: [...]
+   - Triệu chứng: [...]
 
 2. **[Bệnh 2]**
-   - Giải thích: [Tại sao]
-   - Triệu chứng: [Điển hình]
+   - Giải thích: [...]
+   - Triệu chứng: [...]
 
 **💡 KHUYẾN NGHỊ**
 - [Theo dõi]
 - [Tự chăm sóc]
 - [Khi nào đi khám]
 
-⚕️ **LƯU Ý:** Đây là thông tin tham khảo, không phải chẩn đoán y khoa."""
+⚕️ **LƯU Ý:** Đây là thông tin tham khảo, không phải chẩn đoán y khoa.
+
+---
+
+VÍ DỤ:
+
+**User:** "xin chào"
+→ Tool: general_chat("xin chào") → "Xin chào! Tôi có thể giúp gì..."
+→ **Final Answer:** "Xin chào! Tôi là trợ lý y tế AI. Tôi có thể giúp gì cho bạn?"
+
+**User:** "2+2 bằng bao nhiêu?"
+→ Tool: calculator("2+2") → "Kết quả: 4"
+→ **Final Answer:** "2 + 2 = 4"
+
+**User:** "Tôi bị đau đầu và sốt"
+→ Tool: search_medical_documents("đau đầu và sốt") → [Thông tin]
+→ **Final Answer:** [Câu trả lời theo format y tế trên]"""
 
         # Create prompt template
         prompt = ChatPromptTemplate.from_messages([
@@ -264,35 +280,3 @@ def chat_with_agent(messages: list) -> str:
         import traceback
         traceback.print_exc()
         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
-
-
-# ==========================================
-# 📊 Comparison Test
-# ==========================================
-if __name__ == "__main__":
-    """Test and compare with ReAct"""
-    
-    print("\n" + "="*60)
-    print("🧪 TESTING TOOL CALLING AGENT")
-    print("="*60)
-    
-    agent = get_medical_agent_tool_calling()
-    
-    # Test cases
-    test_queries = [
-        "xin chào",
-        "2 + 2 bằng bao nhiêu?",
-        "Tôi bị đau đầu và sốt, có thể là bệnh gì?"
-    ]
-    
-    for query in test_queries:
-        print(f"\n{'='*60}")
-        print(f"Query: {query}")
-        print(f"{'='*60}")
-        
-        result = agent.chat(query)
-        
-        print(f"\nAnswer: {result['answer'][:200]}...")
-        print(f"Tools used: {result['tool_calls']}")
-        print(f"API calls: {result['api_calls']}")
-        print(f"Estimated cost: ${result['api_calls'] * 0.000002:.6f}")  # Rough estimate

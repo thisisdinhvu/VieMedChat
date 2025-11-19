@@ -244,7 +244,7 @@ QUAN TRỌNG:
 # ==========================================
 _agent_instance = None
 
-def get_medical_agent(provider="ollama", model_name=None):
+def get_medical_agent(provider="google", model_name=None):
     """Get or create agent singleton"""
     global _agent_instance
     if _agent_instance is None:
