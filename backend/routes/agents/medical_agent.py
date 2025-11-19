@@ -4,8 +4,7 @@ Agent tự động quyết định khi nào cần search documents
 """
 import os
 from dotenv import load_dotenv
-from langchain.agents import AgentExecutor, create_react_agent
-from langchain_core.prompts import PromptTemplate
+from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -15,50 +14,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")
 from routes.agents.tools.medical_search_tool import get_medical_tools
 
 load_dotenv()
-
-
-# ==========================================
-# 🤖 Agent Prompt (ReAct Pattern)
-# ==========================================
-MEDICAL_AGENT_PROMPT = """Bạn là trợ lý y tế AI thông minh và tận tâm.
-
-Bạn có quyền truy cập vào các công cụ sau:
-
-{tools}
-
-Hướng dẫn:
-1. **Phân tích câu hỏi**: Hiểu rõ người dùng đang hỏi gì
-2. **Quyết định hành động**:
-   - Nếu là chào hỏi đơn giản (xin chào, hi): Trả lời trực tiếp
-   - Nếu là câu hỏi y tế: SỬ DỤNG tool `search_medical_documents`
-   - Nếu là cảm ơn/tạm biệt: Trả lời lịch sự
-3. **Trả lời**: Dựa trên thông tin từ tool hoặc kiến thức của bạn
-
-**QUAN TRỌNG**:
-- LUÔN sử dụng tool cho câu hỏi y tế (triệu chứng, bệnh, thuốc)
-- KHÔNG sử dụng tool cho chào hỏi, cảm ơn
-- Trả lời bằng tiếng Việt, dễ hiểu, thân thiện
-- KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ
-
-Sử dụng format sau:
-
-Question: câu hỏi bạn phải trả lời
-Thought: suy nghĩ về cần làm gì
-Action: tên công cụ cần dùng (hoặc "không cần tool")
-Action Input: đầu vào cho công cụ
-Observation: kết quả từ công cụ
-... (lặp lại Thought/Action/Observation nếu cần)
-Thought: Tôi đã có đủ thông tin để trả lời
-Final Answer: câu trả lời cuối cùng cho người dùng
-
-Bắt đầu!
-
-Previous conversation:
-{chat_history}
-
-New question: {input}
-{agent_scratchpad}
-"""
 
 
 # ==========================================
@@ -101,25 +56,35 @@ class MedicalAgent:
         # Get tools
         self.tools = get_medical_tools()
         
-        # Create prompt
-        self.prompt = PromptTemplate.from_template(MEDICAL_AGENT_PROMPT)
+        # System prompt for agent
+        system_prompt = """Bạn là trợ lý y tế AI thông minh và tận tâm.
+
+Hướng dẫn:
+1. **Phân tích câu hỏi**: Hiểu rõ người dùng đang hỏi gì
+2. **Quyết định hành động**:
+   - Nếu là chào hỏi đơn giản (xin chào, hi, hello): Trả lời trực tiếp KHÔNG dùng tool
+   - Nếu là câu hỏi y tế (triệu chứng, bệnh, thuốc): SỬ DỤNG tool `search_medical_documents`
+   - Nếu là cảm ơn/tạm biệt: Trả lời lịch sự KHÔNG dùng tool
+3. **Trả lời**: Dựa trên thông tin từ tool hoặc kiến thức của bạn
+
+**QUAN TRỌNG**:
+- LUÔN sử dụng tool cho câu hỏi y tế (triệu chứng, bệnh, thuốc)
+- KHÔNG sử dụng tool cho chào hỏi đơn giản, cảm ơn
+- Trả lời bằng tiếng Việt, dễ hiểu, thân thiện
+- KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ"""
         
-        # Create agent
-        self.agent = create_react_agent(
+        # Create agent using initialize_agent (simpler than create_react_agent)
+        self.agent_executor = initialize_agent(
+            tools=self.tools,
             llm=self.llm,
-            tools=self.tools,
-            prompt=self.prompt
-        )
-        
-        # Create executor
-        self.agent_executor = AgentExecutor(
-            agent=self.agent,
-            tools=self.tools,
-            verbose=True,  # Debug logging
+            agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+            verbose=True,
             handle_parsing_errors=True,
             max_iterations=5,
             max_execution_time=30,
-            return_intermediate_steps=True
+            agent_kwargs={
+                "prefix": system_prompt
+            }
         )
         
         print(f"✅ Medical Agent initialized")
@@ -155,11 +120,13 @@ class MedicalAgent:
                     role = "User" if msg['role'] == 'user' else "Assistant"
                     history_str += f"{role}: {msg['content']}\n"
             
+            # Add history to query if exists
+            full_input = query
+            if history_str:
+                full_input = f"Lịch sử trò chuyện:\n{history_str}\n\nCâu hỏi mới: {query}"
+            
             # Run agent
-            result = self.agent_executor.invoke({
-                "input": query,
-                "chat_history": history_str
-            })
+            result = self.agent_executor.invoke({"input": full_input})
             
             # Parse result
             answer = result.get('output', 'Xin lỗi, tôi không thể trả lời câu hỏi này.')
@@ -244,6 +211,8 @@ def chat_with_agent(messages: list) -> str:
         
     except Exception as e:
         print(f"❌ Error in chat_with_agent: {e}")
+        import traceback
+        traceback.print_exc()
         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
 
 

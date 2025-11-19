@@ -120,15 +120,3 @@ def get_medical_tools():
     ]
     
     return tools
-
-
-# ==========================================
-# 🧪 Testing
-# ==========================================
-if __name__ == "__main__":
-    print("🧪 Testing Medical Search Tool\n")
-    
-    # Test search
-    result = search_medical_documents("triệu chứng COVID-19")
-    print("\n📄 Result:")
-    print(result[:500] + "...")
