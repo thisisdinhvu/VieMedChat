@@ -81,47 +81,17 @@ Hướng dẫn:
 - KHÔNG chẩn đoán dứt khoát, luôn khuyên gặp bác sĩ
 
 **Ví dụ câu trả lời tốt**:
+"Dựa trên triệu chứng đau đầu và sốt, có một số tình trạng có thể liên quan:
 
-"Dựa trên triệu chứng đau đầu và sốt bạn mô tả, có một số tình trạng sức khỏe có thể liên quan:
+🔸 **Sốt rét**: Thông tin y tế cho thấy sốt rét thường có triệu chứng sốt cao (40-41°C) kèm đau đầu, rét run toàn thân...
 
-**CÁC BỆNH CÓ THỂ LIÊN QUAN:**
+🔸 **Viêm xoang**: Có thể gây đau đầu sau hốc mắt kèm sốt...
 
-1. Sốt rét
-   - Triệu chứng điển hình: Sốt cao (40-41°C), rét run toàn thân, đau đầu, vã mồ hôi
-   - Diễn biến: Thường có chu kỳ rét run - sốt - vã mồ hôi
-   - Mức độ: Có thể nguy hiểm nếu không điều trị kịp thời
+⚠️ **Dấu hiệu cần đi khám ngay**: Nếu sốt cao trên 39°C kéo dài, đau đầu dữ dội...
 
-2. Viêm xoang
-   - Triệu chứng: Đau đầu vùng hốc mắt, sốt, nghẹt mũi
-   - Đặc điểm: Đau tăng khi cúi người về phía trước
+💡 **Khuyến nghị**: Theo dõi thân nhiệt, nghỉ ngơi... và nên đến cơ sở y tế để bác sĩ khám và chẩn đoán chính xác."
 
-3. Viêm cơ tim
-   - Triệu chứng: Sốt nhẹ, đau đầu, mỏi cơ, có thể khó thở
-   - Cảnh báo: Nếu có khó thở hoặc đau ngực cần đi khám ngay
-
-**DẤU HIỆU CẦN ĐI KHÁM NGAY:**
-- Sốt cao trên 39°C kéo dài trên 3 ngày
-- Đau đầu dữ dội không giảm khi uống thuốc
-- Khó thở, đau ngực, rối loạn ý thức
-- Cơ thể yếu mệm, không thể ăn uống
-
-**KHUYẾN NGHỊ:**
-- Nghỉ ngơi đầy đủ và uống nhiều nước
-- Theo dõi thân nhiệt thường xuyên
-- Nên đến cơ sở y tế để bác sĩ khám và chẩn đoán chính xác
-- Không tự ý dùng kháng sinh mà chưa có chỉ định của bác sĩ
-
-Lưu ý: Thông tin trên chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán của bác sĩ."
-
-**FORMAT BẮT BUỘC:**
-- Không dùng emoji (🔸⚠️💡)
-- Dùng tiêu đề IN HOA với dấu **
-- Dùng số thứ tự (1, 2, 3) cho danh sách bệnh
-- Dùng dấu gạch đầu dòng (-) cho triệu chứng chi tiết
-- Xuống dòng rõ ràng giữa các phần
-- Kết thúc bằng lưu ý về tính chất tham khảo
-
-PHẢI trả lời theo format trên, rõ ràng và chuyên nghiệp!"""
+PHẢI trả lời theo cấu trúc trên, không được nói chung chung!"""
         
         # Create agent using initialize_agent
         self.agent_executor = initialize_agent(
