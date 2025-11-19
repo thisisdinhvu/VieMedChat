@@ -62,9 +62,10 @@ def general_chat(query: str) -> str:
         
         # Initialize LLM for chat
         llm = LLM(
-            model_name="ollama/llama3.2:3b",  # Fast small model for chat
-            ollama_url="http://localhost:11434",
-            temperature=0.7,  # Higher temp for more creative chat
+            # model_name="ollama/qwen2.5:7b",  # Fast small model for chat
+            model_name="gemini-2.0-flash",
+            # ollama_url="http://localhost:11434",
+            temperature=0.4,  # Higher temp for more creative chat
             language="vi"
         )
         

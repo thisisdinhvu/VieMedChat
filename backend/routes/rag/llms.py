@@ -171,7 +171,7 @@ class LLM:
     """
     
     def __init__(self, google_api_key=None, groq_api_key=None, 
-                temperature=0.4, model_name="ollama/llama3.2:3b", 
+                temperature=0.4, model_name="gemini-2.0-flash", 
                 ollama_url="http://localhost:11434",
                 language="vi"):
         """
@@ -182,10 +182,10 @@ class LLM:
             groq_api_key: Groq API key (deprecated)
             temperature: Temperature for generation (0-1)
             model_name: Model name with provider prefix:
-                - "ollama/llama3.2:3b" (Ollama - LOCAL, RECOMMENDED)
-                - "ollama/llama3.2:3b" (Ollama - Fast local)
+                - "ollama/qwen2.5:7b" (Ollama - LOCAL, RECOMMENDED)
+                - "ollama/qwen2.5:7b" (Ollama - Fast local)
                 - "ollama/mistral:7b" (Ollama - Good quality)
-                - "gemini-1.5-flash" (Google Cloud)
+                - "gemini-2.0-flash" (Google Cloud)
             ollama_url: Ollama API endpoint (default: http://localhost:11434)
             language: 'vi' or 'en'
         """
@@ -218,7 +218,7 @@ class LLM:
                 raise ValueError("Ollama connection failed!")
             
             # ✅ FIX: Print đúng provider
-            print(f"✅ LLM initialized: Ollama - {self.model_id}")
+            print(f"✅ LLM initialized - {self.model_id}")
             
         else:  # Default to Gemini
             self.provider = "gemini"

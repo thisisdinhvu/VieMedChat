@@ -143,7 +143,7 @@ def initialize_rag_components():
         # 2. Pre-load Agent (CRITICAL for speed!)
         # ==========================================
         print("\n6️⃣ Pre-loading Medical Agent...")
-        agent = get_medical_agent(provider="ollama", model_name="llama3.2:3b")
+        agent = get_medical_agent(provider="google", model_name="gemini-2.0-flash")
         
         # Warm up agent with a test query
         print("\n7️⃣ Warming up agent with test query...")

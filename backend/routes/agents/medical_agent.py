@@ -26,7 +26,7 @@ class MedicalAgent:
     - Faster response time
     """
     
-    def __init__(self, provider="ollama", model_name="llama3.2:3b", temperature=0.4, 
+    def __init__(self, provider="google", model_name="gemini-2.0-flash", temperature=0.4, 
                  ollama_url="http://localhost:11434"):
         """
         Initialize Medical Agent
@@ -43,7 +43,7 @@ class MedicalAgent:
         
         # Select LLM
         if provider == "ollama":
-            self.model_name = model_name or "llama3.2:3b"
+            self.model_name = model_name or "qwen2.5:7b"
             
             # Test Ollama connection
             import requests
@@ -64,7 +64,7 @@ class MedicalAgent:
                 num_predict=2048,  # ✅ GIẢM từ 4096 → 2048 để nhanh hơn
             )
         else:  # google
-            self.model_name = model_name or "gemini-1.5-flash"
+            self.model_name = model_name or "gemini-2.0-flash"
             self.llm = ChatGoogleGenerativeAI(
                 api_key=os.getenv("GOOGLE_API_KEY"),
                 model=self.model_name,
@@ -157,7 +157,7 @@ QUAN TRỌNG:
 - Luôn chọn tool PHÙ HỢP nhất
 - Không dùng search_medical_documents cho câu chào hỏi
 - Không dùng calculator cho câu hỏi y tế
-- Trả lời bằng TIẾNG VIỆT"""
+- Trả lời bằng TIẾNG VIỆT, không được trả lời bằng ngôn ngữ khác như TIẾNG ANH, PHÁP, TRUNG"""
         
         # Create agent
         self.agent_executor = initialize_agent(
@@ -166,21 +166,10 @@ QUAN TRỌNG:
             agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             verbose=True,
             handle_parsing_errors=True,
-            max_iterations=5,  # ✅ GIẢM từ 8 → 5
+            max_iterations=2,  # ✅ GIẢM từ 8 → 5
             max_execution_time=60,  # ✅ GIẢM từ 120 → 60 giây
             agent_kwargs={
                 "prefix": system_prompt,
-                "format_instructions": """
-LANGUAGE: Vietnamese ONLY
-FORMAT:
-Thought: [Vietnamese thought]
-Action: [tool name]
-Action Input: [Vietnamese input]
-Observation: [result]
-... (repeat as needed)
-Thought: [Vietnamese final thought]
-Final Answer: [Vietnamese answer with Vietnamese markdown headers]
-        """
             },
             early_stopping_method="generate"
         )
