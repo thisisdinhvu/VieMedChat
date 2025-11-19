@@ -1,7 +1,9 @@
 from flask import jsonify, request
 from config.database import get_db_connection, release_db_connection
-from utils.gemini_service import call_gemini
+# from utils.gemini_service import call_gemini
+from utils.rag_service import call_rag_gemini
 import traceback
+
 
 def create_conversation(user_id):
     """Create a new conversation"""
@@ -158,8 +160,8 @@ def send_message(user_id):
         
         print(f"Calling Gemini with {len(messages)} messages...")
         
-        # Call Gemini API
-        ai_response_content = call_gemini(messages)
+        # Call RAG API
+        ai_response_content = call_rag_gemini(messages)
         print(f" Gemini response received: {ai_response_content[:50]}...")
         
         # Save AI response
@@ -204,7 +206,7 @@ def send_message(user_id):
             }
         }
         
-        print("✅ Message sent successfully!")
+        print("✅ Message sent successfully with RAG!")
         return jsonify(result), 200
         
     except Exception as e:
