@@ -10,6 +10,7 @@ from backend.routes.rag.search import Searching
 from backend.routes.rag.utils import load_corpus, preprocess_context
 from backend.routes.rag.llms import LLM
 from backend.routes.rag.reranker import Reranker
+from backend.routes.agents.medical_agent import chat_with_agent
 load_dotenv()
 
 
@@ -88,13 +89,27 @@ class RAGService:
         return self._search_engine
     
     @property
+    # def llm(self):
+    #     """Lazy load LLM (Gemini)"""
+    #     if self._llm is None:
+    #         print("🤖 Initializing Gemini LLM...")
+    #         self._llm = LLM(
+    #             google_api_key=self.google_api_key,
+    #             model_name="gemini-2.0-flash-exp",
+    #             temperature=0.4,
+    #             language="vi"
+    #         )
+    #         print("✅ LLM ready!")
+    #     return self._llm
+    
+    # @property
     def llm(self):
-        """Lazy load LLM (Gemini)"""
+        """Lazy load LLM"""
         if self._llm is None:
-            print("🤖 Initializing Gemini LLM...")
+            print("🤖 Initializing LLM...")
             self._llm = LLM(
-                google_api_key=self.google_api_key,
-                model_name="gemini-2.0-flash-exp",
+                groq_api_key=os.getenv("GROQ_API_KEY"),  # ✅ Thêm dòng này
+                model_name="groq/llama-3.3-70b-versatile",  # ✅ Groq Llama
                 temperature=0.4,
                 language="vi"
             )
@@ -181,8 +196,91 @@ class RAGService:
             traceback.print_exc()
             return []
     
+    # def generate_answer(self, query, conversation_history=None, use_rag=True, 
+    #                    include_context_in_response=False):
+    #     """
+    #     Generate answer using complete RAG pipeline
+        
+    #     Pipeline:
+    #     1. Retrieve context (Hybrid Search + Reranker)
+    #     2. Build prompt with context + history
+    #     3. Generate with LLM
+        
+    #     Args:
+    #         query: User query
+    #         conversation_history: Previous messages [{'role': 'user'/'assistant', 'content': '...'}]
+    #         use_rag: Whether to use RAG context
+    #         include_context_in_response: Return context docs in response
+        
+    #     Returns:
+    #         dict: {
+    #             'answer': str,
+    #             'context_used': list (if include_context_in_response=True),
+    #             'has_context': bool
+    #         }
+    #     """
+    #     try:
+    #         print("\n" + "="*60)
+    #         print("🚀 RAG PIPELINE STARTING")
+    #         print("="*60)
+            
+    #         # Step 1: Retrieve context if enabled
+    #         context_docs = []
+    #         if use_rag:
+    #             print(f"📝 Query: {query}")
+    #             context_docs = self.retrieve_context(
+    #                 query, 
+    #                 top_k=3,  # Final top-3 after reranking
+    #                 search_type="hybrid"
+    #             )
+            
+    #         # Step 2: Build context string
+    #         context_str = None
+    #         if context_docs and len(context_docs) > 0:
+    #             context_str = "\n\n".join([
+    #                 f"[Tài liệu {i+1}]:\n{doc}" 
+    #                 for i, doc in enumerate(context_docs)
+    #             ])
+    #             print(f"\n📚 Context prepared ({len(context_docs)} documents)")
+    #         else:
+    #             print("\n⚠️ No relevant context found")
+            
+    #         # Step 3: Build prompt with LLM
+    #         print("\n🤖 Building prompt and generating...")
+    #         prompt = self.llm.preprocess_prompt(
+    #             question=query,
+    #             context=context_str
+    #         )
+            
+    #         # Step 4: Generate answer
+    #         answer = self.llm.generate(prompt)
+            
+    #         print("\n✅ Answer generated successfully!")
+    #         print("="*60 + "\n")
+            
+    #         result = {
+    #             'answer': answer,
+    #             'has_context': len(context_docs) > 0
+    #         }
+            
+    #         if include_context_in_response:
+    #             result['context_used'] = context_docs
+            
+    #         return result
+            
+    #     except Exception as e:
+    #         print(f"\n❌ Error in RAG pipeline: {e}")
+    #         import traceback
+    #         traceback.print_exc()
+            
+    #         return {
+    #             'answer': "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
+    #             'context_used': [] if include_context_in_response else None,
+    #             'has_context': False
+    #         }
+    
     def generate_answer(self, query, conversation_history=None, use_rag=True, 
-                       include_context_in_response=False):
+                   include_context_in_response=False):
         """
         Generate answer using complete RAG pipeline
         
@@ -230,15 +328,19 @@ class RAGService:
             else:
                 print("\n⚠️ No relevant context found")
             
-            # Step 3: Build prompt with LLM
+            # Step 3: Get LLM instance and build prompt
             print("\n🤖 Building prompt and generating...")
-            prompt = self.llm.preprocess_prompt(
+            
+            # ✅ FIX: Lấy instance từ property trước
+            llm_instance = self.llm
+            
+            prompt = llm_instance.preprocess_prompt(
                 question=query,
                 context=context_str
             )
             
             # Step 4: Generate answer
-            answer = self.llm.generate(prompt)
+            answer = llm_instance.generate(prompt)
             
             print("\n✅ Answer generated successfully!")
             print("="*60 + "\n")
@@ -309,9 +411,51 @@ def get_rag_service(use_reranker=True, reranker_model="BAAI/bge-reranker-v2-m3")
 # ==========================================
 # 🔌 Wrapper for chat_controller.py
 # ==========================================
+# def call_rag_gemini(messages):
+#     """
+#     Simple wrapper function for Flask chat_controller
+    
+#     Args:
+#         messages: List of conversation messages [{'role': 'user'/'assistant', 'content': '...'}]
+    
+#     Returns:
+#         str: Generated answer
+#     """
+#     try:
+#         # Get RAG service
+#         rag = get_rag_service(use_reranker=True)
+        
+#         # Extract last user message
+#         last_message = messages[-1]['content'] if messages else ""
+        
+#         # Generate answer with full pipeline
+#         result = rag.generate_answer(
+#             query=last_message,
+#             conversation_history=messages,
+#             use_rag=True,
+#             include_context_in_response=False  # Don't return context to save bandwidth
+#         )
+        
+#         # Log for debugging
+#         if result['has_context']:
+#             print(f"💡 Answer generated with RAG context")
+#         else:
+#             print(f"💡 Answer generated without context (general knowledge)")
+        
+#         return result['answer']
+        
+#     except Exception as e:
+#         print(f"❌ Error in call_rag_gemini: {e}")
+#         import traceback
+#         traceback.print_exc()
+        
+#         # Fallback to basic response
+#         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
+
 def call_rag_gemini(messages):
     """
     Simple wrapper function for Flask chat_controller
+    NOW USES LANGCHAIN AGENT!
     
     Args:
         messages: List of conversation messages [{'role': 'user'/'assistant', 'content': '...'}]
@@ -320,27 +464,9 @@ def call_rag_gemini(messages):
         str: Generated answer
     """
     try:
-        # Get RAG service
-        rag = get_rag_service(use_reranker=True)
-        
-        # Extract last user message
-        last_message = messages[-1]['content'] if messages else ""
-        
-        # Generate answer with full pipeline
-        result = rag.generate_answer(
-            query=last_message,
-            conversation_history=messages,
-            use_rag=True,
-            include_context_in_response=False  # Don't return context to save bandwidth
-        )
-        
-        # Log for debugging
-        if result['has_context']:
-            print(f"💡 Answer generated with RAG context")
-        else:
-            print(f"💡 Answer generated without context (general knowledge)")
-        
-        return result['answer']
+        # ✅ THAY TOÀN BỘ logic cũ bằng agent
+        from routes.agents.medical_agent import chat_with_agent
+        return chat_with_agent(messages)
         
     except Exception as e:
         print(f"❌ Error in call_rag_gemini: {e}")
