@@ -270,7 +270,7 @@ def chat_with_agent(messages: list) -> str:
     """
     try:
         # Get agent (sử dụng singleton đã pre-load)
-        agent = get_medical_agent(provider="ollama", model_name="")
+        agent = get_medical_agent(provider="google", model_name="gemini-2.0-flash")
         
         # Extract last message
         last_message = messages[-1]['content'] if messages else ""
