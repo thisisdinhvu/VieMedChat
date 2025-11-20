@@ -66,7 +66,7 @@ def general_chat(query: str) -> str:
 
         # Initialize LLM for chat with higher temperature for natural conversation
         llm = LLM(
-            model_name="models/gemini-2.0-flash-lite",
+            model_name="models/gemini-2.0-flash",
             temperature=0.7,  # Higher temp for more natural, creative chat
             language="vi",
         )

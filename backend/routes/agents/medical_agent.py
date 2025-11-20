@@ -1,6 +1,7 @@
 """
 Optimized LangChain ReAct Agent for Medical Chatbot
 """
+
 import os
 from dotenv import load_dotenv
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
@@ -8,6 +9,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 import sys
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 from routes.agents.tools.medical_search_tool import get_medical_tools
@@ -25,12 +27,17 @@ class MedicalAgent:
     - Structured output format
     - Faster response time
     """
-    
-    def __init__(self, provider="google", model_name="models/gemini-2.0-flash-lite", temperature=0.4, 
-                 ollama_url="http://localhost:11434"):
+
+    def __init__(
+        self,
+        provider="google",
+        model_name="models/gemini-2.0-flash",
+        temperature=0.4,
+        ollama_url="http://localhost:11434",
+    ):
         """
         Initialize Medical Agent
-        
+
         Args:
             provider: "ollama" or "google"
             model_name: Model name
@@ -40,13 +47,14 @@ class MedicalAgent:
         self.provider = provider
         self.temperature = temperature
         self.ollama_url = ollama_url
-        
+
         # Select LLM
         if provider == "ollama":
             self.model_name = model_name or "qwen2.5:7b"
-            
+
             # Test Ollama connection
             import requests
+
             try:
                 response = requests.get(f"{ollama_url}/api/tags", timeout=5)
                 if response.status_code != 200:
@@ -56,7 +64,7 @@ class MedicalAgent:
                 print(f"❌ Cannot connect to Ollama: {e}")
                 print("   Make sure Ollama is running: ollama serve")
                 raise ValueError("Ollama connection failed!")
-            
+
             self.llm = ChatOllama(
                 model=self.model_name,
                 base_url=ollama_url,
@@ -64,16 +72,16 @@ class MedicalAgent:
                 num_predict=2048,  # ✅ GIẢM từ 4096 → 2048 để nhanh hơn
             )
         else:  # google
-            self.model_name = model_name or "models/gemini-2.0-flash-lite"
+            self.model_name = model_name or "models/gemini-2.0-flash"
             self.llm = ChatGoogleGenerativeAI(
                 api_key=os.getenv("GOOGLE_API_KEY"),
                 model=self.model_name,
-                temperature=temperature
+                temperature=temperature,
             )
-        
+
         # Get tools
         self.tools = get_medical_tools()
-        
+
         # ==========================================
         # ✅ IMPROVED SYSTEM PROMPT với Output Format
         # ==========================================
@@ -158,7 +166,7 @@ QUAN TRỌNG:
 - Không dùng search_medical_documents cho câu chào hỏi
 - Không dùng calculator cho câu hỏi y tế
 - Trả lời bằng TIẾNG VIỆT, không được trả lời bằng ngôn ngữ khác như TIẾNG ANH, PHÁP, TRUNG"""
-        
+
         # Create agent
         self.agent_executor = initialize_agent(
             tools=self.tools,
@@ -171,22 +179,22 @@ QUAN TRỌNG:
             agent_kwargs={
                 "prefix": system_prompt,
             },
-            early_stopping_method="generate"
+            early_stopping_method="generate",
         )
-        
+
         print(f"✅ Medical Agent initialized")
         print(f"   Provider: {provider}")
         print(f"   Model: {self.model_name}")
         print(f"   Tools: {len(self.tools)}")
-    
+
     def chat(self, query: str, chat_history: list = None) -> dict:
         """
         Chat với agent
-        
+
         Args:
             query: User question
             chat_history: Previous conversation
-        
+
         Returns:
             dict: {'answer': str, 'used_tools': bool, 'intermediate_steps': list}
         """
@@ -195,47 +203,50 @@ QUAN TRỌNG:
             print(f"🤖 AGENT PROCESSING")
             print(f"{'='*60}")
             print(f"Query: {query[:50]}...")
-            
+
             # ✅ GIỚI HẠN HISTORY để giảm context
             history_str = ""
             if chat_history:
                 for msg in chat_history[-5:]:  # ✅ Chỉ lấy 5 tin nhắn gần nhất
-                    role = "User" if msg['role'] == 'user' else "Assistant"
-                    history_str += f"{role}: {msg['content'][:100]}...\n"  # ✅ Cắt ngắn nội dung
-            
+                    role = "User" if msg["role"] == "user" else "Assistant"
+                    history_str += (
+                        f"{role}: {msg['content'][:100]}...\n"  # ✅ Cắt ngắn nội dung
+                    )
+
             # Add history to query if exists
             full_input = query
             if history_str:
                 full_input = f"Lịch sử:\n{history_str}\n\nCâu hỏi: {query}"
-            
+
             # Run agent
             result = self.agent_executor.invoke({"input": full_input})
-            
+
             # Parse result
-            answer = result.get('output', 'Xin lỗi, tôi không thể trả lời câu hỏi này.')
-            intermediate_steps = result.get('intermediate_steps', [])
-            
+            answer = result.get("output", "Xin lỗi, tôi không thể trả lời câu hỏi này.")
+            intermediate_steps = result.get("intermediate_steps", [])
+
             # Check if tools were used
             used_tools = len(intermediate_steps) > 0
-            
+
             print(f"\n✅ COMPLETED ({len(intermediate_steps)} steps)")
             print(f"{'='*60}\n")
-            
+
             return {
-                'answer': answer,
-                'used_tools': used_tools,
-                'intermediate_steps': intermediate_steps
+                "answer": answer,
+                "used_tools": used_tools,
+                "intermediate_steps": intermediate_steps,
             }
-            
+
         except Exception as e:
             print(f"❌ Error in agent: {e}")
             import traceback
+
             traceback.print_exc()
-            
+
             return {
-                'answer': "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
-                'used_tools': False,
-                'intermediate_steps': []
+                "answer": "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
+                "used_tools": False,
+                "intermediate_steps": [],
             }
 
 
@@ -244,14 +255,12 @@ QUAN TRỌNG:
 # ==========================================
 _agent_instance = None
 
+
 def get_medical_agent(provider="google", model_name=None):
     """Get or create agent singleton"""
     global _agent_instance
     if _agent_instance is None:
-        _agent_instance = MedicalAgent(
-            provider=provider,
-            model_name=model_name
-        )
+        _agent_instance = MedicalAgent(provider=provider, model_name=model_name)
     return _agent_instance
 
 
@@ -261,36 +270,38 @@ def get_medical_agent(provider="google", model_name=None):
 def chat_with_agent(messages: list) -> str:
     """
     Wrapper function for Flask chat_controller
-    
+
     Args:
         messages: Conversation history
-    
+
     Returns:
         str: Agent's response
     """
     try:
         # Get agent (sử dụng singleton đã pre-load)
-        agent = get_medical_agent(provider="google", model_name="models/gemini-2.0-flash-lite")
-        
+        agent = get_medical_agent(
+            provider="google", model_name="models/gemini-2.0-flash"
+        )
+
         # Extract last message
-        last_message = messages[-1]['content'] if messages else ""
-        
+        last_message = messages[-1]["content"] if messages else ""
+
         # Chat with agent
         result = agent.chat(
-            query=last_message,
-            chat_history=messages[:-1]  # Exclude last message
+            query=last_message, chat_history=messages[:-1]  # Exclude last message
         )
-        
+
         # Log tool usage
-        if result['used_tools']:
+        if result["used_tools"]:
             print(f"💡 Agent used tools to answer")
         else:
             print(f"💡 Agent answered directly (no tools)")
-        
-        return result['answer']
-        
+
+        return result["answer"]
+
     except Exception as e:
         print(f"❌ Error in chat_with_agent: {e}")
         import traceback
+
         traceback.print_exc()
         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."

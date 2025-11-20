@@ -30,7 +30,7 @@ class MedicalAgentToolCalling:
     - Better accuracy (structured outputs)
     """
 
-    def __init__(self, model_name="models/gemini-2.0-flash-lite", temperature=0.3):
+    def __init__(self, model_name="models/gemini-2.0-flash", temperature=0.3):
         """
         Initialize Tool Calling Agent using direct llm.bind_tools()
 
@@ -148,6 +148,30 @@ C. Gọi general_chat khi:
 7. "Paracetamol dùng như thế nào?"
    → BẮT BUỘC gọi: search_medical_documents("paracetamol")
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 HỌC TỪ CÁC VÍ DỤ SAU (Few-Shot Learning):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+User: "tôi bị đau đầu dữ dội và buồn nôn"
+→ Tool được gọi: search_medical_documents(query="đau đầu buồn nôn")
+
+User: "tôi hay bị nhức đầu, vậy tôi có thể mắc bệnh gì?"
+→ Tool được gọi: search_medical_documents(query="nhức đầu triệu chứng bệnh")
+
+User: "tôi bị tiểu ít, tiểu đêm, chán ăn, sụt cân, có thể mắc bệnh gì?"
+→ Tool được gọi: search_medical_documents(query="tiểu ít tiểu đêm chán ăn sụt cân triệu chứng")
+
+User: "làm sao để biết tôi có bị suy thận hay không?"
+→ Tool được gọi: search_medical_documents(query="chẩn đoán suy thận")
+
+User: "tính BMI cho tôi, cao 1m7 nặng 60kg"
+→ Tool được gọi: calculator(expression="60 / (1.7 * 1.7)")
+
+User: "xin chào bạn"
+→ Tool được gọi: general_chat(query="xin chào bạn")
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ⚠️ LƯU Ý:
 - Nếu không chắc chắn câu hỏi thuộc loại nào → Gọi general_chat
 - KHÔNG BAO GIỜ trả lời trực tiếp mà không gọi tool
@@ -203,57 +227,60 @@ C. Gọi general_chat khi:
             tool_calls_made = []
 
             # Check if LLM wants to use tools
+            tool_calls = []
             if hasattr(response, "tool_calls") and response.tool_calls:
-                print(f"🔧 LLM requested {len(response.tool_calls)} tool call(s)")
-
-                # Execute each tool call
-                for tool_call in response.tool_calls:
-                    tool_name = tool_call.get("name")
-                    tool_args = tool_call.get("args", {})
-
-                    print(f"   → Calling {tool_name} with args: {tool_args}")
-
-                    if tool_name in self.tool_map:
-                        # Execute tool - handle both named args and positional args
-                        try:
-                            # Try with original args first
-                            tool_result = self.tool_map[tool_name](**tool_args)
-                        except TypeError as e:
-                            # If that fails, try extracting positional args (__arg1, __arg2, etc.)
-                            if "__arg1" in tool_args:
-                                positional_args = []
-                                i = 1
-                                while f"__arg{i}" in tool_args:
-                                    positional_args.append(tool_args[f"__arg{i}"])
-                                    i += 1
-                                tool_result = self.tool_map[tool_name](*positional_args)
-                            else:
-                                raise e
-
-                        tool_calls_made.append(
-                            {
-                                "tool": tool_name,
-                                "input": str(tool_args),
-                                "output": str(tool_result)[:100],
-                            }
-                        )
-
-                        # Add tool result to messages and get final answer
-                        messages.append(response)
-                        messages.append(
-                            HumanMessage(
-                                content=f"Tool result: {tool_result}\n\nBased on this, please provide your final answer to the user."
-                            )
-                        )
-
-                        # Second call - LLM generates final answer
-                        final_response = self.llm.invoke(messages)
-                        answer = final_response.content
-                    else:
-                        answer = f"Lỗi: Tool '{tool_name}' không tồn tại."
+                tool_calls = response.tool_calls
+                print(f"🔧 LLM requested {len(tool_calls)} tool call(s)")
             else:
-                # No tool needed, use LLM response directly
-                answer = response.content
+                # FORCE general_chat if no tool is called
+                print("⚠️ LLM did not call any tool. Forcing general_chat...")
+                tool_calls = [{"name": "general_chat", "args": {"query": query}}]
+
+            # Execute each tool call
+            for tool_call in tool_calls:
+                tool_name = tool_call.get("name")
+                tool_args = tool_call.get("args", {})
+
+                print(f"   → Calling {tool_name} with args: {tool_args}")
+
+                if tool_name in self.tool_map:
+                    # Execute tool - handle both named args and positional args
+                    try:
+                        # Try with original args first
+                        tool_result = self.tool_map[tool_name](**tool_args)
+                    except TypeError as e:
+                        # If that fails, try extracting positional args (__arg1, __arg2, etc.)
+                        if "__arg1" in tool_args:
+                            positional_args = []
+                            i = 1
+                            while f"__arg{i}" in tool_args:
+                                positional_args.append(tool_args[f"__arg{i}"])
+                                i += 1
+                            tool_result = self.tool_map[tool_name](*positional_args)
+                        else:
+                            raise e
+
+                    tool_calls_made.append(
+                        {
+                            "tool": tool_name,
+                            "input": str(tool_args),
+                            "output": str(tool_result)[:100],
+                        }
+                    )
+
+                    # Add tool result to messages and get final answer
+                    messages.append(response)
+                    messages.append(
+                        HumanMessage(
+                            content=f"Tool result: {tool_result}\n\nBased on this, please provide your final answer to the user."
+                        )
+                    )
+
+                    # Second call - LLM generates final answer
+                    final_response = self.llm.invoke(messages)
+                    answer = final_response.content
+                else:
+                    answer = f"Lỗi: Tool '{tool_name}' không tồn tại."
 
             print(f"\n✅ COMPLETED")
             print(f"   Tools used: {len(tool_calls_made)}")
@@ -286,7 +313,7 @@ C. Gọi general_chat khi:
 _agent_instance = None
 
 
-def get_medical_agent_tool_calling(model_name="models/gemini-2.0-flash-lite"):
+def get_medical_agent_tool_calling(model_name="models/gemini-2.0-flash"):
     """Get or create tool calling agent singleton"""
     global _agent_instance
     if _agent_instance is None:
@@ -314,9 +341,7 @@ def chat_with_agent(messages: list) -> str:
     """
     try:
         # Get agent
-        agent = get_medical_agent_tool_calling(
-            model_name="models/gemini-2.0-flash-lite"
-        )
+        agent = get_medical_agent_tool_calling(model_name="models/gemini-2.0-flash")
 
         # Extract last message
         last_message = messages[-1]["content"] if messages else ""
