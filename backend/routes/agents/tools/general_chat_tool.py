@@ -2,6 +2,7 @@
 General Chat Tool for LangChain Agent
 Handles casual conversation using LLM
 """
+
 from langchain.tools import Tool
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -17,9 +18,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.
 # ==========================================
 class GeneralChatInput(BaseModel):
     """Input schema for general chat"""
+
     query: str = Field(
         description="Câu hỏi hoặc nội dung trò chuyện thông thường của người dùng. "
-                    "Ví dụ: 'xin chào', 'bạn tên gì', 'hôm nay thế nào'"
+        "Ví dụ: 'xin chào', 'bạn tên gì', 'hôm nay thế nào'"
     )
 
 
@@ -29,46 +31,46 @@ class GeneralChatInput(BaseModel):
 def general_chat(query: str) -> str:
     """
     Handle general conversation using LLM.
-    
+
     Use this tool when:
     - User asks casual questions (greetings, small talk)
     - Questions about the bot itself ("bạn là ai?", "bạn làm gì?")
     - General chitchat not related to medical or calculations
     - Expressions of thanks, goodbye, etc.
-    
+
     Do NOT use for:
     - Medical questions (use search_medical_documents)
     - Math calculations (use calculator)
-    
+
     Examples:
     - "xin chào" → Use this tool
     - "bạn tên gì?" → Use this tool
     - "cảm ơn" → Use this tool
     - "đau đầu" → Do NOT use (medical)
     - "2 + 2" → Do NOT use (math)
-    
+
     Args:
         query: User's casual question
-    
+
     Returns:
         str: Friendly conversational response
     """
     try:
         print(f"\n💬 GENERAL CHAT TOOL CALLED")
         print(f"   Query: {query}")
-        
+
         # Import LLM (lazy loading)
         from backend.routes.rag.llms import LLM
-        
+
         # Initialize LLM for chat
         llm = LLM(
             # model_name="ollama/qwen2.5:7b",  # Fast small model for chat
             model_name="models/gemini-2.0-flash-lite",
             # ollama_url="http://localhost:11434",
             temperature=0.4,  # Higher temp for more creative chat
-            language="vi"
+            language="vi",
         )
-        
+
         # Build casual chat prompt
         chat_prompt = f"""Bạn là một trợ lý AI thân thiện và nhiệt tình.
 
@@ -83,34 +85,39 @@ Lưu ý:
 - Nếu tạm biệt: "Chúc bạn một ngày tốt lành!"
 
 Trả lời:"""
-        
+
         # Generate response
         response = llm.generate(chat_prompt)
-        
+
         print(f"   ✅ Response generated")
-        
+
         return response.strip()
-        
+
     except Exception as e:
         print(f"   ❌ Error in general_chat: {e}")
         import traceback
+
         traceback.print_exc()
-        
+
         # Fallback responses
         query_lower = query.lower()
-        
-        if any(greeting in query_lower for greeting in ['chào', 'hello', 'hi', 'hey']):
-            return "Xin chào! Tôi là trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay?"
-        
-        elif any(thanks in query_lower for thanks in ['cảm ơn', 'thank', 'thanks']):
-            return "Rất vui được giúp đỡ bạn! Nếu có câu hỏi gì khác, đừng ngại hỏi nhé!"
-        
-        elif any(bye in query_lower for bye in ['tạm biệt', 'bye', 'goodbye']):
+
+        if any(greeting in query_lower for greeting in ["chào", "hello", "hi", "hey"]):
+            return (
+                "Xin chào! Tôi là trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay?"
+            )
+
+        elif any(thanks in query_lower for thanks in ["cảm ơn", "thank", "thanks"]):
+            return (
+                "Rất vui được giúp đỡ bạn! Nếu có câu hỏi gì khác, đừng ngại hỏi nhé!"
+            )
+
+        elif any(bye in query_lower for bye in ["tạm biệt", "bye", "goodbye"]):
             return "Tạm biệt! Chúc bạn một ngày tốt lành! 👋"
-        
-        elif 'tên' in query_lower or 'là ai' in query_lower:
+
+        elif "tên" in query_lower or "là ai" in query_lower:
             return "Tôi là trợ lý AI y tế, được thiết kế để giúp bạn tư vấn về các vấn đề sức khỏe."
-        
+
         else:
             return "Tôi là trợ lý AI y tế. Bạn có câu hỏi gì về sức khỏe không? Tôi sẵn sàng hỗ trợ!"
 
@@ -121,7 +128,7 @@ Trả lời:"""
 def get_general_chat_tool():
     """
     Get general chat tool for LangChain agent
-    
+
     Returns:
         Tool: LangChain Tool object
     """
@@ -149,6 +156,6 @@ def get_general_chat_tool():
             Input: Câu hỏi chung (string)
             Output: Câu trả lời thân thiện
         """,
-        args_schema=GeneralChatInput,
-        return_direct=False
+        # args_schema=GeneralChatInput,  # Tạm comment để test
+        return_direct=False,
     )

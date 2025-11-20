@@ -2,6 +2,7 @@
 Calculator Tool for LangChain Agent
 Performs basic arithmetic operations
 """
+
 from langchain.tools import Tool
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -13,9 +14,10 @@ import re
 # ==========================================
 class CalculatorInput(BaseModel):
     """Input schema for calculator"""
+
     expression: str = Field(
         description="Biểu thức toán học cần tính. "
-                    "Ví dụ: '2 + 2', '10 * 5', '100 / 4', '(3 + 5) * 2'"
+        "Ví dụ: '2 + 2', '10 * 5', '100 / 4', '(3 + 5) * 2'"
     )
 
 
@@ -25,53 +27,55 @@ class CalculatorInput(BaseModel):
 def calculate(expression: str) -> str:
     """
     Calculate basic math expressions safely.
-    
+
     Use this tool when:
     - User asks to calculate something
     - User provides a math expression
     - User needs numerical computation
-    
+
     Supports: +, -, *, /, (), powers (**)
-    
+
     Examples:
     - "2 + 2" → "4"
     - "10 * 5 + 3" → "53"
     - "(100 - 20) / 4" → "20.0"
-    
+
     Args:
         expression: Math expression as string
-    
+
     Returns:
         str: Calculation result or error message
     """
     try:
         print(f"\n🧮 CALCULATOR TOOL CALLED")
         print(f"   Expression: {expression}")
-        
+
         # Clean expression (remove spaces, validate characters)
         expression = expression.strip()
-        
+
         # Security: Only allow safe characters
-        if not re.match(r'^[\d\s\+\-\*\/\(\)\.\*\*]+$', expression):
+        if not re.match(r"^[\d\s\+\-\*\/\(\)\.\*\*]+$", expression):
             return "❌ Lỗi: Biểu thức chứa ký tự không hợp lệ. Chỉ cho phép: +, -, *, /, (), số"
-        
+
         # Evaluate safely
         result = eval(expression, {"__builtins__": {}})
-        
+
         print(f"   ✅ Result: {result}")
-        
+
         # Format result nicely
         if isinstance(result, float) and result.is_integer():
             return f"Kết quả: {int(result)}"
         else:
             return f"Kết quả: {result}"
-        
+
     except ZeroDivisionError:
         return "❌ Lỗi: Không thể chia cho 0"
-    
+
     except SyntaxError:
-        return "❌ Lỗi: Cú pháp biểu thức không đúng. Ví dụ đúng: '2 + 2', '10 * (5 - 3)'"
-    
+        return (
+            "❌ Lỗi: Cú pháp biểu thức không đúng. Ví dụ đúng: '2 + 2', '10 * (5 - 3)'"
+        )
+
     except Exception as e:
         print(f"   ❌ Calculator error: {e}")
         return f"❌ Lỗi khi tính toán: {str(e)}"
@@ -83,7 +87,7 @@ def calculate(expression: str) -> str:
 def get_calculator_tool():
     """
     Get calculator tool for LangChain agent
-    
+
     Returns:
         Tool: LangChain Tool object
     """
@@ -111,6 +115,6 @@ def get_calculator_tool():
             Input: Biểu thức toán học (string)
             Output: Kết quả tính toán
         """,
-        args_schema=CalculatorInput,
-        return_direct=False
+        # args_schema=CalculatorInput,  # Tạm comment để test
+        return_direct=False,
     )

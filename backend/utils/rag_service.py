@@ -1,11 +1,13 @@
 """
 Optimized RAG Service với caching và giảm số lượng retrieval
 """
+
 import os
 from dotenv import load_dotenv
 from functools import lru_cache
 
 import sys, os
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from backend.routes.rag.embedding import Embedding
 from backend.routes.rag.search import Searching
@@ -23,30 +25,30 @@ class RAGService:
     - Caching results
     - Faster reranking
     """
-    
+
     def __init__(self, use_reranker=True, reranker_model="BAAI/bge-reranker-v2-m3"):
         """Initialize RAG pipeline"""
         # API Keys
         self.pinecone_api_key = os.getenv("PINECONE_API_KEY")
         self.google_api_key = os.getenv("GOOGLE_API_KEY")
         self.cohere_api_key = os.getenv("COHERE_API_KEY")
-        
+
         # Configs
         self.index_name = os.getenv("PINECONE_INDEX_NAME")
         self.corpus_path = os.getenv("CORPUS_PATH")
         self.use_reranker = use_reranker
         self.reranker_model = reranker_model
-        
+
         # Lazy loading attributes
         self._vectorstore = None
         self._search_engine = None
         self._splits = None
         self._llm = None
         self._reranker = None
-        
+
         print("🤖 RAG Service initialized (lazy loading enabled)")
         print(f"   - Reranker: {'✅ Enabled' if use_reranker else '❌ Disabled'}")
-    
+
     @property
     def vectorstore(self):
         """Lazy load Pinecone vectorstore"""
@@ -55,12 +57,12 @@ class RAGService:
             embedding = Embedding(
                 model_name="BAAI/bge-m3",
                 index_name=self.index_name,
-                pinecone_api_key=self.pinecone_api_key
+                pinecone_api_key=self.pinecone_api_key,
             )
             self._vectorstore = embedding.load_embedding()
             print("✅ Vectorstore loaded!")
         return self._vectorstore
-    
+
     @property
     def splits(self):
         """Lazy load document splits for BM25"""
@@ -69,7 +71,7 @@ class RAGService:
             _, self._splits = load_corpus(self.corpus_path)
             print(f"✅ Loaded {len(self._splits)} document chunks")
         return self._splits
-    
+
     @property
     def search_engine(self):
         """Lazy load hybrid search engine"""
@@ -79,11 +81,11 @@ class RAGService:
                 k1=5,  # ✅ GIẢM từ 10 → 5 cho vector search
                 k2=5,  # ✅ GIẢM từ 10 → 5 cho BM25
                 embedding_instance=self.vectorstore,
-                splits=self.splits
+                splits=self.splits,
             )
             print("✅ Search engine ready!")
         return self._search_engine
-    
+
     @property
     def llm(self):
         """Lazy load LLM - Using Ollama"""
@@ -93,48 +95,47 @@ class RAGService:
                 model_name="models/gemini-2.0-flash-lite",  # ✅ SỬ DỤNG OLLAMA
                 # ollama_url="http://localhost:11434",
                 temperature=0.4,
-                language="vi"
+                language="vi",
             )
             print("✅ LLM ready!")
         return self._llm
-    
+
     @property
     def reranker(self):
         """Lazy load reranker"""
         if self._reranker is None and self.use_reranker:
             print(f"🎯 Initializing reranker ({self.reranker_model})...")
             try:
-                self._reranker = Reranker(
-                    model_name=self.reranker_model,
-                    top_n=5 
-                )
+                self._reranker = Reranker(model_name=self.reranker_model, top_n=5)
                 print("✅ Reranker ready!")
             except Exception as e:
                 print(f"⚠️ Reranker initialization failed: {e}")
                 print("   Continuing without reranker...")
                 self.use_reranker = False
         return self._reranker
-    
+
     def retrieve_context(self, query, top_k=5, search_type="hybrid", use_reranker=None):
         """
         ✅ OPTIMIZED: Tối ưu reranking
-        
+
         Args:
             query: User query
             top_k: Final number of documents (default: 5)
             search_type: 'hybrid', 'vector', or 'bm25'
             use_reranker: Override class setting
-        
+
         Returns:
             list: Retrieved and cleaned document contents
         """
         try:
             print(f"\n🔍 Retrieving (top-{top_k})...")
-            
+
             # ✅ Giảm số lượng candidates
-            should_rerank = use_reranker if use_reranker is not None else self.use_reranker
+            should_rerank = (
+                use_reranker if use_reranker is not None else self.use_reranker
+            )
             initial_k = top_k * 2 if should_rerank else top_k  # 6 thay vì 10-15
-            
+
             # Search
             if search_type == "hybrid":
                 docs = self.search_engine.hybrid_search(query)
@@ -144,11 +145,11 @@ class RAGService:
                 docs = self.search_engine.bm25_search(query)
             else:
                 docs = self.search_engine.hybrid_search(query)
-            
+
             # Extract content
             context_candidates = self.search_engine.get_context(docs[:initial_k])
             print(f"   Retrieved {len(context_candidates)} candidates")
-            
+
             # Rerank if enabled
             final_context = context_candidates
             if should_rerank and self.reranker:
@@ -161,79 +162,80 @@ class RAGService:
                     final_context = context_candidates[:top_k]
             else:
                 final_context = context_candidates[:top_k]
-            
+
             # Clean and return
             cleaned_context = preprocess_context(final_context)
             print(f"\n✅ Final: {len(cleaned_context)} documents")
-            
+
             return cleaned_context
-            
+
         except Exception as e:
             print(f"❌ Error retrieving context: {e}")
             import traceback
+
             traceback.print_exc()
             return []
-    
-    def generate_answer(self, query, conversation_history=None, use_rag=True, 
-                   include_context_in_response=False):
+
+    def generate_answer(
+        self,
+        query,
+        conversation_history=None,
+        use_rag=True,
+        include_context_in_response=False,
+    ):
         """Generate answer using RAG pipeline"""
         try:
-            print("\n" + "="*60)
+            print("\n" + "=" * 60)
             print("🚀 RAG PIPELINE")
-            print("="*60)
-            
+            print("=" * 60)
+
             # Retrieve context if enabled
             context_docs = []
             if use_rag:
                 print(f"📝 Query: {query[:50]}...")
                 context_docs = self.retrieve_context(
-                    query, 
-                    top_k=5,  
-                    search_type="hybrid"
+                    query, top_k=5, search_type="hybrid"
                 )
-            
+
             # Build context string
             context_str = None
             if context_docs and len(context_docs) > 0:
-                context_str = "\n\n".join([
-                    f"[Tài liệu {i+1}]:\n{doc[:500]}"  # ✅ Cắt ngắn mỗi doc
-                    for i, doc in enumerate(context_docs)
-                ])
+                context_str = "\n\n".join(
+                    [
+                        f"[Tài liệu {i+1}]:\n{doc[:500]}"  # ✅ Cắt ngắn mỗi doc
+                        for i, doc in enumerate(context_docs)
+                    ]
+                )
                 print(f"\n📚 Context: {len(context_docs)} docs")
             else:
                 print("\n⚠️ No context")
-            
+
             # Generate
             print("\n🤖 Generating...")
             llm_instance = self.llm
-            prompt = llm_instance.preprocess_prompt(
-                question=query,
-                context=context_str
-            )
+            prompt = llm_instance.preprocess_prompt(question=query, context=context_str)
             answer = llm_instance.generate(prompt)
-            
+
             print("\n✅ Done!")
-            print("="*60 + "\n")
-            
-            result = {
-                'answer': answer,
-                'has_context': len(context_docs) > 0
-            }
-            
+            print("=" * 60 + "\n")
+
+            result = {"answer": answer, "has_context": len(context_docs) > 0}
+
             if include_context_in_response:
-                result['context_used'] = context_docs
-            
+                result["context_used"] = context_docs
+
             return result
-            
+
         except Exception as e:
             print(f"\n❌ Error in RAG pipeline: {e}")
             import traceback
+
             traceback.print_exc()
-            
+
             return {
-                'answer': "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
-                'context_used': [] if include_context_in_response else None,
-                'has_context': False
+                "answer": "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
+                "context_used": [] if include_context_in_response else None,
+                "has_context": False,
             }
 
 
@@ -242,13 +244,13 @@ class RAGService:
 # ==========================================
 _rag_service_instance = None
 
+
 def get_rag_service(use_reranker=True, reranker_model="BAAI/bge-reranker-v2-m3"):
     """Get or create RAG service singleton"""
     global _rag_service_instance
     if _rag_service_instance is None:
         _rag_service_instance = RAGService(
-            use_reranker=use_reranker,
-            reranker_model=reranker_model
+            use_reranker=use_reranker, reranker_model=reranker_model
         )
     return _rag_service_instance
 
@@ -263,10 +265,12 @@ def call_rag_gemini(messages):
     try:
         # from backend.routes.agents.medical_agent import chat_with_agent
         from backend.routes.agents.medical_agent_with_toolcall import chat_with_agent
+
         return chat_with_agent(messages)
-        
+
     except Exception as e:
         print(f"❌ Error in call_rag_gemini: {e}")
         import traceback
+
         traceback.print_exc()
         return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
