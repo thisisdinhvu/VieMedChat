@@ -78,8 +78,8 @@ class RAGService:
         if self._search_engine is None:
             print("🔍 Initializing hybrid search engine...")
             self._search_engine = Searching(
-                k1=5,  # ✅ GIẢM từ 10 → 5 cho vector search
-                k2=5,  # ✅ GIẢM từ 10 → 5 cho BM25
+                k1=10,  # ✅ GIẢM từ 10 → 5 cho vector search
+                k2=10,  # ✅ GIẢM từ 10 → 5 cho BM25
                 embedding_instance=self.vectorstore,
                 splits=self.splits,
             )
@@ -202,7 +202,7 @@ class RAGService:
             if context_docs and len(context_docs) > 0:
                 context_str = "\n\n".join(
                     [
-                        f"[Tài liệu {i+1}]:\n{doc[:500]}"  # ✅ Cắt ngắn mỗi doc
+                        f"[Tài liệu {i+1}]:\n{doc}"  # ✅ Cắt ngắn mỗi doc
                         for i, doc in enumerate(context_docs)
                     ]
                 )

@@ -74,7 +74,11 @@ def search_medical_documents(query: str) -> str:
 
 {formatted_context}
 
-Hãy sử dụng thông tin trên để trả lời câu hỏi của bệnh nhân một cách chính xác và dễ hiểu."""
+📌 YÊU CẦU:
+- Hãy tổng hợp TẤT CẢ thông tin chi tiết từ các tài liệu trên
+- Trình bày đầy đủ: triệu chứng, nguyên nhân, chẩn đoán, điều trị
+- Sử dụng bullet points để dễ đọc
+- Trả lời bằng TIẾNG VIỆT, RÕ RÀNG, CHI TIẾT, CHÍNH XÁC, DỄ HIỂU"""
 
     except Exception as e:
         print(f"❌ Error in search_medical_documents: {e}")
@@ -124,7 +128,7 @@ def get_medical_tools():
             Input: Câu hỏi y tế (string)
             Output: Thông tin y tế liên quan
         """,
-        # args_schema=MedicalSearchInput,
+        args_schema=MedicalSearchInput,
         return_direct=False,
     )
 

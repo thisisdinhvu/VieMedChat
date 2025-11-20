@@ -1,6 +1,6 @@
 """
 General Chat Tool for LangChain Agent
-Handles casual conversation using LLM
+Handles casual conversation using LLM with professional personality
 """
 
 from langchain.tools import Tool
@@ -30,24 +30,26 @@ class GeneralChatInput(BaseModel):
 # ==========================================
 def general_chat(query: str) -> str:
     """
-    Handle general conversation using LLM.
+    Handle general conversation using LLM with professional personality.
 
     Use this tool when:
     - User asks casual questions (greetings, small talk)
     - Questions about the bot itself ("bạn là ai?", "bạn làm gì?")
     - General chitchat not related to medical or calculations
     - Expressions of thanks, goodbye, etc.
+    - Weather, food, travel, entertainment questions
 
     Do NOT use for:
     - Medical questions (use search_medical_documents)
     - Math calculations (use calculator)
 
     Examples:
-    - "xin chào" → Use this tool
-    - "bạn tên gì?" → Use this tool
-    - "cảm ơn" → Use this tool
-    - "đau đầu" → Do NOT use (medical)
-    - "2 + 2" → Do NOT use (math)
+    - "xin chào" -> Use this tool
+    - "bạn tên gì?" -> Use this tool
+    - "cảm ơn" -> Use this tool
+    - "thời tiết hôm nay" -> Use this tool
+    - "đau đầu" -> Do NOT use (medical)
+    - "2 + 2" -> Do NOT use (math)
 
     Args:
         query: User's casual question
@@ -62,29 +64,77 @@ def general_chat(query: str) -> str:
         # Import LLM (lazy loading)
         from backend.routes.rag.llms import LLM
 
-        # Initialize LLM for chat
+        # Initialize LLM for chat with higher temperature for natural conversation
         llm = LLM(
-            # model_name="ollama/qwen2.5:7b",  # Fast small model for chat
             model_name="models/gemini-2.0-flash-lite",
-            # ollama_url="http://localhost:11434",
-            temperature=0.4,  # Higher temp for more creative chat
+            temperature=0.7,  # Higher temp for more natural, creative chat
             language="vi",
         )
 
-        # Build casual chat prompt
-        chat_prompt = f"""Bạn là một trợ lý AI thân thiện và nhiệt tình.
+        # Build professional chat prompt with personality
+        chat_prompt = f"""Bạn là VieMedChat - trợ lý AI y tế thân thiện và chuyên nghiệp.
 
-Người dùng nói: "{query}"
+🎭 TÍNH CÁCH:
+- Thân thiện, nhiệt tình, luôn sẵn sàng giúp đỡ
+- Chuyên nghiệp nhưng không cứng nhắc
+- Biết lắng nghe và thấu hiểu
+- Trả lời ngắn gọn, tự nhiên (1-3 câu)
 
-Hãy trả lời một cách ngắn gọn, tự nhiên và thân thiện (1-2 câu).
+🎯 VAI TRÒ:
+Bạn là trợ lý AI chuyên về y tế, có thể:
+- Tư vấn về triệu chứng, bệnh lý, thuốc men
+- Tính toán các chỉ số sức khỏe (BMI, v.v.)
+- Trò chuyện thân thiện về các chủ đề thường ngày
 
-Lưu ý:
-- Nếu được hỏi về bản thân: "Tôi là trợ lý AI y tế, có thể giúp bạn tư vấn về sức khỏe"
-- Nếu được cảm ơn: "Rất vui được giúp đỡ bạn!"
-- Nếu được chào: "Xin chào! Tôi có thể giúp gì cho bạn?"
-- Nếu tạm biệt: "Chúc bạn một ngày tốt lành!"
+� NGUỒN DỮ LIỆU:
+- Dữ liệu y tế được thu thập từ Bệnh viện Đa khoa Tâm Anh
+- Cơ sở dữ liệu chuyên sâu về các bệnh lý, triệu chứng, và điều trị
 
-Trả lời:"""
+�📝 NGƯỜI DÙNG NÓI:
+"{query}"
+
+💬 HƯỚNG DẪN TRẢ LỜI:
+
+1. Nếu chào hỏi (xin chào, hi, hello):
+   Trả lời: "Xin chào! Tôi là VieMedChat, trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay? 😊"
+
+2. Nếu hỏi về bản thân (bạn là ai, tên gì, làm gì):
+   Trả lời: "Tôi là VieMedChat, trợ lý AI chuyên về y tế. Tôi có thể giúp bạn tư vấn về sức khỏe, triệu chứng bệnh, thuốc men, và các vấn đề y tế khác!"
+
+3. Nếu hỏi về khả năng/tool (bạn có thể làm gì, có những tool nào):
+   Trả lời: "Tôi có 3 công cụ chính:
+   • Tìm kiếm thông tin y tế (triệu chứng, bệnh, thuốc)
+   • Tính toán chỉ số sức khỏe (BMI, v.v.)
+   • Trò chuyện tư vấn thân thiện
+   Bạn cần tôi giúp gì nhé?"
+
+4. Nếu hỏi về nguồn dữ liệu (dữ liệu từ đâu, thu thập ở đâu):
+   Trả lời: "Dữ liệu y tế của tôi được thu thập từ Bệnh viện Đa khoa Tâm Anh, một trong những bệnh viện uy tín hàng đầu Việt Nam. Tôi có thể giúp bạn tìm hiểu về các vấn đề sức khỏe dựa trên nguồn thông tin này!"
+
+5. Nếu cảm ơn (cảm ơn, thanks):
+   Trả lời: "Rất vui được giúp đỡ bạn! Nếu có thắc mắc gì về sức khỏe, đừng ngại hỏi nhé! 💙"
+
+6. Nếu tạm biệt (bye, tạm biệt):
+   Trả lời: "Tạm biệt! Chúc bạn luôn khỏe mạnh! Hẹn gặp lại! 👋"
+
+7. Nếu hỏi thời tiết:
+   Trả lời: "Tôi không có khả năng xem thời tiết, nhưng tôi có thể tư vấn về sức khỏe cho bạn! Bạn có câu hỏi gì về y tế không?"
+
+8. Nếu hỏi món ăn/du lịch/giải trí:
+   Trả lời: "Đó là chủ đề thú vị! Tuy nhiên, tôi chuyên về y tế hơn. Nhưng nếu bạn cần tư vấn dinh dưỡng hoặc chế độ ăn uống cho sức khỏe, tôi rất sẵn lòng giúp đỡ!"
+
+9. Nếu trò chuyện chung chung:
+   Trả lời thân thiện, tự nhiên, nhưng nhẹ nhàng dẫn dắt về chủ đề y tế
+
+⚠️ LƯU Ý QUAN TRỌNG:
+- Trả lời NGẮN GỌN (1-3 câu)
+- Tự nhiên, không rập khuôn
+- Luôn thể hiện sự thân thiện
+- Nhẹ nhàng nhắc về vai trò trợ lý y tế
+- KHÔNG nhắc đến Google, mô hình ngôn ngữ, hay công nghệ AI
+- Chỉ nói về nguồn dữ liệu từ Bệnh viện Tâm Anh khi được hỏi
+
+Hãy trả lời:"""
 
         # Generate response
         response = llm.generate(chat_prompt)
@@ -103,9 +153,7 @@ Trả lời:"""
         query_lower = query.lower()
 
         if any(greeting in query_lower for greeting in ["chào", "hello", "hi", "hey"]):
-            return (
-                "Xin chào! Tôi là trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay?"
-            )
+            return "Xin chào! Tôi là VieMedChat, trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay?"
 
         elif any(thanks in query_lower for thanks in ["cảm ơn", "thank", "thanks"]):
             return (
@@ -116,10 +164,10 @@ Trả lời:"""
             return "Tạm biệt! Chúc bạn một ngày tốt lành! 👋"
 
         elif "tên" in query_lower or "là ai" in query_lower:
-            return "Tôi là trợ lý AI y tế, được thiết kế để giúp bạn tư vấn về các vấn đề sức khỏe."
+            return "Tôi là VieMedChat, trợ lý AI y tế, được thiết kế để giúp bạn tư vấn về các vấn đề sức khỏe."
 
         else:
-            return "Tôi là trợ lý AI y tế. Bạn có câu hỏi gì về sức khỏe không? Tôi sẵn sàng hỗ trợ!"
+            return "Tôi là VieMedChat, trợ lý AI y tế. Bạn có câu hỏi gì về sức khỏe không? Tôi sẵn sàng hỗ trợ!"
 
 
 # ==========================================
@@ -142,6 +190,7 @@ def get_general_chat_tool():
             - Câu chào hỏi (xin chào, hi, hello)
             - Câu hỏi về bot (bạn là ai, tên gì, làm gì)
             - Cảm ơn, tạm biệt
+            - Hỏi thời tiết, món ăn, du lịch, giải trí
             - Trò chuyện thông thường, không liên quan y tế hoặc tính toán
             
             KHÔNG SỬ DỤNG khi:
@@ -152,10 +201,11 @@ def get_general_chat_tool():
             - "xin chào" → general_chat("xin chào")
             - "bạn tên gì?" → general_chat("bạn tên gì?")
             - "cảm ơn bạn" → general_chat("cảm ơn bạn")
+            - "thời tiết hôm nay" → general_chat("thời tiết hôm nay")
             
             Input: Câu hỏi chung (string)
-            Output: Câu trả lời thân thiện
+            Output: Câu trả lời thân thiện, chuyên nghiệp
         """,
-        # args_schema=GeneralChatInput,  # Tạm comment để test
+        args_schema=GeneralChatInput,
         return_direct=False,
     )

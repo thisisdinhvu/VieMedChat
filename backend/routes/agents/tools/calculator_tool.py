@@ -115,6 +115,6 @@ def get_calculator_tool():
             Input: Biểu thức toán học (string)
             Output: Kết quả tính toán
         """,
-        # args_schema=CalculatorInput,  # Tạm comment để test
+        args_schema=CalculatorInput,  # Tạm comment để test
         return_direct=False,
     )
