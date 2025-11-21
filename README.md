@@ -1,4 +1,4 @@
-# 🏥 VieMedChat - Trợ Lý Y Tế AI Thông Minh
+# 🏥 VieMedChat - Intelligent Medical AI Assistant
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![React](https://img.shields.io/badge/React-18-blue.svg)
@@ -6,17 +6,17 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-blue.svg)
 
-> **Lưu ý:** Dự án này là sản phẩm nghiên cứu và học tập. Các thông tin y tế chỉ mang tính chất tham khảo, không thay thế lời khuyên của bác sĩ chuyên khoa.
+> **Disclaimer:** This project is for research and educational purposes only. The medical information provided is for reference only and does not substitute for professional medical advice, diagnosis, or treatment.
 
-## 📖 Giới thiệu
+## 📖 Introduction
 
-**VieMedChat** là hệ thống chatbot tư vấn y tế sử dụng công nghệ **RAG (Retrieval-Augmented Generation)** và **Agentic AI**. Hệ thống được thiết kế để hỗ trợ người dùng tra cứu thông tin bệnh lý, triệu chứng và thuốc một cách chính xác, nhanh chóng bằng ngôn ngữ tự nhiên (Tiếng Việt).
+**VieMedChat** is an advanced medical chatbot system leveraging **RAG (Retrieval-Augmented Generation)** and **Agentic AI** technologies. The system is designed to assist users in looking up medical information, symptoms, and medications accurately and quickly using natural language (Vietnamese).
 
-### ✨ Tính năng nổi bật
-- 🤖 **AI Agent thông minh**: Tự động phân loại câu hỏi và chọn công cụ xử lý phù hợp (RAG, Calculator, General Chat).
-- 📚 **RAG Knowledge Base**: Truy xuất thông tin từ kho dữ liệu y tế uy tín, giảm thiểu ảo giác (hallucination) của LLM.
-- 🧠 **Fine-tuned Model**: Sử dụng mô hình Qwen 2.5 được tinh chỉnh riêng cho tác vụ y tế tiếng Việt.
-- 💬 **Giao diện thân thiện**: Chatbot tương tác tự nhiên, hỗ trợ lưu lịch sử trò chuyện.
+### ✨ Key Features
+- 🤖 **Intelligent AI Agent**: Automatically classifies user queries and selects the appropriate tool (RAG, Calculator, General Chat).
+- 📚 **RAG Knowledge Base**: Retrieves information from trusted medical data sources, minimizing LLM hallucinations.
+- 🧠 **Fine-tuned Model**: Utilizes a Qwen 2.5 model specifically fine-tuned for Vietnamese medical tasks.
+- 💬 **User-Friendly Interface**: Natural chat interaction with conversation history support.
 
 ---
 
@@ -27,7 +27,7 @@
 - **LLM**: Google Gemini 2.0 Flash / Qwen 2.5 (Fine-tuned)
 - **Vector DB**: Pinecone
 - **Embedding**: BAAI/bge-m3
-- **Database**: PostgreSQL (Lưu user, history)
+- **Database**: PostgreSQL (User management, Chat history)
 
 ### Frontend
 - **Framework**: React.js
@@ -36,16 +36,16 @@
 
 ---
 
-## 🚀 Cài đặt & Chạy dự án
+## 🚀 Installation & Setup
 
-### Yêu cầu tiên quyết
+### Prerequisites
 - Python 3.9+
 - Node.js 16+
 - PostgreSQL
-- Tài khoản Google AI Studio (Gemini API Key)
-- Tài khoản Pinecone (Vector DB)
+- Google AI Studio Account (Gemini API Key)
+- Pinecone Account (Vector DB)
 
-### 1. Clone dự án
+### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/VieMedChat.git
 cd VieMedChat
@@ -58,14 +58,14 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Tạo file .env từ .env.example và điền key
+# Create .env file from example and fill in your keys
 cp .env.example .env
 ```
 
 ### 3. Setup Database
 ```bash
-# Đảm bảo PostgreSQL đang chạy
-# Chạy script khởi tạo DB
+# Ensure PostgreSQL is running
+# Run database initialization script
 python utils/init_db.py
 ```
 
@@ -75,46 +75,46 @@ cd ../frontend
 npm install
 ```
 
-### 5. Chạy ứng dụng
+### 5. Run the Application
 **Backend:**
 ```bash
 cd backend
 python app.py
-# Server chạy tại: http://localhost:5000
+# Server runs at: http://localhost:5000
 ```
 
 **Frontend:**
 ```bash
 cd frontend
 npm start
-# App chạy tại: http://localhost:3000
+# App runs at: http://localhost:3000
 ```
 
 ---
 
-## 📂 Cấu trúc dự án
+## 📂 Project Structure
 
 ```
 VieMedChat/
 ├── backend/
-│   ├── controllers/     # Xử lý logic API
-│   ├── routes/          # Định nghĩa API endpoints
-│   ├── utils/           # Các hàm tiện ích (RAG, DB)
-│   ├── agents/          # Logic AI Agent
+│   ├── controllers/     # API Logic
+│   ├── routes/          # API Endpoints
+│   ├── utils/           # Utilities (RAG, DB)
+│   ├── agents/          # AI Agent Logic
 │   └── app.py           # Entry point
 ├── frontend/
 │   ├── src/
 │   │   ├── components/  # UI Components
-│   │   ├── pages/       # Các màn hình chính
-│   │   └── services/    # Gọi API Backend
+│   │   ├── pages/       # Main Pages
+│   │   └── services/    # API Calls
 │   └── public/
 └── ...
 ```
 
 ---
 
-## 🤝 Đóng góp
-Mọi đóng góp đều được hoan nghênh! Vui lòng tạo Pull Request hoặc mở Issue để thảo luận.
+## 🤝 Contribution
+Contributions are welcome! Please feel free to submit a Pull Request or open an Issue for discussion.
 
 ## 📄 License
 MIT License
