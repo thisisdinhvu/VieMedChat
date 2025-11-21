@@ -34,3 +34,4 @@ __pycache__/
 backend/database
 
 __init__.py
+IMPROVEMENT_PLAN.md
