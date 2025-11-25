@@ -1,0 +1,690 @@
+[
+  {
+    "query": "triệu chứng suy thận",
+    "relevant_doc_ids": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 6,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document đề cập đến việc các triệu chứng suy thận ban đầu thường không đặc hiệu, đây là một thông tin hữu ích liên quan đến \"triệu chứng suy thận\".",
+        "content_preview": "Các triệu chứng của suy giảm chức năng ở thận khi mới hình thành thường không có triệu chứng đặc hiệu và phát triển theo thời gian. Bởi thận bao gồm hai quả có khả năng hỗ trợ cho nhau rất hiệu quả. D"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document liệt kê rõ ràng các triệu chứng phổ biến của bệnh thận mạn tính (suy giảm chức năng thận kéo dài), đây chính là thông tin mà query \"triệu chứng suy thận\" tìm kiếm.",
+        "content_preview": "2.11. Bệnh thận mạn tính\nBệnh thận mạn tính (CKD) là tình trạng suy giảm chức năng thận kéo dài. Các triệu chứng xuất hiện chậm và trở nên rõ ràng ở giai đoạn muộn. Một số triệu chứng phổ biến bao gồm"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"tiểu máu, tiểu bọt\" và \"các dấu hiệu suy thận khác\" trong phần khai thác tiền sử bệnh, cho thấy đây là những triệu chứng hoặc dấu hiệu liên quan đến suy thận mà bác sĩ sẽ hỏi. Mặc dù không liệt kê đầy đủ, nhưng nó cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Sau khi được chẩn đoán trong 10 năm, khoảng 10% bệnh nhân mắc thận IgA vẫn giữ được chức năng thận bình thường, dù lúc chẩn đoán họ đã suy thận.\nBệnh thận IgA thường có triệu chứng tương đối ít, dễ kh"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document liệt kê trực tiếp và chi tiết các dấu hiệu/triệu chứng của suy thận, trả lời chính xác câu hỏi của query.",
+        "content_preview": "Dấu hiệu suy thận\nThông thường bệnh nhân suy thận sẽ có một vài triệu chứng của bệnh, nhưng đôi khi không có triệu chứng nào. Một số biểu hiện của tình trạng này có thể xảy ra bao gồm: (3)\nGiảm lượng "
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document giải thích viêm cầu thận mạn tính dẫn đến suy thận mạn tính và bắt đầu liệt kê các triệu chứng của viêm cầu thận, một tình trạng tiền thân trực tiếp của suy thận. Thông tin này hữu ích cho người tìm kiếm triệu chứng suy thận.",
+        "content_preview": "Viêm cầu thận mạn là tình trạng viêm mạn tính tại cầu thận, bệnh tiến triển qua nhiều tháng, nhiều năm dẫn đến xơ teo cả 2 thận. Bệnh diễn biến thành từng đợt cấp và sau cùng trở thành suy thận mạn tí"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document liệt kê nhiều triệu chứng cụ thể của bệnh suy thận như giảm lượng nước tiểu, phù, khó thở, mệt mỏi, buồn nôn, co rút cơ, thiếu máu, v.v. và đề cập trực tiếp đến \"dấu hiệu sớm của bệnh suy thận\" và \"triệu chứng của bệnh thận\".",
+        "content_preview": "Giảm lượng nước tiểu\nPhù mắt cá chân, bàn chân\nKhó thở không rõ nguyên nhân\nĐau hoặc cảm thấy nặng ngực\nBuồn ngủ quá mức, mệt mỏi, uể oải\nKém ăn, buồn nôn dai dẳng, nôn\nCo rút cơ (đặc biệt là ở chân)\n"
+      }
+    ]
+  },
+  {
+    "query": "dấu hiệu tiểu đường",
+    "relevant_doc_ids": [
+      0,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 6,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document liệt kê các dấu hiệu của nhiễm toan ceton, và giải thích rằng nhiễm toan ceton \"là dấu hiệu của bệnh tiểu đường ở những người chưa được chẩn đoán\" hoặc \"là dấu hiệu của bệnh tiểu đường\" trong một số trường hợp, trực tiếp trả lời query về \"dấu hiệu tiểu đường\".",
+        "content_preview": "Thở nhanh và sâu.\nDa và miệng khô.\nMặt đỏ bừng.\nHơi thở có mùi trái cây.\nCứng cơ hoặc đau nhức.\nBuồn nôn và nôn.\nĐôi khi nhiễm toan ceton là dấu hiệu của bệnh tiểu đường ở những người chưa được chẩn đ"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document trực tiếp đề cập đến \"Dấu hiệu của bệnh đái tháo đường\" và bắt đầu liệt kê \"Triệu chứng của tiểu đường tuýp 1\", cung cấp thông tin hữu ích để trả lời query.",
+        "content_preview": "Dấu hiệu của bệnh đái tháo đường\nCác dấu hiệu nhận biết của bệnh tiểu đường thay đổi ít nhiều theo tuýp bệnh tiểu đường, đôi khi rất nhẹ, thậm chí không có triệu chứng rõ ràng khiến người bệnh khó phá"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document đề cập đến \"Mất cảm giác, tê, phù… là những dấu hiệu nhận biết sớm vết loét tiểu đường\", đây là các dấu hiệu liên quan đến biến chứng của bệnh tiểu đường, cung cấp thông tin hữu ích cho query \"dấu hiệu tiểu đường\".",
+        "content_preview": "Có vùng da sẫm màu, chuyển sang màu đen hoặc nóng xung quanh vết thương.\nSưng đỏ, cứng vùng da xung quanh vết thương.\nChảy dịch, dịch có mùi khó chịu ở vết thương.\nCó dấu hiệu teo cơ.\nVết thương nhiễm"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document cung cấp thông tin về các dấu hiệu liên quan đến biến chứng của bệnh tiểu đường (như loét tiểu đường và tê bì, mất cảm giác do biến chứng thần kinh), đây là những biểu hiện của bệnh tiểu đường.",
+        "content_preview": "Vết loét nông (một phần hoặc toàn bộ lớp da)\nVết loét sâu đến gân hoặc bao khớp, không kèm theo áp xe hoặc tổn thương xương\nVết loét sâu, kèm tình trạng áp xe, viêm tủy xương hoặc nhiễm trùng khớp\nHoạ"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document liệt kê các \"dấu hiệu tiền tiểu đường\" như da sẫm màu, uống nhiều nước, đi tiểu nhiều lần, tầm nhìn mờ. Mặc dù là dấu hiệu của tiền tiểu đường, nhưng một số triệu chứng này (uống nhiều nước, đi tiểu nhiều, mờ mắt) cũng là dấu hiệu điển hình của bệnh tiểu đường, và tiền tiểu đường là giai đoạn trước khi phát triển thành tiểu đường tuýp 2. Do đó, thông tin này hữu ích và liên quan đến query \"dấu hiệu tiểu đường\".",
+        "content_preview": "Tiền tiểu đường không ảnh hưởng lớn đến sức khỏe; tuy nhiên, nếu không thay đổi lối sống, người lớn và trẻ em bị tiền tiểu đường có nguy cơ cao bị bệnh đái tháo đường tuýp 2. Lúc đó,"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document cung cấp thông tin về \"triệu chứng\" (dấu hiệu) của bệnh tiểu đường tuýp 1, cụ thể là \"cảm thấy đói và mệt\", trực tiếp trả lời một phần của query \"dấu hiệu tiểu đường\".",
+        "content_preview": "1. Triệu chứng của tiểu đường tuýp 1\nCác triệu chứng của thể tiểu đường tuýp 1 thường diễn tiến nhanh, có thể xuất hiện vài ngày hoặc vài tuần với các biểu hiện điển hình gồm:\nCảm thấy đói và mệt: Thô"
+      }
+    ]
+  },
+  {
+    "query": "đau đầu và buồn nôn",
+    "relevant_doc_ids": [
+      0,
+      1,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 7,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Tài liệu đề cập \"nhức đầu\" (đau đầu) và \"buồn nôn\" là các triệu chứng của một số bệnh nhiễm trùng não như viêm màng não và áp xe, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": ">> Tham khảo thêm về bệnh gây nhiễm trùng não khác: Bệnh dại\nTriệu chứng nhiễm trùng não\nCác triệu chứng nhiễm trùng não phụ thuộc vào vùng não bị nhiễm trùng cũng như mức độ nghiêm trọng của tình trạ"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document cung cấp thông tin chi tiết về \"buồn nôn\" và \"nôn ói\" (một phần của query), bao gồm các giai đoạn và triệu chứng liên quan của hội chứng nôn ói chu kỳ. Mặc dù không đề cập đến \"đau đầu\", nhưng thông tin về \"buồn nôn\" là hữu ích và không chỉ đề cập qua loa.",
+        "content_preview": "Ai dễ mắc hội chứng nôn ói chu kỳ?\nHội chứng nôn ói chu kỳ có thể xảy ra ở mọi lứa tuổi, đối tượng dễ mắc bệnh nhất là trẻ từ 3-7 tuổi. Mặc dù bệnh thường phổ biến ở trẻ em, nhưng ghi nhận về các ca m"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document mô tả triệu chứng đau nửa đầu, trong đó có đề cập rõ ràng đến việc người bệnh có thể cảm thấy buồn nôn hoặc nôn khi cơn đau xảy ra, điều này trực tiếp liên quan đến query \"đau đầu và buồn nôn\".",
+        "content_preview": "Triệu chứng đau đầu căng cơ\nNgười bệnh bị nhức đầu từ nhẹ đến vừa, cảm giác đầu bị bó, kẹp như có một dải băng quấn căng quanh đầu.\nTình trạng đau căng đầu xảy ra ở cả hai bên đầu và thường xuất hiện "
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Tài liệu mô tả \"đau mắt và nhức đầu dữ dội\" cùng với \"buồn nôn và nôn\" là các triệu chứng có thể xuất hiện đồng thời trong Glaucoma góc đóng cấp, cung cấp thông tin trực tiếp và hữu ích cho truy vấn.",
+        "content_preview": "Trong Glaucoma góc đóng cấp, nhãn áp tăng nhanh và người bệnh thường nhận thấy đau mắt và nhức đầu dữ dội, đỏ, mờ mắt, quầng sáng bảy sắc cầu vồng xung quanh đèn và mất thị lực đột ngột. Họ cũng có th"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document mô tả \"Đau đầu migraine trạng thái\" (Status Migrainosus) với các triệu chứng bao gồm cả đau đầu và buồn nôn dữ dội, trực tiếp cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Đau đầu migraine trạng thái (Status Migrainosus): Chiếm 3% tổng số ca đau đầu của hội chứng migraine. Bất kỳ cơn đau đầu migraine nào kéo dài hơn 72 giờ thường được gọi là chứng đau nửa đầu trạng thái"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document có tiêu đề phụ \"Đau đầu buồn nôn là bệnh gì? Nguyên nhân, triệu chứng cần lưu ý.\" trực tiếp đề cập đến các triệu chứng trong query, cho thấy nó chứa thông tin hữu ích về chủ đề này.",
+        "content_preview": "Xem thêm:\nĐau đầu chóng mặt là bệnh gì? Nguyên nhân, triệu chứng và lưu ý\nĐau đầu buồn nôn là bệnh gì? Nguyên nhân, triệu chứng cần lưu ý.\nĐối tượng nguy cơ cao bị đau đầu\nNgười thường xuyên làm việc "
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập rõ ràng \"đau đầu và nôn\" là các triệu chứng của phù gai thị do tăng áp lực nội sọ, cung cấp thông tin hữu ích liên quan trực tiếp đến query.",
+        "content_preview": "Nôn: Tình trạng nôn vọt, nôn không liên quan đến bữa ăn và không có đau bụng trước hay sau nôn.\nPhù gai thị: Tình trạng phù hoặc teo gai thị xảy ra khi tăng áp lực nội sọ, đè ép các bó mạch thần kinh "
+      }
+    ]
+  },
+  {
+    "query": "ho ra máu",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 6,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document trực tiếp đề cập và giải thích về \"ho ra máu\" như một triệu chứng, mức độ và tần suất, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Triệu chứng điển hình và thường gặp nhất là ho, ho khạc đờm kéo dài trong nhiều năm.\nĐờm mủ có màu xanh hoặc màu vàng, một số trường hợp đờm có lẫn máu;\nKhạc đờm thường tăng lên khi có bội nhiễm;\nCó m"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Tài liệu trực tiếp thảo luận về \"ho ra máu\", mô tả các mức độ, tính chất tái phát và mối liên hệ với ung thư phổi, cung cấp thông tin hữu ích cho truy vấn.",
+        "content_preview": "Ho ra máu tái phát nhiều lần, có thể kéo dài nhiều năm;\nMức độ ho ra máu có thể  ít hoặc nhiều từ ho máu nhẹ, trung bình, ho máu nặng, ho máu rất nặng và/hoặc gây suy hô hấp cấp.\nHo ra máu cũng là một"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document trực tiếp đề cập đến \"ho ra đờm có máu\" (một dạng của ho ra máu), giải thích mức độ nghiêm trọng, các nguyên nhân tiềm ẩn và khi nào cần đi khám bác sĩ, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "6. Ho ra đờm có máu, đờm đỏ hoặc đờm hồng\nHo ra đờm lẫn máu, đờm đỏ hoặc hồng là triệu chứng nghiêm trọng và cần được chẩn đoán ngay lập tức. Đây có thể là dấu hiệu của viêm phổi nặng, lao phổi, ung t"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document có các mục \"Điều trị trường hợp ho ra máu\" và \"Điều trị ngoại khoa\" đề cập trực tiếp đến các phương pháp xử lý khi bị ho ra máu, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "1. Dẫn lưu đờm mủ phế quản\nHướng dẫn người bệnh cách ho khạc đờm và vỗ rung lồng ngực kết hợp với dẫn lưu theo tư thế.\n\n2. Điều trị bằng kháng sinh\nKháng sinh được sử dụng trong đợt cấp tính của giãn "
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document trực tiếp đề cập đến triệu chứng \"Ho ra máu (đờm lẫn máu) số lượng từ ít tới nhiều\" như một dấu hiệu của bệnh lao phổi, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Ở nền bệnh lao tiến triển, tùy vào mức độ gây bệnh ở từng cơ quan bệnh nhân sẽ có những triệu chứng khác nhau. Ở lao phổi, các dấu hiệu thường đặc hiệu biểu hiện qua đường hô hấp như:\nHo khan, ho ít, "
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document đề cập rõ ràng \"ho có đờm màu gỉ sắt hoặc nhuốm máu khi ho nặng\" là một triệu chứng của bệnh sán lá phổi, đây là thông tin trực tiếp liên quan đến query \"ho ra máu\".",
+        "content_preview": "2. Đặc điểm sinh học\nVật chủ chứa: con người là vật chủ chính để sán lá phổi ký sinh, ngoài ra một số động vật như chó, heo, mèo… vẫn có thể nhiễm bệnh.\nKhi gây nhiễm bệnh cho người: Sau 2-15 ngày, ng"
+      }
+    ]
+  },
+  {
+    "query": "đau ngực trái",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 9,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document có một phần riêng biệt và chi tiết về \"Đau ngực trái\", định nghĩa, mô tả đặc điểm cơn đau và cảnh báo về các vấn đề tim mạch liên quan, cung cấp thông tin hữu ích trực tiếp cho query.",
+        "content_preview": "Các vị trí đau ngực\n\n1. Đau ngực trái\nĐau ở ngực trái là tình trạng người bệnh cảm thấy bị khó chịu, đau tức ở vùng ngực bên trái. Cơn đau có thể xuất hiện một cách đột ngột và đau dữ dội hoặc bị đau "
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document định nghĩa về đau ngực và đặc biệt đề cập rõ ràng đến \"đau ngực trái\" như một vị trí đau cụ thể, thậm chí có một mục riêng về \"Đau ngực trái\". Điều này cung cấp thông tin hữu ích và trực tiếp liên quan đến query.",
+        "content_preview": "# Đau ngực\n\nĐau ngực\n\nNguồn: https://tamanhhospital.vn/benh/dau-nguc/\n\nĐau ngực là gì?\nĐau ngực là cảm giác đau, khó chịu, căng tức ở vùng ngực, giống như có vật nặng đang đè nặng hoặc bóp chặt lồng n"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập trực tiếp đến \"Đau ngực đột ngột và dữ dội\" và \"đau ngực dữ dội\" như một triệu chứng của hội chứng trái tim tan vỡ, cung cấp thông tin hữu ích liên quan đến query \"đau ngực trái\".",
+        "content_preview": "Triệu chứng của bệnh trái tim tan vỡ\nHội chứng trái tim tan vỡ thường không để lại tổn thương vĩnh viễn cho tim, hầu hết bệnh nhân có thể hồi phục hoàn toàn sau một thời gian ngắn.\n\nTriệu chứng của hộ"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document định nghĩa \"đau thắt ngực\" và nêu rõ vị trí đau thường là \"vùng ngực trái\", cung cấp thông tin hữu ích liên quan trực tiếp đến query \"đau ngực trái\".",
+        "content_preview": "# Đau thắt ngực\n\nĐau thắt ngực\n\nNguồn: https://tamanhhospital.vn/benh/dau-that-nguc/\n\nĐau thắt ngực là bệnh gì?\nĐau thắt ngực là thuật ngữ dùng để chỉ cơn đau hoặc khó chịu ở vùng ngực, xảy ra khi khả"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Mặc dù tài liệu chủ yếu nói về \"đau bụng bên trái\", nhưng có đoạn đề cập đến \"đau ngực lan xuống dạ dày\" kèm theo các triệu chứng khác như buồn nôn, khó thở, ngứa ran ở cánh tay là dấu hiệu của các bệnh lý ở tim. Thông tin này hữu ích và liên quan đến query \"đau ngực trái\" vì bệnh tim là một nguyên nhân quan trọng của đau ngực.",
+        "content_preview": "# Đau bụng bên trái là bệnh gì\n\nĐau bụng bên trái\n\nNguồn: https://tamanhhospital.vn/benh/dau-bung-ben-trai/\n\nĐau bụng bên trái là bệnh gì?\nĐau bụng bên trái là triệu chứng điển hình của táo bón hoặc đ"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document mô tả \"đau ngực đột ngột\" và nêu rõ \"Vị trí đau thường xuất phát ở phía sau xương ức hoặc bên trái ngực\", trực tiếp trả lời và cung cấp thông tin hữu ích về triệu chứng \"đau ngực trái\".",
+        "content_preview": "Triệu chứng viêm màng ngoài tim\nTùy thuộc vào loại viêm màng ngoài tim mà người bệnh có thể gặp những triệu chứng khác nhau. Trong đó, đau ngực đột ngột là triệu chứng phổ biến nhất. Vị trí đau thường"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document có một mục lớn là \"Đau ngực\" mô tả các triệu chứng đau hoặc khó chịu ở vùng ngực, bao gồm cả cảm giác đau tức hoặc nặng ngực, và khả năng lan ra vai, cổ, cánh tay. Mặc dù không nói cụ thể \"đau ngực trái\", nhưng \"đau ngực\" là một khái niệm bao trùm và thông tin này hữu ích cho người tìm kiếm về \"đau ngực trái\".",
+        "content_preview": "2. Đánh trống ngực\nNgười bệnh cảm thấy tim đập mạnh và có thể cảm nhận được từng nhịp đập trong lồng ngực. Triệu chứng đánh trống ngực thường rõ rệt hơn khi nằm nghiêng bên trái hoặc khi tập trung chú"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document có phần \"Đau ngực trái\" trực tiếp định nghĩa, mô tả đặc điểm và cảnh báo về nguyên nhân tiềm ẩn của tình trạng đau ngực trái, cung cấp thông tin hữu ích và liên quan trực tiếp đến query.",
+        "content_preview": "1. Đau ngực trái\nĐau ở ngực trái là tình trạng người bệnh cảm thấy bị khó chịu, đau tức ở vùng ngực bên trái. Cơn đau có thể xuất hiện một cách đột ngột và đau dữ dội hoặc bị đau ở ngực trái âm ỉ, dai"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Query là về \"đau ngực trái\". Document nói về \"đau thắt ngực\", đây là một dạng đau ngực phổ biến và thường xuất hiện ở ngực trái. Thông tin về các tác nhân khởi phát cơn đau thắt ngực rất hữu ích cho người tìm kiếm về đau ngực trái.",
+        "content_preview": "Các tác nhân làm khởi phát cơn đau thắt ngực"
+      }
+    ]
+  },
+  {
+    "query": "cách điều trị cao huyết áp",
+    "relevant_doc_ids": [
+      0,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 6,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document cung cấp thông tin về cách điều trị và kiểm soát huyết áp cao, đặc biệt là trong bối cảnh thai kỳ và sau sinh, bao gồm ngưỡng điều trị và mục tiêu huyết áp, cũng như việc sử dụng thuốc. Đây là thông tin hữu ích liên quan trực tiếp đến query.",
+        "content_preview": "Bên cạnh đó, kiểm soát huyết áp trong thời gian mang thai là rất quan trọng. Trường Cao đẳng Sản phụ khoa Hoa Kỳ khuyến cáo, nên điều trị hạ huyết áp đối với những thai phụ có huyết áp tâm thu > 160mm"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến việc kiểm soát tăng huyết áp bằng cách \"sử dụng thuốc điều trị tăng huyết áp theo chỉ định của bác sĩ\", đây là một cách điều trị cao huyết áp, trả lời trực tiếp một phần của query.",
+        "content_preview": "Bệnh hồng cầu hình liềm: Các tế bào máu hình lưỡi liềm mang ít oxy hơn và cũng có xu hướng mắc kẹt trong thành động mạch, cản trở lưu lượng máu đến não, gây ra tình trạng thiếu máu não thoáng qua.\nCác"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập đến \"Tăng huyết áp cấp cứu\" và hướng dẫn \"người bệnh cần được đưa đến bệnh viện cấp cứu kịp thời\", đây là một cách xử lý/điều trị khẩn cấp cho tình trạng cao huyết áp nghiêm trọng, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "6. Tăng huyết áp áo choàng trắng\nHội chứng huyết áp áo choàng trắng là tình trạng huyết áp tăng cao khi đo tại phòng khám/bệnh viện nhưng bình thường khi ở nhà. Đây là dạng huyết áp tăng trái ngược vớ"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document trực tiếp đề cập đến \"Biện pháp điều trị huyết áp cao\" và nêu rõ hai cách điều trị là \"dùng thuốc theo chỉ định\" và \"lối sống khoa học\", trả lời trực tiếp cho query.",
+        "content_preview": "Biện pháp điều trị huyết áp cao\nĐể kiểm soát tốt và đưa huyết áp về mức bình thường, người bệnh cần có sự kết hợp giữa dùng thuốc theo chỉ định điều trị huyết áp cao với lối sống khoa học."
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document cung cấp thông tin chi tiết về \"điều trị không dùng thuốc\" (non-pharmacological treatment), bao gồm các thay đổi lối sống, chế độ ăn uống và thói quen sinh hoạt, đây là một phần quan trọng trong các cách điều trị cao huyết áp.",
+        "content_preview": "1. Điều trị không dùng thuốc\nĐiều trị không dùng thuốc là giải pháp ưu tiên hàng đầu đối với tất cả người bị tăng huyết áp. Bác sĩ sẽ hướng dẫn người bệnh điều chỉnh lối sống để giúp kiểm soát chỉ số "
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document trực tiếp trả lời câu hỏi \"cách điều trị cao huyết áp\" bằng cách đề cập đến việc phối hợp điều chỉnh lối sống và sử dụng thuốc, đồng thời cung cấp chi tiết về các biện pháp thay đổi lối sống.",
+        "content_preview": "Điều trị tăng huyết áp như thế nào?\nĐiều trị tăng huyết áp cần phối hợp giữa điều chỉnh lối sống và sử dụng thuốc hạ huyết áp, giúp người bệnh dễ dàng kiểm soát huyết áp. Mức huyết áp mục tiêu cần đạt"
+      }
+    ]
+  },
+  {
+    "query": "thuốc gì cho người tiểu đường",
+    "relevant_doc_ids": [
+      5,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 4,
+    "doc_details": [
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document cung cấp thông tin về \"Thuốc trị lở loét cho người tiểu đường\", bao gồm thuốc bôi ngoài da và thuốc kháng sinh. Đây là các loại thuốc được sử dụng cho người mắc bệnh tiểu đường để điều trị một biến chứng phổ biến, do đó có liên quan đến query \"thuốc gì cho người tiểu đường\".",
+        "content_preview": "Thói quen hút thuốc lá.\nThừa cân, béo phì.\nCó các biến chứng khác do tiểu đường: bệnh võng mạc tiểu đường, suy thận…\nBiến dạng chân.\nCao huyết áp.\nSuy giảm miễn dịch.\nCách điều trị loét do tiểu đường\n"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document cung cấp thông tin về một loại thuốc (thuốc trị lở loét) được sử dụng cho người tiểu đường, đây là một phần thông tin hữu ích liên quan đến query, mặc dù không phải là thuốc điều trị chính bệnh tiểu đường.",
+        "content_preview": "1. Thuốc trị lở loét cho người tiểu đường\nTùy theo tình trạng vết loét và sức khỏe của người bệnh, bác sĩ sẽ cân nhắc sử dụng các loại thuốc bôi ngoài da hoặc kháng sinh:\n\n1.1. Thuốc bôi ngoài da\nNgườ"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập đến việc sử dụng insulin cho người tiểu đường tuýp 1 và thuốc điều trị tiểu đường dạng uống hoặc tiêm cho người tiểu đường tuýp 2, trực tiếp trả lời câu hỏi về \"thuốc gì cho người tiểu đường\".",
+        "content_preview": ">>>Tham khảo: Cách thử tiểu đường tại nhà (đo đường huyết) đơn giản, chính xác\nPhương pháp điều trị bệnh đái tháo đường\nHiện nay có rất nhiều phương pháp điều trị bệnh tiểu đường. Trong đó, việc điều "
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập đến \"Thuốc ức chế natri-glucose cotransporter-2 (SGLT-2)\" và giải thích rằng loại thuốc này \"Xuất phát từ điều trị đái tháo đường type 2\", cung cấp thông tin hữu ích về thuốc cho người tiểu đường.",
+        "content_preview": "1. Sử dụng thuốc điều trị\nBác sĩ có thể kê đơn một số loại thuốc để giúp điều trị các triệu chứng và giảm nguy cơ biến chứng cho bệnh nhân, bao gồm:\nThuốc lợi tiểu furosemide: Có tác dụng thải bớt nướ"
+      }
+    ]
+  },
+  {
+    "query": "điều trị viêm gan B",
+    "relevant_doc_ids": [
+      1,
+      2,
+      3,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 5,
+    "doc_details": [
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document đề cập đến việc người bệnh viêm gan B cấp tính có thể phải nhập viện để \"điều trị\" khi tình trạng trở nên nghiêm trọng, cho thấy thông tin liên quan đến việc điều trị viêm gan B.",
+        "content_preview": "Phân loại viêm gan siêu vi B\nViêm gan B được phân thành hai loại là viêm gan B cấp tính và viêm gan B mãn tính.\n\n1. Viêm gan B cấp tính\nViêm gan B cấp tính là tình trạng nhiễm trùng ngắn hạn, kéo dài "
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document có một phần tiêu đề rõ ràng là \"Điều trị bệnh viêm gan siêu vi B\" và đề cập đến \"Điều trị ngăn ngừa lây nhiễm viêm gan B sau khi phơi nhiễm\", đây là một hình thức điều trị liên quan đến viêm gan B.",
+        "content_preview": "Ung thư gan: Những người bị nhiễm viêm gan B mãn tính có nguy cơ ung thư gan cao hơn những người không mắc bệnh.\nSuy gan: Viêm gan siêu vi B là một trong những nguyên nhân của tình trạng suy gan cấp t"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document cung cấp thông tin về kế hoạch điều trị viêm gan B cấp tính, bao gồm việc dùng thuốc theo chỉ định, nghỉ ngơi, vận động, ăn uống khoa học và theo dõi sức khỏe, trực tiếp trả lời một phần của query \"điều trị viêm gan B\".",
+        "content_preview": "3. Tái phát viêm gan\nMột biến chứng khác của viêm gan B chính là tái hoạt động viêm gan sau một khoảng thời gian virus viêm gan B không hoạt động.\n\n4. Biến chứng ngoài gan (hiếm gặp)\nTrong một số trườ"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document trực tiếp đề cập đến các phương pháp điều trị viêm gan B mãn tính, bao gồm các loại thuốc cụ thể (Entecavir, Tenofovir, Interferon) và cơ chế hoạt động, rất hữu ích cho query \"điều trị viêm gan B\".",
+        "content_preview": "3. Điều trị viêm gan B mãn tính\nHầu hết người được chẩn đoán viêm gan B mãn tính sẽ cần điều trị suốt đời. Việc điều trị giúp giảm nguy cơ biến chứng ở gan nguy hiểm và phòng ngừa lây nhiễm cho người "
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập trực tiếp đến việc \"điều trị viêm gan B\", bao gồm thông tin về thời gian điều trị (\"rất dài, có khi suốt đời\"), mục tiêu điều trị (ngăn chặn biến chứng), và việc bác sĩ tư vấn \"phác đồ điều trị viêm gan B\".",
+        "content_preview": "Đặc biệt, theo quan điểm y học hiện nay thì chưa có thuốc triệt tiêu hoàn toàn (“tận gốc”) cho tất cả mọi trường hợp (tỷ lệ khỏi bệnh rất thấp ở người viêm gan B mạn tính). Do đó, người bệnh viêm gan "
+      }
+    ]
+  },
+  {
+    "query": "paracetamol có tác dụng phụ gì",
+    "relevant_doc_ids": [
+      4
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 1,
+    "doc_details": [
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document đề cập trực tiếp đến paracetamol và tác dụng phụ của nó, cụ thể là \"ít tác dụng phụ\". Mặc dù không liệt kê chi tiết các tác dụng phụ, thông tin này vẫn hữu ích và trả lời được một phần câu hỏi về bản chất tác dụng phụ của paracetamol.",
+        "content_preview": "Nhìn chung, các loại thuốc thường được dùng trong điều trị thoái hóa cột sống có thể kể đến như sau:\nParacetamol đem lại hiệu quả trong việc giảm đau nhức khó chịu và ít tác dụng phụ. Tuy nhiên, thuốc"
+      }
+    ]
+  },
+  {
+    "query": "liều dùng aspirin",
+    "relevant_doc_ids": [
+      1,
+      3,
+      6
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 3,
+    "doc_details": [
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document đề cập đến \"aspirin liều cao\" trong điều trị viêm màng ngoài tim cấp tính, cung cấp thông tin về một loại liều dùng của aspirin.",
+        "content_preview": "Siêu âm tim là chẩn đoán đầu tay được chỉ định cho bệnh nhân viêm màng ngoài tim\nCách điều trị viêm màng ngoài tim\nĐiều trị viêm màng ngoài tim phụ thuộc vào nguyên nhân gây ra các triệu chứng và mức "
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"aspirin liều thấp\", đây là một dạng liều dùng cụ thể của aspirin, cung cấp thông tin liên quan đến query \"liều dùng aspirin\" mặc dù không liệt kê đầy đủ các liều lượng khác.",
+        "content_preview": "Những yếu tố nguy cơ gây bệnh gout mà bạn nên lưu ý:\nĂn quá nhiều, không kiểm soát các thực phẩm giàu purin\nNgười có người thân từng mắc bệnh gout\nSử dụng một số loại thuốc không kê toa, sai liều lượn"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập cụ thể đến \"aspirin liều thấp (81mg)\", cung cấp thông tin về liều dùng aspirin, dù trong một ngữ cảnh cụ thể (thai phụ).",
+        "content_preview": "Giảm cân nếu có chỉ số BMI ở mức thừa cân – béo phì (≥ 25);\nTránh xa thuốc lá;\nTập thể dục thường xuyên;\nKiểm soát huyết áp hoặc lượng đường trong máu;\nDùng aspirin liều thấp (81mg) sau 12 tuần mang t"
+      }
+    ]
+  },
+  {
+    "query": "chế độ ăn cho người suy thận",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 7,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document đề cập trực tiếp đến \"chế độ ăn hạn chế protein\" cho người mắc bệnh thận và nhấn mạnh \"người bệnh suy thận cần tuân thủ chế độ dinh dưỡng của bác sĩ\", cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Người mắc bệnh thận nên tuân thủ chế độ ăn hạn chế protein khi kết quả xét nghiệm máu cho thấy mức độ dinh dưỡng thấp. Người mắc bệnh amyloidosis nguyên phát của thận hoặc bệnh amyloidosis liên quan đ"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document cung cấp các khuyến nghị cụ thể về chế độ ăn uống (hạn chế natri, giảm lượng nước, ăn ít chất béo bão hòa và cholesterol) cho những người mắc hội chứng suy thận, trực tiếp trả lời câu hỏi về \"chế độ ăn cho người suy thận\".",
+        "content_preview": "Người bệnh chạy thận tại Trung tâm Tiết niệu – Thận học, BVĐK Tâm Anh TP.HCM\nBiện pháp phòng ngừa bệnh thận nhiễm bột\nNghiên cứu đã chỉ ra rằng thay đổi chế độ ăn uống và dinh dưỡng không gây ra hoặc "
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập đến \"chế độ ăn thích hợp\" và đưa ra các lời khuyên cụ thể về ăn uống như \"giảm đường giảm muối\", \"uống đủ nước\", \"hạn chế bia rượu\" cho người bệnh thận, rất hữu ích cho người suy thận.",
+        "content_preview": "Dù suy thận và bệnh thận mạn không thể hồi phục; tuy nhiên, với chẩn đoán và điều trị thích hợp, người bệnh vẫn có thể sống lâu mà không có những thay đổi đáng kể về chất lượng cuộc sống. Người bệnh c"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"chế độ ăn uống lành mạnh\" như một yếu tố quan trọng để làm chậm sự tiến triển của \"bệnh thận mạn\" (suy thận) ở giai đoạn 1, trực tiếp liên quan đến \"chế độ ăn\" cho \"người suy thận\" trong query.",
+        "content_preview": "2. Bệnh thận mạn\nBệnh thận tiến triển với tốc độ khác nhau ở những người khác nhau và có thể mất từ 2-5 năm để chuyển qua các giai đoạn khác nhau. Các giai đoạn bệnh thận được đo bằng cách xét nghiệm "
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document cung cấp thông tin về chế độ ăn (nên ăn gì, hạn chế gì) cho người mắc bệnh thận IgA, đặc biệt nhấn mạnh \"khi có suy giảm chức năng thận\", điều này trực tiếp liên quan đến \"người suy thận\" trong query.",
+        "content_preview": "Y học hiện nay vẫn chưa có thuốc hoặc phương pháp điều trị dứt điểm bệnh thận IgA, chỉ có thể ngăn chặn không cho bệnh tiến triển nặng và nhanh hơn.\n\n2. Bệnh thận IgA nên ăn gì?\nBệnh thận IgA nên ăn h"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document cung cấp nhiều thông tin hữu ích về chế độ ăn cho người suy thận, bao gồm khuyến nghị về protein, hạn chế nước, kali, photpho và chất béo có hại, đều là các yếu tố quan trọng trong chế độ ăn cho bệnh nhân suy thận.",
+        "content_preview": "Chọn các thực phẩm giàu protein nạc: Protein rất cần cho sự phát triển cơ bắp và giúp chống nhiễm trùng. Các thực phẩm giàu đạm nên bổ sung gồm trứng, thịt gia cầm, cá, cua, tôm, các loại đậu; cần giả"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập đến việc hạn chế thực phẩm chế biến sẵn do chứa nhiều natri, đây là một lời khuyên quan trọng và hữu ích trong chế độ ăn cho người suy thận. Mặc dù phần sau của tài liệu chuyển hướng sang chủ đề suy nhược cơ thể, thông tin ban đầu vẫn liên quan trực tiếp đến query.",
+        "content_preview": "Hạn chế sử dụng thực phẩm đã qua chế biến: Đồ đóng hộp, kẹo ngọt và thịt cá nấu sẵn có thể chứa nhiều chất bảo quản, chất phụ gia, natri hoặc chất béo làm chậm quá trình tiêu hóa. Vì vậy, nên sử dụng "
+      }
+    ]
+  },
+  {
+    "query": "phòng ngừa đột quỵ",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 7,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Mặc dù phần lớn tài liệu nói về điều trị, nhưng nó có đề cập đến mục tiêu \"phòng ngừa tối đa nguy cơ tái phát bệnh đột quỵ\", đây là một khía cạnh quan trọng của phòng ngừa đột quỵ (phòng ngừa thứ phát).",
+        "content_preview": "Các vấn đề tâm lý như trầm cảm, rối loạn cảm xúc,…;\nTrường hợp nặng sẽ dẫn đến tử vong hoặc sống thực vật.\nNgười bị đột quỵ có nguy cơ cao mất khả năng vận động\n\n8. Cách điều trị đột quỵ\nNhìn chung, m"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document cung cấp nhiều thông tin hữu ích về phòng ngừa đột quỵ, bao gồm lời khuyên về chế độ ăn (giảm natri, ăn nhiều rau củ quả) và giải đáp về yếu tố nguy cơ (tắm đêm).",
+        "content_preview": "Cố gắng giảm hàm lượng natri trong mỗi khẩu phần ăn.\n\nXem thêm:\nĂn gì phòng ngừa đột quỵ? Top 13 thực phẩm không nên bỏ qua.\n\nLập kế hoạch chăm sóc bệnh nhân đột quỵ não đúng cách như thế nào?\nChế độ "
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document cung cấp các cách phòng ngừa một loại đột quỵ cụ thể (đột quỵ xuất huyết não), bao gồm kiểm soát huyết áp, cholesterol và không hút thuốc lá. Đây là thông tin hữu ích và liên quan trực tiếp đến chủ đề \"phòng ngừa đột quỵ\" nói chung.",
+        "content_preview": "Cách phòng ngừa đột quỵ xuất huyết não\n\nCó một số cách để giúp giảm nguy cơ đột quỵ xuất huyết não, bao gồm:\nKiểm soát huyết áp: Huyết áp cao là yếu tố nguy cơ chính của đột quỵ xuất huyết não. Bạn có"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document trực tiếp đề cập đến \"phòng ngừa đột quỵ\" và cung cấp thông tin chi tiết về chế độ dinh dưỡng để phòng ngừa đột quỵ, bao gồm các lời khuyên cụ thể về thực phẩm nên ăn và nên tránh.",
+        "content_preview": "Lắng nghe cơ thể và tìm đến bác sĩ chuyên môn, các cơ sở y tế uy tín khi cần được thăm khám và tư vấn.\nXem thêm: 10 cách phòng ngừa đột quỵ từ sớm hiệu quả, không nên bỏ qua.\n\n11. Dinh dưỡng\nKhi xây d"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document cung cấp các thông tin hữu ích về phòng ngừa đột quỵ như không lạm dụng thuốc, thăm khám sức khỏe và tầm soát đột quỵ định kỳ, và duy trì cơ thể khỏe mạnh.",
+        "content_preview": "Không lạm dụng thuốc: Lạm dụng thuốc sẽ có tác động làm tăng nguy cơ bị cơn thiếu máu não cục bộ thoáng qua và đột quỵ. Vì vậy, mọi người chỉ được dùng thuốc khi có chỉ định từ bác sĩ.\nHiện nay mọi ng"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document liệt kê nhiều yếu tố nguy cơ gây đột quỵ (như ít vận động, hút thuốc lá, chế độ ăn uống không lành mạnh, béo phì, tiểu đường, tăng huyết áp...). Việc nhận biết và quản lý các yếu tố nguy cơ này chính là một phần quan trọng của phòng ngừa đột quỵ, do đó cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Việc sử dụng thuốc tránh thai hay các liệu pháp điều chỉnh hormone, thay đổi nội tiết tố cũng làm tăng nguy cơ gây bệnh.\n\nXem thêm:\nDấu hiệu đột quỵ ở nữ: Nguyên nhân và cách phòng ngừa hiệu quả.\n6 dấ"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document cung cấp nhiều thông tin cụ thể về các biện pháp phòng ngừa đột quỵ như hạn chế tắm đêm, kiểm tra sức khỏe định kỳ, tầm soát các yếu tố nguy cơ, và tìm kiếm tư vấn y tế. Ngoài ra, nó còn đề cập trực tiếp đến \"phòng ngừa đột quỵ\" trong phần \"Xem thêm\".",
+        "content_preview": "Hạn chế tắm đêm vì đây cũng là một yếu tố làm tăng nguy cơ đột quỵ;\nKiểm tra sức khỏe định kỳ, tầm soát đột quỵ, đặc biệt là lượng cholesterol và huyết áp, tim mạch, tiểu đường,…;\nLắng nghe cơ thể và "
+      }
+    ]
+  },
+  {
+    "query": "xét nghiệm gì để biết bị tiểu đường",
+    "relevant_doc_ids": [
+      0,
+      3,
+      6,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 5,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document nêu rõ các xét nghiệm cụ thể (kiểm tra lượng đường trong máu, nghiệm pháp dung nạp glucose) được sử dụng để chẩn đoán tiểu đường thai kỳ, một dạng của bệnh tiểu đường. Thông tin này trả lời trực tiếp câu hỏi \"xét nghiệm gì để biết bị tiểu đường\" mặc dù tập trung vào một đối tượng cụ thể.",
+        "content_preview": "Đã hoặc đang bị hội chứng buồng trứng đa nang (PCOS).\nThừa cân trước khi mang thai làm tăng nguy cơ tiểu đường thai kỳ\nPhương pháp chẩn đoán đái tháo đường trong thai kỳ\nĐể chẩn đoán, bác sĩ sẽ tiến h"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"Đo đường huyết (xác định có mắc tiểu đường hay không)\", đây là một xét nghiệm trực tiếp để biết có bị tiểu đường hay không, trả lời được câu hỏi của query.",
+        "content_preview": ">> Bài viết liên quan: Tiểu đêm nhiều lần ở nam giới: Nguyên nhân, cách trị và phòng ngừa\nPhương pháp chẩn đoán hội chứng tiểu đêm\nNgười bệnh nên ghi chép lại những thông tin trong ngày như bạn đã uốn"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập nhiễm toan ceton là dấu hiệu của bệnh tiểu đường và liệt kê các xét nghiệm liên quan đến chẩn đoán nhiễm toan ceton như kiểm tra ceton, sử dụng máy đo glucose và xét nghiệm máu. Mặc dù tập trung vào nhiễm toan ceton, các xét nghiệm này vẫn cung cấp thông tin hữu ích về các chỉ số và phương pháp kiểm tra có liên quan đến việc phát hiện bệnh tiểu đường.",
+        "content_preview": "Đôi khi, nhiễm toan ceton xảy ra với người bệnh tiểu đường tuýp 2. Trong một số trường hợp, nhiễm toan ceton là dấu hiệu của bệnh tiểu đường.\nCách chẩn đoán nhiễm toan ceton\nKiểm tra ceton khi lượng đ"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document liệt kê rõ ràng các xét nghiệm (Glucose huyết tương lúc đói - FPG, nghiệm pháp dung nạp glucose đường uống - OGTT) và tiêu chuẩn chẩn đoán để biết một người có bị tiểu đường hay không, trực tiếp trả lời câu hỏi của query.",
+        "content_preview": ">>>Xem ngay: Bị tiểu đường có nhổ răng được không?\nCách chẩn đoán bệnh đái tháo đường\nTheo Hiệp hội Đái tháo đường Mỹ (ADA), tiêu chuẩn dùng trong chẩn đoán bệnh tiểu đường được dựa vào 1 trong 4 tiêu"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document liệt kê các xét nghiệm như glucose huyết đói, nghiệm pháp dung nạp glucose, và HbA1c, là những xét nghiệm quan trọng được sử dụng để chẩn đoán tiền tiểu đường và là một phần của quá trình chẩn đoán bệnh tiểu đường. Mặc dù tài liệu tập trung vào tiền tiểu đường, các xét nghiệm này vẫn là thông tin hữu ích và liên quan đến câu hỏi \"xét nghiệm gì để biết bị tiểu đường\". Ngoài ra, tài liệu còn có liên kết tham khảo về \"Cách thử tiểu đường tại nhà (đo đường huyết)\".",
+        "content_preview": "Chẩn đoán tiền tiểu đường được thực hiện khi xuất hiện một trong các rối loạn sau:\nRối loạn glucose huyết đói (impaired fasting glucose – IFG) trong khoảng 100 – 125 mg/dL hoặc 5.6 – 6.9 mmol/L.\nRối l"
+      }
+    ]
+  },
+  {
+    "query": "chỉ số đường huyết bao nhiêu là cao",
+    "relevant_doc_ids": [
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 1,
+    "doc_details": [
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document cung cấp các ngưỡng chỉ số đường huyết cụ thể (140-199mg/dL là tiền tiểu đường, 200mg/dL trở lên là đái tháo đường), giúp trả lời câu hỏi \"chỉ số đường huyết bao nhiêu là cao\".",
+        "content_preview": "Nếu đường huyết dưới 140 mg/dL thì bình thường.\nNếu đường huyết từ 140 đến 199mg/dL, bạn bị tiền tiểu đường.\nNếu đường huyết từ 200 mg/dL trở lên, bạn bị đái tháo đường.\nNgoà"
+      }
+    ]
+  },
+  {
+    "query": "triệu chứng nhồi máu cơ tim",
+    "relevant_doc_ids": [
+      0,
+      3,
+      5,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 6,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Tài liệu có một phần riêng biệt liệt kê chi tiết các triệu chứng nhận biết nhồi máu cơ tim, trực tiếp trả lời câu hỏi.",
+        "content_preview": "Tỷ lệ nhồi máu cơ tim ngày càng tăng ở nước ta\nTriệu chứng nhồi máu cơ tim thường gặp\n\nMột số triệu chứng nhận biết nhồi máu cơ tim bao gồm:\nĐau nặng ngực;\nMỏi cứng hàm, đau mỏi vai, hai tay;\nMệt mỏi "
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"cơn đau ngực\" là một triệu chứng xuất hiện khi bệnh nhân bị nhồi máu cơ tim, và cũng nhắc đến \"các triệu chứng của nhồi máu cơ tim\" nói chung, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Can thiệp sớm trong thời khoảng “giờ vàng” giúp bảo tồn mạng sống người bệnh\nBác sĩ Trần Trung Kiên nhấn mạnh, khung “giờ vàng” can thiệp nhồi máu cơ tim người bệnh cần lưu ý đó là: khoảng thời gian 1"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document trực tiếp đề cập đến \"đau thắt ngực\" là dấu hiệu điển hình và mô tả đặc điểm của triệu chứng này khi cảnh báo nhồi máu cơ tim.",
+        "content_preview": "Đau thắt ngực là dấu hiệu điển hình nhất cảnh báo bệnh tim mạch, đặc biệt là nhồi máu cơ tim. Bệnh tim sẽ trở nguy hiểm khi xảy ra các cơn đau thắt ngực không ổn định.\nKhi các triệu chứng đau thắt ngự"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document liệt kê trực tiếp và chi tiết các triệu chứng nhận biết nhồi máu cơ tim, trả lời chính xác query.",
+        "content_preview": "Một số triệu chứng nhận biết nhồi máu cơ tim bao gồm:\nĐau nặng ngực;\nMỏi cứng hàm, đau mỏi vai, hai tay;\nMệt mỏi bất thường;\nKhó thở, hụt hơi;\nKhó chịu ở vùng thượng vị;\nCảm giác buồn nôn;\nHoa mắt, ch"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document trực tiếp liệt kê các triệu chứng của nhồi máu cơ tim, trả lời chính xác query.",
+        "content_preview": "5. Nhồi máu cơ tim\nNhồi máu cơ tim xảy ra khi huyết khối chặn dòng máu trong động mạch vành, ngăn cản oxy đến một phần của cơ tim, dẫn đến tổn thương hoặc chết tế bào cơ tim. Các triệu chứng bao gồm đ"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document liệt kê rõ ràng và chi tiết nhiều triệu chứng của nhồi máu cơ tim, bao gồm cả các triệu chứng điển hình và không điển hình, trực tiếp trả lời câu hỏi của query.",
+        "content_preview": "Đau ngực có phải là triệu chứng duy nhất quan trọng của nhồi máu cơ tim?\nĐau thắt ngực là triệu chứng nhận biết nhiều bệnh lý nguy hiểm, mà nổi bật là nhồi máu cơ tim. Tuy nhiên, nhiều người có thể nh"
+      }
+    ]
+  }
+]

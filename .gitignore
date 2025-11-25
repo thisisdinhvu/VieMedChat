@@ -35,3 +35,6 @@ backend/database
 
 __init__.py
 IMPROVEMENT_PLAN.md
+.backend/finetuning/.jsonl
+.backend/evaluation/results
+.backend/logs

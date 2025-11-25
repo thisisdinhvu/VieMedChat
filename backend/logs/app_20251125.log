@@ -1,0 +1,1294 @@
+2025-11-25 10:00:24 | INFO     | __main__:320 | Initializing RAG components...
+2025-11-25 10:05:10 | INFO     | __main__:320 | Initializing RAG components...
+2025-11-25 10:07:53 | INFO     | __main__:320 | Initializing RAG components...
+2025-11-25 10:08:34 | INFO     | __main__:53 | LLM judge initialized (Gemini 2.5 Pro)
+2025-11-25 10:08:34 | INFO     | __main__:55 | Ground Truth Generator initialized
+2025-11-25 10:08:46 | INFO     | __main__:218 | Generating ground truth for 15 queries...
+2025-11-25 10:08:46 | INFO     | __main__:219 | Mode: auto
+2025-11-25 10:08:46 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:08:46 | INFO     | __main__:124 | Query: triệu chứng suy thận
+2025-11-25 10:08:46 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:10:12 | INFO     | __main__:320 | Initializing RAG components...
+2025-11-25 10:10:52 | INFO     | __main__:53 | LLM judge initialized (Gemini 2.5 Flash)
+2025-11-25 10:10:52 | INFO     | __main__:55 | Ground Truth Generator initialized
+2025-11-25 10:10:54 | INFO     | __main__:218 | Generating ground truth for 15 queries...
+2025-11-25 10:10:54 | INFO     | __main__:219 | Mode: auto
+2025-11-25 10:10:54 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:10:54 | INFO     | __main__:124 | Query: triệu chứng suy thận
+2025-11-25 10:10:54 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:11:29 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:11:29 | INFO     | __main__:124 | Query: dấu hiệu tiểu đường
+2025-11-25 10:11:29 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:12:39 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:12:39 | INFO     | __main__:124 | Query: đau đầu và buồn nôn
+2025-11-25 10:12:39 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:13:21 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:13:22 | INFO     | __main__:124 | Query: ho ra máu
+2025-11-25 10:13:22 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:14:20 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:14:20 | INFO     | __main__:124 | Query: đau ngực trái
+2025-11-25 10:14:20 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:15:04 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:15:04 | INFO     | __main__:124 | Query: cách điều trị cao huyết áp
+2025-11-25 10:15:04 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:16:06 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:16:06 | INFO     | __main__:124 | Query: thuốc gì cho người tiểu đường
+2025-11-25 10:16:06 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:16:45 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:16:45 | INFO     | __main__:124 | Query: điều trị viêm gan B
+2025-11-25 10:16:45 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:17:33 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:17:33 | INFO     | __main__:124 | Query: paracetamol có tác dụng phụ gì
+2025-11-25 10:17:33 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:18:31 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:18:31 | INFO     | __main__:124 | Query: liều dùng aspirin
+2025-11-25 10:18:31 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:19:33 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:19:33 | INFO     | __main__:124 | Query: chế độ ăn cho người suy thận
+2025-11-25 10:19:33 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:20:28 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:20:28 | INFO     | __main__:124 | Query: phòng ngừa đột quỵ
+2025-11-25 10:20:28 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:21:18 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:21:18 | INFO     | __main__:124 | Query: xét nghiệm gì để biết bị tiểu đường
+2025-11-25 10:21:18 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:22:13 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:22:13 | INFO     | __main__:124 | Query: chỉ số đường huyết bao nhiêu là cao
+2025-11-25 10:22:13 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:23:12 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 10:23:12 | INFO     | __main__:124 | Query: triệu chứng nhồi máu cơ tim
+2025-11-25 10:23:12 | INFO     | __main__:125 | ================================================================================
+2025-11-25 10:24:03 | INFO     | __main__:241 | 
+✅ Test dataset saved to: D:\Projects\Chatbots\VieMedChat\backend\evaluation\test_dataset.json
+2025-11-25 10:34:45 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:34:58 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 10:35:11 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 10:35:11 | INFO     | __main__:82 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 10:35:11 | INFO     | __main__:92 | ✅ Loaded 15 test queries
+2025-11-25 10:35:11 | INFO     | __main__:107 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 10:35:11 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @5 ---
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.7467
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.5069
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.5467
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.5914
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.8667
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @10 ---
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.7652
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 1.0000
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.5267
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.7773
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 1.0000
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @20 ---
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.7652
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 1.0000
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.2633
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.7773
+2025-11-25 10:35:24 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 1.0000
+2025-11-25 10:35:24 | INFO     | __main__:133 | ✅ Results saved to evaluation\results\evaluation_results_test_dataset.json
+2025-11-25 10:45:03 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:45:16 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 10:45:32 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 10:45:32 | INFO     | __main__:82 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 10:45:32 | INFO     | __main__:92 | ✅ Loaded 15 test queries
+2025-11-25 10:45:32 | INFO     | __main__:107 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 10:45:32 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @5 ---
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.7467
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.5069
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.5467
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.5914
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.8667
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @10 ---
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.7652
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 1.0000
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.5267
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.7773
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 1.0000
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @20 ---
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.7652
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 1.0000
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.2633
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.7773
+2025-11-25 10:45:44 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 1.0000
+2025-11-25 10:45:44 | INFO     | __main__:133 | ✅ Results saved to evaluation\results\evaluation_results_test_dataset.json
+2025-11-25 10:55:13 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:55:26 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 10:55:41 | INFO     | __main__:85 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 10:55:41 | INFO     | __main__:95 | ✅ Loaded 15 test queries
+2025-11-25 10:55:41 | INFO     | __main__:110 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:245 | 
+--- Metrics @5 ---
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:78 | MRR@5: nan
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:112 | Recall@5: nan
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:142 | Precision@5: nan
+2025-11-25 10:55:41 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: nan
+2025-11-25 10:56:32 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:56:45 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 10:56:59 | INFO     | __main__:85 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 10:56:59 | INFO     | __main__:95 | ✅ Loaded 15 test queries
+2025-11-25 10:56:59 | INFO     | __main__:110 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:245 | 
+--- Metrics @5 ---
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:78 | MRR@5: nan
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:112 | Recall@5: nan
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:142 | Precision@5: nan
+2025-11-25 10:56:59 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: nan
+2025-11-25 10:57:24 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:57:36 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 10:57:50 | INFO     | __main__:85 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 10:57:50 | INFO     | __main__:95 | ✅ Loaded 15 test queries
+2025-11-25 10:57:50 | INFO     | __main__:110 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:245 | 
+--- Metrics @5 ---
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:78 | MRR@5: nan
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:112 | Recall@5: nan
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:142 | Precision@5: nan
+2025-11-25 10:57:50 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: nan
+2025-11-25 10:59:31 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 10:59:45 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 11:00:00 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 11:00:00 | INFO     | __main__:85 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 11:00:00 | INFO     | __main__:95 | ✅ Loaded 15 test queries
+2025-11-25 11:00:00 | INFO     | __main__:110 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 11:00:00 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @5 ---
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.7333
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.3635
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.4267
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.4936
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.8000
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @10 ---
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.7333
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 0.3635
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.2133
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.4300
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 0.8000
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @20 ---
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.7333
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 0.3635
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.1067
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.4300
+2025-11-25 11:00:13 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 0.8000
+2025-11-25 11:00:13 | INFO     | __main__:136 | ✅ Results saved to evaluation\results\evaluation_results_test_dataset.json
+2025-11-25 11:03:56 | INFO     | __main__:54 | Initializing RAG components...
+2025-11-25 11:04:10 | INFO     | __main__:69 | Loading corpus from: database\text_corpus
+2025-11-25 11:04:24 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 11:04:24 | INFO     | __main__:85 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 11:04:24 | INFO     | __main__:95 | ✅ Loaded 15 test queries
+2025-11-25 11:04:24 | INFO     | __main__:110 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 11:04:24 | INFO     | evaluation.rag_evaluator:236 | Evaluating 15 test queries...
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @5 ---
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.7467
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.5069
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.5467
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.5914
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.8667
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @10 ---
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.7652
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 1.0000
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.5267
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.7773
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 1.0000
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:258 | 
+--- Metrics @20 ---
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.7652
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 1.0000
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.2633
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.7773
+2025-11-25 11:04:34 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 1.0000
+2025-11-25 11:04:34 | INFO     | __main__:136 | ✅ Results saved to evaluation\results\evaluation_results_test_dataset.json
+2025-11-25 11:05:26 | INFO     | __main__:172 | Initializing RAG components WITH RERANKER...
+2025-11-25 11:05:35 | INFO     | __main__:187 | Loading corpus from: database\text_corpus
+2025-11-25 11:05:52 | INFO     | __main__:199 | Initializing reranker...
+2025-11-25 11:05:55 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 11:05:55 | INFO     | __main__:61 | RAG Evaluator WITH Reranker initialized (threshold=0.3)
+2025-11-25 11:05:55 | INFO     | __main__:212 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 11:05:55 | INFO     | __main__:221 | ✅ Loaded 15 test queries
+2025-11-25 11:05:55 | INFO     | __main__:237 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 11:05:55 | INFO     | __main__:78 | Evaluating 15 test queries WITH RERANKER...
+2025-11-25 11:06:47 | INFO     | __main__:128 | 
+--- Metrics @5 (WITH RERANKER) ---
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.5556
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.2756
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.3467
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.3868
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.7333
+2025-11-25 11:06:47 | INFO     | __main__:128 | 
+--- Metrics @10 (WITH RERANKER) ---
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.5556
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 0.2756
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.1733
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.3335
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 0.7333
+2025-11-25 11:06:47 | INFO     | __main__:128 | 
+--- Metrics @20 (WITH RERANKER) ---
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.5556
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 0.2756
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.0867
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.3335
+2025-11-25 11:06:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 0.7333
+2025-11-25 11:06:47 | INFO     | __main__:268 | ✅ Results saved to evaluation\results\evaluation_results_WITH_RERANKER_threshold_0.3.json
+2025-11-25 11:07:38 | INFO     | __main__:172 | Initializing RAG components WITH RERANKER...
+2025-11-25 11:07:46 | INFO     | __main__:187 | Loading corpus from: database\text_corpus
+2025-11-25 11:08:01 | INFO     | __main__:199 | Initializing reranker...
+2025-11-25 11:08:02 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 11:08:02 | INFO     | __main__:61 | RAG Evaluator WITH Reranker initialized (threshold=0.3)
+2025-11-25 11:08:02 | INFO     | __main__:212 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 11:08:02 | INFO     | __main__:221 | ✅ Loaded 15 test queries
+2025-11-25 11:08:02 | INFO     | __main__:237 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 11:08:02 | INFO     | __main__:78 | Evaluating 15 test queries WITH RERANKER...
+2025-11-25 11:09:40 | INFO     | __main__:128 | 
+--- Metrics @5 (WITH RERANKER) ---
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.9000
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.6329
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.6267
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.7698
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.9333
+2025-11-25 11:09:40 | INFO     | __main__:128 | 
+--- Metrics @10 (WITH RERANKER) ---
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.9000
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 0.8316
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.4400
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.8141
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 0.9333
+2025-11-25 11:09:40 | INFO     | __main__:128 | 
+--- Metrics @20 (WITH RERANKER) ---
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.9000
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 0.8316
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.2200
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.8141
+2025-11-25 11:09:40 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 0.9333
+2025-11-25 11:09:40 | INFO     | __main__:268 | ✅ Results saved to evaluation\results\evaluation_results_WITH_RERANKER_threshold_0.3.json
+2025-11-25 11:12:46 | INFO     | __main__:172 | Initializing RAG components WITH RERANKER...
+2025-11-25 11:12:53 | INFO     | __main__:187 | Loading corpus from: database\text_corpus
+2025-11-25 11:13:07 | INFO     | __main__:199 | Initializing reranker...
+2025-11-25 11:13:08 | INFO     | evaluation.rag_evaluator:42 | RAG Evaluator initialized
+2025-11-25 11:13:08 | INFO     | __main__:61 | RAG Evaluator WITH Reranker initialized (threshold=0.2)
+2025-11-25 11:13:08 | INFO     | __main__:212 | Loading test dataset from: evaluation\test_dataset.json
+2025-11-25 11:13:08 | INFO     | __main__:221 | ✅ Loaded 15 test queries
+2025-11-25 11:13:08 | INFO     | __main__:237 | Evaluating with k_values: [5, 10, 20]
+2025-11-25 11:13:08 | INFO     | __main__:78 | Evaluating 15 test queries WITH RERANKER...
+2025-11-25 11:14:47 | INFO     | __main__:128 | 
+--- Metrics @5 (WITH RERANKER) ---
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:78 | MRR@5: 0.7500
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:112 | Recall@5: 0.5331
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:142 | Precision@5: 0.5867
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@5: 0.6330
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@5: 0.8667
+2025-11-25 11:14:47 | INFO     | __main__:128 | 
+--- Metrics @10 (WITH RERANKER) ---
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:78 | MRR@10: 0.7500
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:112 | Recall@10: 0.8175
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:142 | Precision@10: 0.4667
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@10: 0.7249
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@10: 0.8667
+2025-11-25 11:14:47 | INFO     | __main__:128 | 
+--- Metrics @20 (WITH RERANKER) ---
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:78 | MRR@20: 0.7500
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:112 | Recall@20: 0.8175
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:142 | Precision@20: 0.2333
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:186 | NDCG@20: 0.7249
+2025-11-25 11:14:47 | INFO     | evaluation.rag_evaluator:216 | Hit Rate@20: 0.8667
+2025-11-25 11:14:47 | INFO     | __main__:268 | ✅ Results saved to evaluation\results\evaluation_results_WITH_RERANKER_threshold_0.2.json
+2025-11-25 11:26:33 | INFO     | __main__:345 | Initializing RAG components...
+2025-11-25 11:27:12 | INFO     | __main__:53 | LLM judge initialized (Gemini 2.5 Flash)
+2025-11-25 11:27:12 | INFO     | __main__:55 | Ground Truth Generator initialized
+2025-11-25 11:27:17 | INFO     | __main__:218 | Generating ground truth for 37 queries...
+2025-11-25 11:27:17 | INFO     | __main__:219 | Mode: auto
+2025-11-25 11:27:17 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:27:17 | INFO     | __main__:124 | Query: triệu chứng suy thận
+2025-11-25 11:27:17 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:28:16 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:28:16 | INFO     | __main__:124 | Query: dấu hiệu tiểu đường
+2025-11-25 11:28:16 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:28:54 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:28:54 | INFO     | __main__:124 | Query: đau đầu và buồn nôn
+2025-11-25 11:28:54 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:29:49 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:29:49 | INFO     | __main__:124 | Query: ho ra máu
+2025-11-25 11:29:49 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:30:48 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:30:48 | INFO     | __main__:124 | Query: đau ngực trái
+2025-11-25 11:30:48 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:31:50 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:31:50 | INFO     | __main__:124 | Query: triệu chứng nhồi máu cơ tim
+2025-11-25 11:31:50 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:32:30 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:32:30 | INFO     | __main__:124 | Query: bị mệt mỏi kéo dài
+2025-11-25 11:32:30 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:33:03 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:33:03 | INFO     | __main__:124 | Query: chóng mặt và buồn nôn
+2025-11-25 11:33:03 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:34:03 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:34:03 | INFO     | __main__:124 | Query: đau bụng dữ dội
+2025-11-25 11:34:03 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:35:04 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:35:04 | INFO     | __main__:124 | Query: sốt cao không rõ nguyên nhân
+2025-11-25 11:35:04 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:36:04 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:36:04 | INFO     | __main__:124 | Query: khó thở về đêm
+2025-11-25 11:36:04 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:36:54 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:36:54 | INFO     | __main__:124 | Query: cách điều trị cao huyết áp
+2025-11-25 11:36:54 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:38:06 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 53.727966693s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 53
+}
+]
+2025-11-25 11:39:10 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 49.913754646s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 49
+}
+]
+2025-11-25 11:40:14 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 46.095512881s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 46
+}
+]
+2025-11-25 11:41:18 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 42.285022553s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 42
+}
+]
+2025-11-25 11:42:21 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 38.491812478s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 38
+}
+]
+2025-11-25 11:43:25 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 34.671640909s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 34
+}
+]
+2025-11-25 11:44:29 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 30.82699012s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 30
+}
+]
+2025-11-25 11:45:33 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 27.009875022s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 27
+}
+]
+2025-11-25 11:45:33 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:45:33 | INFO     | __main__:124 | Query: thuốc gì cho người tiểu đường
+2025-11-25 11:45:33 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:46:42 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 18.107121307s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-11-25 11:47:46 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 14.033408067s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 14
+}
+]
+2025-11-25 11:48:50 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 10.257417406s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 10
+}
+]
+2025-11-25 11:49:53 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 6.409714673s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-11-25 11:50:57 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 2.581169333s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 2
+}
+]
+2025-11-25 11:52:01 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 58.714785861s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2025-11-25 11:53:05 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 54.915799753s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 54
+}
+]
+2025-11-25 11:54:09 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 51.114290831s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 51
+}
+]
+2025-11-25 11:55:13 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 47.291406495s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 47
+}
+]
+2025-11-25 11:56:16 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 43.473101133s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2025-11-25 11:56:16 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 11:56:16 | INFO     | __main__:124 | Query: điều trị viêm gan B
+2025-11-25 11:56:16 | INFO     | __main__:125 | ================================================================================
+2025-11-25 11:57:24 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 35.924364768s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 35
+}
+]
+2025-11-25 11:58:28 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 32.08614353s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 32
+}
+]
+2025-11-25 11:59:32 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 28.282104089s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 28
+}
+]
+2025-11-25 12:00:35 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 24.434954918s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-11-25 12:01:39 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 20.639997903s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-11-25 12:02:43 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 16.756896931s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 16
+}
+]
+2025-11-25 12:03:47 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 12.930230853s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 12
+}
+]
+2025-11-25 12:04:51 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 9.063297949s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 9
+}
+]
+2025-11-25 12:05:55 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 5.205392723s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 5
+}
+]
+2025-11-25 12:06:58 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 1.39577024s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-11-25 12:06:58 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 12:06:58 | INFO     | __main__:124 | Query: điều trị viêm phổi
+2025-11-25 12:06:58 | INFO     | __main__:125 | ================================================================================
+2025-11-25 12:08:06 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 53.381188976s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 53
+}
+]
+2025-11-25 12:09:11 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 49.249464069s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 49
+}
+]
+2025-11-25 12:10:14 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 45.439682123s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 45
+}
+]
+2025-11-25 12:11:18 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 41.526080514s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 41
+}
+]
+2025-11-25 12:12:22 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 37.573824239s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 37
+}
+]
+2025-11-25 12:13:26 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 33.775475433s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2025-11-25 12:14:30 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 29.768153602s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 29
+}
+]
+2025-11-25 12:15:34 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 25.916971378s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 25
+}
+]
+2025-11-25 12:16:38 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 22.123484283s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2025-11-25 12:17:42 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 18.249052742s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-11-25 12:17:42 | INFO     | __main__:123 | 
+================================================================================
+2025-11-25 12:17:42 | INFO     | __main__:124 | Query: cách chữa đau dạ dày
+2025-11-25 12:17:42 | INFO     | __main__:125 | ================================================================================
+2025-11-25 12:18:49 | ERROR    | __main__:106 | LLM judge error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 250, model: gemini-2.5-flash
+Please retry in 10.427308661s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250
+}
+, retry_delay {
+  seconds: 10
+}
+]
+2025-11-25 14:00:54 | INFO     | __main__:194 | Saved 5 triplets to D:\Projects\Chatbots\VieMedChat\backend\evaluation\triplets_synthetic_test.jsonl
+2025-11-25 14:24:56 | INFO     | __main__:194 | Saved 50 triplets to D:\Projects\Chatbots\VieMedChat\backend\finetuning\triplets_synthetic_test.jsonl

@@ -1,0 +1,30 @@
+{
+  "test_file": "test_dataset.json",
+  "num_queries": 15,
+  "total_relevant_docs": 79,
+  "avg_relevant_per_query": 5.266666666666667,
+  "k_values": [
+    5,
+    10,
+    20
+  ],
+  "reranker_enabled": true,
+  "reranker_threshold": 0.2,
+  "metrics": {
+    "MRR@5": 0.75,
+    "Recall@5": 0.533068783068783,
+    "Precision@5": 0.5866666666666666,
+    "NDCG@5": 0.6329958688692969,
+    "HitRate@5": 0.8666666666666667,
+    "MRR@10": 0.75,
+    "Recall@10": 0.8174603174603176,
+    "Precision@10": 0.46666666666666656,
+    "NDCG@10": 0.7248633722494341,
+    "HitRate@10": 0.8666666666666667,
+    "MRR@20": 0.75,
+    "Recall@20": 0.8174603174603176,
+    "Precision@20": 0.23333333333333328,
+    "NDCG@20": 0.7248633722494341,
+    "HitRate@20": 0.8666666666666667
+  }
+}

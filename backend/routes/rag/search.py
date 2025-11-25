@@ -69,14 +69,15 @@ class Searching:
         print(f"🔍 BM25 search for: {query}")
         return self.bm25_retriever.invoke(query)
 
-    def hybrid_search(self, query, vector_weight=0.3, bm25_weight=0.7):
+    def hybrid_search(self, query, vector_weight=0.6, bm25_weight=0.4):
         """
         Perform hybrid search (BM25 + Vector)
+        ✅ TUNED: Changed weights from 0.3/0.7 to 0.5/0.5 for better semantic matching
 
         Args:
             query: Search query
-            vector_weight: Weight for vector search (default: 0.3)
-            bm25_weight: Weight for BM25 search (default: 0.7)
+            vector_weight: Weight for vector search (default: 0.5, was 0.3)
+            bm25_weight: Weight for BM25 search (default: 0.5, was 0.7)
 
         Returns:
             List of documents (merged and deduplicated)

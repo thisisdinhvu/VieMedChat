@@ -78,8 +78,8 @@ class RAGService:
         if self._search_engine is None:
             print("🔍 Initializing hybrid search engine...")
             self._search_engine = Searching(
-                k1=10,  # ✅ GIẢM từ 10 → 5 cho vector search
-                k2=10,  # ✅ GIẢM từ 10 → 5 cho BM25
+                k1=5,  # ✅ TUNED: Reduced from 10 to 5 for better precision
+                k2=5,  # ✅ TUNED: Reduced from 10 to 5 for better precision
                 embedding_instance=self.vectorstore,
                 splits=self.splits,
             )
@@ -155,7 +155,10 @@ class RAGService:
             if should_rerank and self.reranker:
                 print(f"\n🎯 Reranking to top-{top_k}...")
                 try:
-                    final_context = self.reranker.rerank(query, context_candidates)
+                    # ✅ TUNED: Pass threshold to filter low-score docs
+                    final_context = self.reranker.rerank(
+                        query, context_candidates, threshold=0.3
+                    )
                     print(f"   ✅ Reranked")
                 except Exception as e:
                     print(f"   ⚠️ Reranking failed: {e}")

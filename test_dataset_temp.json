@@ -1,0 +1,740 @@
+[
+  {
+    "query": "triệu chứng suy thận",
+    "relevant_doc_ids": [
+      0,
+      1,
+      3,
+      4,
+      6
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 5,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document đề cập trực tiếp đến \"triệu chứng của suy giảm chức năng ở thận\" (liên quan đến suy thận) và cung cấp thông tin rằng các triệu chứng ban đầu thường không đặc hiệu, phát triển theo thời gian. Đây là thông tin hữu ích liên quan đến query.",
+        "content_preview": "Các triệu chứng của suy giảm chức năng ở thận khi mới hình thành thường không có triệu chứng đặc hiệu và phát triển theo thời gian. Bởi thận bao gồm hai quả có khả năng hỗ trợ cho nhau rất hiệu quả. D"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document liệt kê rõ ràng các triệu chứng phổ biến của bệnh thận mạn tính (suy giảm chức năng thận kéo dài), trực tiếp trả lời query về \"triệu chứng suy thận\".",
+        "content_preview": "2.11. Bệnh thận mạn tính\nBệnh thận mạn tính (CKD) là tình trạng suy giảm chức năng thận kéo dài. Các triệu chứng xuất hiện chậm và trở nên rõ ràng ở giai đoạn muộn. Một số triệu chứng phổ biến bao gồm"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"tiểu máu, tiểu bọt\" và \"các dấu hiệu suy thận khác\" trong phần khai thác tiền sử bệnh, cho thấy đây là những triệu chứng hoặc dấu hiệu liên quan đến suy thận mà bác sĩ sẽ hỏi. Mặc dù không liệt kê đầy đủ, nhưng nó cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Sau khi được chẩn đoán trong 10 năm, khoảng 10% bệnh nhân mắc thận IgA vẫn giữ được chức năng thận bình thường, dù lúc chẩn đoán họ đã suy thận.\nBệnh thận IgA thường có triệu chứng tương đối ít, dễ kh"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document liệt kê nhiều triệu chứng cụ thể của bệnh suy thận như giảm lượng nước tiểu, phù, khó thở, mệt mỏi, buồn nôn, co rút cơ, thiếu máu và có đoạn nhắc đến \"Một số dấu hiệu sớm của bệnh suy thận\".",
+        "content_preview": "Giảm lượng nước tiểu\nPhù mắt cá chân, bàn chân\nKhó thở không rõ nguyên nhân\nĐau hoặc cảm thấy nặng ngực\nBuồn ngủ quá mức, mệt mỏi, uể oải\nKém ăn, buồn nôn dai dẳng, nôn\nCo rút cơ (đặc biệt là ở chân)\n"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document liệt kê nhiều triệu chứng và dấu hiệu của suy thận (khó thở, khó ngủ, chán ăn, chuột rút, ngứa, giảm lượng nước tiểu, phù mắt cá chân, bàn chân), trực tiếp trả lời query.",
+        "content_preview": "5. Giai đoạn 5 (Suy thận mạn hoặc là Bệnh thận mạn giai đoạn cuối)\neGFR của người bệnh giảm xuống dưới 15 ml/phút/1.73 m2 da. Người bệnh có các triệu chứng như khó thở và khó ngủ, chán ăn, bị chuột rú"
+      }
+    ]
+  },
+  {
+    "query": "dấu hiệu tiểu đường",
+    "relevant_doc_ids": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 7,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document liệt kê các dấu hiệu của nhiễm toan ceton, và giải thích rằng nhiễm toan ceton \"là dấu hiệu của bệnh tiểu đường ở những người chưa được chẩn đoán\" hoặc \"là dấu hiệu của bệnh tiểu đường\" trong một số trường hợp, trực tiếp trả lời query về \"dấu hiệu tiểu đường\".",
+        "content_preview": "Thở nhanh và sâu.\nDa và miệng khô.\nMặt đỏ bừng.\nHơi thở có mùi trái cây.\nCứng cơ hoặc đau nhức.\nBuồn nôn và nôn.\nĐôi khi nhiễm toan ceton là dấu hiệu của bệnh tiểu đường ở những người chưa được chẩn đ"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document trực tiếp đề cập đến \"Dấu hiệu của bệnh đái tháo đường\" và bắt đầu liệt kê \"Triệu chứng của tiểu đường tuýp 1\", cung cấp thông tin hữu ích để trả lời query.",
+        "content_preview": "Dấu hiệu của bệnh đái tháo đường\nCác dấu hiệu nhận biết của bệnh tiểu đường thay đổi ít nhiều theo tuýp bệnh tiểu đường, đôi khi rất nhẹ, thậm chí không có triệu chứng rõ ràng khiến người bệnh khó phá"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document liệt kê các \"dấu hiệu tiền tiểu đường\" như da sẫm màu, uống nhiều nước, đi tiểu nhiều lần, tầm nhìn mờ. Mặc dù là dấu hiệu của tiền tiểu đường, nhưng một số triệu chứng này (uống nhiều nước, đi tiểu nhiều, mờ mắt) cũng là dấu hiệu điển hình của bệnh tiểu đường, và tiền tiểu đường là giai đoạn trước khi phát triển thành tiểu đường tuýp 2. Do đó, thông tin này hữu ích và liên quan đến query \"dấu hiệu tiểu đường\".",
+        "content_preview": "Tiền tiểu đường không ảnh hưởng lớn đến sức khỏe; tuy nhiên, nếu không thay đổi lối sống, người lớn và trẻ em bị tiền tiểu đường có nguy cơ cao bị bệnh đái tháo đường tuýp 2. Lúc đó,"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document cung cấp thông tin về \"triệu chứng\" (dấu hiệu) của bệnh tiểu đường tuýp 1, cụ thể là \"cảm thấy đói và mệt\", trực tiếp trả lời một phần của query \"dấu hiệu tiểu đường\".",
+        "content_preview": "1. Triệu chứng của tiểu đường tuýp 1\nCác triệu chứng của thể tiểu đường tuýp 1 thường diễn tiến nhanh, có thể xuất hiện vài ngày hoặc vài tuần với các biểu hiện điển hình gồm:\nCảm thấy đói và mệt: Thô"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document có cụm từ \"Dấu hiệu của bệnh đái tháo đường\", trực tiếp đề cập đến nội dung mà query \"dấu hiệu tiểu đường\" tìm kiếm.",
+        "content_preview": "Nguyên nhân: gồm nhiều yếu tố tác động như các gen nguy cơ, kháng insulin, tăng nhu cầu tiết insulin, ngộ độc glucose, ngộ độc lipid, rối loạn tiết/giảm hoạt động incretin, tích luỹ amylin, giảm khối "
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập đến \"Đi tiểu thường xuyên\" là triệu chứng ban đầu và khẳng định \"nhiễm toan ceton là dấu hiệu của bệnh tiểu đường ở những người chưa được chẩn đoán\", cung cấp thông tin hữu ích về dấu hiệu tiểu đường.",
+        "content_preview": "Nhiễm toan ceton phát triển chậm. Các triệu chứng ban đầu gồm:\nĐi tiểu thường xuyên.\nNếu không được điều trị, các triệu chứng nhiễm toan ceton do tiểu đường thường xuất hiện nhanh chóng, có khi trong "
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập trực tiếp đến \"Triệu chứng của tiểu đường tuýp 2\" và \"Một số dấu hiệu nghi ngờ\" để chẩn đoán bệnh tiểu đường, rất phù hợp với query \"dấu hiệu tiểu đường\".",
+        "content_preview": "2. Triệu chứng của tiểu đường tuýp 2\nỞ thể tiểu đường tuýp 2, các triệu chứng tiến triển âm thầm và phát triển trong nhiều năm, hầu hết bệnh nhân không gặp những triệu chứng rõ ràng như thể tiểu đường"
+      }
+    ]
+  },
+  {
+    "query": "đau đầu và buồn nôn",
+    "relevant_doc_ids": [
+      0,
+      1,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 7,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Tài liệu liệt kê \"nhức đầu dữ dội\" và \"buồn nôn và nôn\" là các triệu chứng của nhiều bệnh nhiễm trùng não như viêm màng não và áp xe, trực tiếp trả lời các triệu chứng trong query.",
+        "content_preview": ">> Tham khảo thêm về bệnh gây nhiễm trùng não khác: Bệnh dại\nTriệu chứng nhiễm trùng não\nCác triệu chứng nhiễm trùng não phụ thuộc vào vùng não bị nhiễm trùng cũng như mức độ nghiêm trọng của tình trạ"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document cung cấp thông tin chi tiết về \"buồn nôn\" và \"nôn ói\" (một phần của query), bao gồm các giai đoạn và triệu chứng liên quan của hội chứng nôn ói chu kỳ. Mặc dù không đề cập đến \"đau đầu\", nhưng thông tin về \"buồn nôn\" là hữu ích và không chỉ đề cập qua loa.",
+        "content_preview": "Ai dễ mắc hội chứng nôn ói chu kỳ?\nHội chứng nôn ói chu kỳ có thể xảy ra ở mọi lứa tuổi, đối tượng dễ mắc bệnh nhất là trẻ từ 3-7 tuổi. Mặc dù bệnh thường phổ biến ở trẻ em, nhưng ghi nhận về các ca m"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document có tiêu đề phụ \"Đau đầu buồn nôn là bệnh gì? Nguyên nhân, triệu chứng cần lưu ý.\" trực tiếp đề cập đến các triệu chứng trong query, cho thấy nó chứa thông tin hữu ích về chủ đề này.",
+        "content_preview": "Xem thêm:\nĐau đầu chóng mặt là bệnh gì? Nguyên nhân, triệu chứng và lưu ý\nĐau đầu buồn nôn là bệnh gì? Nguyên nhân, triệu chứng cần lưu ý.\nĐối tượng nguy cơ cao bị đau đầu\nNgười thường xuyên làm việc "
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document đề cập rõ ràng \"đau đầu và nôn\" là các triệu chứng của phù gai thị do tăng áp lực nội sọ, cung cấp thông tin hữu ích liên quan trực tiếp đến query.",
+        "content_preview": "Nôn: Tình trạng nôn vọt, nôn không liên quan đến bữa ăn và không có đau bụng trước hay sau nôn.\nPhù gai thị: Tình trạng phù hoặc teo gai thị xảy ra khi tăng áp lực nội sọ, đè ép các bó mạch thần kinh "
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập trực tiếp đến \"đau đầu migraine\" và \"buồn nôn\" là các triệu chứng của \"Đau đầu migraine trạng thái\", cung cấp thông tin hữu ích về nguyên nhân và mức độ nghiêm trọng của sự kết hợp triệu chứng này.",
+        "content_preview": "Đau đầu migraine trạng thái (Status Migrainosus): Chiếm 3% tổng số ca đau đầu của hội chứng migraine. Bất kỳ cơn đau đầu migraine nào kéo dài hơn 72 giờ thường được gọi là chứng đau nửa đầu trạng thái"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập trực tiếp đến cả \"nhức đầu\" (đau đầu) và \"buồn nôn\" như các triệu chứng, rất phù hợp với query.",
+        "content_preview": "Nhức đầu. Bạn có thể cảm nhận được những cơn nhức đầu xuất hiện đột ngột và dữ dội, không thuyên giảm dù cho bạn có sử dụng các loại thuốc giảm đau đầu.\nRối loạn ngôn ngữ. Gặp khó khăn hoặc mất khả nă"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập rõ ràng \"đau nửa đầu\" (một dạng đau đầu) và liệt kê \"buồn nôn\" là một trong các biểu hiện thường gặp, trực tiếp liên quan đến query \"đau đầu và buồn nôn\".",
+        "content_preview": "Theo các chuyên gia sức khỏe phân loại thì đây có thể là đau đầu nguyên phát hoặc thứ phát. Đau nửa đầu có thể kéo dài từ vài giờ cho tới vài ngày. Khi bị đau nửa đầu, người bệnh thường có các biểu hi"
+      }
+    ]
+  },
+  {
+    "query": "ho ra máu",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 4,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document trực tiếp đề cập và giải thích chi tiết về \"ho ra máu\" như một triệu chứng, bao gồm mức độ và tần suất, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Triệu chứng điển hình và thường gặp nhất là ho, ho khạc đờm kéo dài trong nhiều năm.\nĐờm mủ có màu xanh hoặc màu vàng, một số trường hợp đờm có lẫn máu;\nKhạc đờm thường tăng lên khi có bội nhiễm;\nCó m"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document trực tiếp thảo luận về \"ho ra máu\", mô tả các đặc điểm (tái phát, mức độ nặng nhẹ) và đề cập đến \"ho ra máu\" là triệu chứng thường gặp của ung thư phổi, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Ho ra máu tái phát nhiều lần, có thể kéo dài nhiều năm;\nMức độ ho ra máu có thể  ít hoặc nhiều từ ho máu nhẹ, trung bình, ho máu nặng, ho máu rất nặng và/hoặc gây suy hô hấp cấp.\nHo ra máu cũng là một"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document trực tiếp đề cập đến \"ho ra đờm có máu\" (một dạng của ho ra máu), giải thích mức độ nghiêm trọng, các nguyên nhân tiềm ẩn và khi nào cần đi khám bác sĩ, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "6. Ho ra đờm có máu, đờm đỏ hoặc đờm hồng\nHo ra đờm lẫn máu, đờm đỏ hoặc hồng là triệu chứng nghiêm trọng và cần được chẩn đoán ngay lập tức. Đây có thể là dấu hiệu của viêm phổi nặng, lao phổi, ung t"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document có các mục \"Điều trị trường hợp ho ra máu\" và \"Điều trị ngoại khoa\" đề cập trực tiếp đến các phương pháp xử lý khi bị ho ra máu, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "1. Dẫn lưu đờm mủ phế quản\nHướng dẫn người bệnh cách ho khạc đờm và vỗ rung lồng ngực kết hợp với dẫn lưu theo tư thế.\n\n2. Điều trị bằng kháng sinh\nKháng sinh được sử dụng trong đợt cấp tính của giãn "
+      }
+    ]
+  },
+  {
+    "query": "đau ngực trái",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 8,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document có một phần riêng biệt và chi tiết về \"Đau ngực trái\", định nghĩa, mô tả đặc điểm cơn đau và cảnh báo về các vấn đề tim mạch, cung cấp thông tin hữu ích trực tiếp cho query.",
+        "content_preview": "Các vị trí đau ngực\n\n1. Đau ngực trái\nĐau ở ngực trái là tình trạng người bệnh cảm thấy bị khó chịu, đau tức ở vùng ngực bên trái. Cơn đau có thể xuất hiện một cách đột ngột và đau dữ dội hoặc bị đau "
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document định nghĩa về đau ngực và đặc biệt đề cập rõ ràng đến \"đau ngực trái\" như một vị trí đau cụ thể, thậm chí có một mục riêng về \"Đau ngực trái\". Điều này cung cấp thông tin hữu ích và trực tiếp liên quan đến query.",
+        "content_preview": "# Đau ngực\n\nĐau ngực\n\nNguồn: https://tamanhhospital.vn/benh/dau-nguc/\n\nĐau ngực là gì?\nĐau ngực là cảm giác đau, khó chịu, căng tức ở vùng ngực, giống như có vật nặng đang đè nặng hoặc bóp chặt lồng n"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập trực tiếp đến \"Đau ngực đột ngột và dữ dội\" và \"đau ngực dữ dội\" như một triệu chứng của hội chứng trái tim tan vỡ, cung cấp thông tin hữu ích liên quan đến query \"đau ngực trái\".",
+        "content_preview": "Triệu chứng của bệnh trái tim tan vỡ\nHội chứng trái tim tan vỡ thường không để lại tổn thương vĩnh viễn cho tim, hầu hết bệnh nhân có thể hồi phục hoàn toàn sau một thời gian ngắn.\n\nTriệu chứng của hộ"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document định nghĩa \"đau thắt ngực\" và nêu rõ vị trí đau thường là \"vùng ngực trái\", cung cấp thông tin hữu ích liên quan trực tiếp đến query \"đau ngực trái\".",
+        "content_preview": "# Đau thắt ngực\n\nĐau thắt ngực\n\nNguồn: https://tamanhhospital.vn/benh/dau-that-nguc/\n\nĐau thắt ngực là bệnh gì?\nĐau thắt ngực là thuật ngữ dùng để chỉ cơn đau hoặc khó chịu ở vùng ngực, xảy ra khi khả"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document có phần \"Đau ngực trái\" trực tiếp định nghĩa, mô tả đặc điểm và đưa ra cảnh báo ban đầu về nguyên nhân của tình trạng đau ngực trái, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "1. Đau ngực trái\nĐau ở ngực trái là tình trạng người bệnh cảm thấy bị khó chịu, đau tức ở vùng ngực bên trái. Cơn đau có thể xuất hiện một cách đột ngột và đau dữ dội hoặc bị đau ở ngực trái âm ỉ, dai"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Query là về \"đau ngực trái\". Document nói về \"đau thắt ngực\", đây là một dạng đau ngực phổ biến và thường xuất hiện ở ngực trái. Thông tin về các tác nhân khởi phát cơn đau thắt ngực rất hữu ích cho người tìm kiếm về đau ngực trái.",
+        "content_preview": "Các tác nhân làm khởi phát cơn đau thắt ngực"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập đến các nguyên nhân gây đau ngực và đau vú có thể bắt nguồn từ thành ngực, cơ ngực hoặc dây thần kinh, bao gồm chấn thương vùng ngực, viêm quanh xương sườn, và mặc áo ngực không phù hợp. Các nguyên nhân này có thể gây ra cảm giác đau ở vùng ngực, bao gồm cả ngực trái.",
+        "content_preview": "2. Chấn thương vùng ngực\nĐau vú có thể bắt nguồn từ thành ngực, cơ ngực hoặc do dây thần kinh ở cột sống ngực có vấn đề như cơ bị kéo, viêm quanh xương sườn, chấn thương thành ngực (bị đánh vào ngực),"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document cung cấp thông tin hữu ích về cách phòng ngừa đau ngực nói chung và lời khuyên quan trọng là cần đến bệnh viện kiểm tra ngay nếu nhận thấy cơn đau tức ngực hoặc vấn đề về tim, điều này rất liên quan đến người đang tìm kiếm về \"đau ngực trái\".",
+        "content_preview": "Để phòng ngừa đau ngực, mỗi người nên thay đổi thói quen và điều chỉnh lối sống như:\nXây dựng chế độ ăn uống khoa học;\nTập thể dục đều đặn;\nKhông hút thuốc lá, hạn chế rượu bia;\nTránh căng thẳng quá m"
+      }
+    ]
+  },
+  {
+    "query": "triệu chứng nhồi máu cơ tim",
+    "relevant_doc_ids": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 8,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Tài liệu có một phần riêng biệt liệt kê chi tiết các triệu chứng nhận biết nhồi máu cơ tim, trực tiếp trả lời câu hỏi.",
+        "content_preview": "Tỷ lệ nhồi máu cơ tim ngày càng tăng ở nước ta\nTriệu chứng nhồi máu cơ tim thường gặp\n\nMột số triệu chứng nhận biết nhồi máu cơ tim bao gồm:\nĐau nặng ngực;\nMỏi cứng hàm, đau mỏi vai, hai tay;\nMệt mỏi "
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập đến \"cơn đau ngực\" là một triệu chứng xuất hiện khi bệnh nhân bị nhồi máu cơ tim, và cũng nhắc đến \"các triệu chứng của nhồi máu cơ tim\" nói chung, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Can thiệp sớm trong thời khoảng “giờ vàng” giúp bảo tồn mạng sống người bệnh\nBác sĩ Trần Trung Kiên nhấn mạnh, khung “giờ vàng” can thiệp nhồi máu cơ tim người bệnh cần lưu ý đó là: khoảng thời gian 1"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document liệt kê trực tiếp và chi tiết các triệu chứng nhận biết nhồi máu cơ tim, trả lời chính xác query.",
+        "content_preview": "Một số triệu chứng nhận biết nhồi máu cơ tim bao gồm:\nĐau nặng ngực;\nMỏi cứng hàm, đau mỏi vai, hai tay;\nMệt mỏi bất thường;\nKhó thở, hụt hơi;\nKhó chịu ở vùng thượng vị;\nCảm giác buồn nôn;\nHoa mắt, ch"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document trực tiếp liệt kê các triệu chứng của nhồi máu cơ tim (đau ngực dữ dội, khó thở và đổ mồ hôi lạnh), trả lời chính xác query.",
+        "content_preview": "5. Nhồi máu cơ tim\nNhồi máu cơ tim xảy ra khi huyết khối chặn dòng máu trong động mạch vành, ngăn cản oxy đến một phần của cơ tim, dẫn đến tổn thương hoặc chết tế bào cơ tim. Các triệu chứng bao gồm đ"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document trực tiếp liệt kê nhiều triệu chứng của nhồi máu cơ tim, bao gồm cả triệu chứng điển hình (đau ngực) và các triệu chứng không điển hình khác, trả lời chính xác và hữu ích cho query.",
+        "content_preview": "Đau ngực có phải là triệu chứng duy nhất quan trọng của nhồi máu cơ tim?\nĐau thắt ngực là triệu chứng nhận biết nhiều bệnh lý nguy hiểm, mà nổi bật là nhồi máu cơ tim. Tuy nhiên, nhiều người có thể nh"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document có câu \"Triệu chứng nhồi máu cơ tim thường gặp\" trực tiếp đề cập đến chủ đề \"triệu chứng nhồi máu cơ tim\" của query, cho thấy nó chứa thông tin hữu ích liên quan.",
+        "content_preview": "Tỷ lệ nhồi máu cơ tim ngày càng tăng ở nước ta\nTriệu chứng nhồi máu cơ tim thường gặp"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document liệt kê các triệu chứng như đổ mồ hôi lạnh, hoa mắt, chóng mặt, mệt mỏi đột ngột và đau tim không cải thiện khi nghỉ ngơi, đồng thời chỉ rõ đây có thể là dấu hiệu cảnh báo sớm của nhồi máu cơ tim, trực tiếp trả lời query.",
+        "content_preview": "Ngoài cảm giác đau và khó chịu kể trên, cơn đau ở tim còn đi kèm với một số triệu chứng khác như:\nĐổ mồ hôi lạnh;\nHoa mắt, chóng mặt;\nMệt mỏi đột ngột.\nNgười bệnh cần lưu ý, nếu tình trạng tim bị đau "
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document trực tiếp liệt kê các triệu chứng của nhồi máu cơ tim như đau tức ngực, mệt, hồi hộp, vã mồ hôi, khó thở, hột hoảng hoặc ngất xỉu.",
+        "content_preview": "1. Ngất xỉu\nNhồi máu cơ tim có thể xảy ra bất ngờ, nhưng có những trường hợp được cảnh báo trước với các triệu chứng nhồi máu cơ tim như đau tức ngực, mệt, hồi hộp, vã mồ hôi, khó thở, hột hoảng hoặc "
+      }
+    ]
+  },
+  {
+    "query": "bị mệt mỏi kéo dài",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 10,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document đề cập trực tiếp đến \"mệt mỏi kéo dài\" như một nguyên nhân gây ra các triệu chứng (cụ thể là ở mắt) và gợi ý cách điều chỉnh lối sống để giảm bớt tình trạng này, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Dấu hiệu nhận biết dễ dàng nhất của một người thiếu ngủ nằm ở đôi mắt, mắt sẽ trở nên lờ đờ, trông mệt mỏi và co giật mí mắt. Nếu co giật mí mắt do thiếu ngủ, tình trạng này sẽ nhanh chóng cải thiện k"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document trực tiếp đề cập đến \"Cơ thể mệt mỏi\" và nêu rõ \"Triệu chứng này có thể kéo dài\", khớp hoàn toàn với query \"bị mệt mỏi kéo dài\".",
+        "content_preview": "8. Đổ mồ hôi\nĐổ mồ hôi bất thường là phản ứng của cơ thể khi tim hoạt động quá mức. Triệu chứng này thường xuất hiện đột ngột và có thể kèm theo cảm giác nóng bức. Người bệnh có thể đổ mồ hôi nhiều ng"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập đến \"mệt mỏi\" và mô tả các triệu chứng \"có thể kéo dài từ vài ngày đến một tuần\" hoặc bệnh \"có thể kéo dài trong nhiều năm\", điều này liên quan trực tiếp đến khái niệm \"mệt mỏi kéo dài\" trong query.",
+        "content_preview": "Ngoài ra, các triệu chứng khác người bệnh cũng có thể gặp phải như bỏng rát ở kết mạc, vòm họng, cảm giác uể oải, mệt mỏi và nặng đầu. Các triệu chứng có thể kéo dài từ vài ngày đến một tuần rồi khỏi."
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập trực tiếp đến \"tình trạng căng thẳng, mệt mỏi\" và \"tâm trạng mệt mỏi, căng thẳng do áp lực công việc, cuộc sống kéo dài\", cung cấp thông tin về nguyên nhân và một số triệu chứng liên quan đến mệt mỏi kéo dài.",
+        "content_preview": "Cảnh báo !!! Dây thần kinh ngoại biên bị tổn thương là nguyên nhân chủ yếu dẫn đến hội chứng ống cổ tay và hội chứng ống cổ chân\nThường xuyên rơi vào tình trạng căng thẳng, mệt mỏi\nTâm trạng mệt mỏi, "
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Mặc dù tài liệu không trực tiếp dùng từ \"mệt mỏi\", \"thiếu ngủ lâu ngày\" (prolonged sleep deprivation) là một nguyên nhân rất phổ biến và trực tiếp dẫn đến \"mệt mỏi kéo dài\" (prolonged fatigue). Thông tin về thiếu ngủ và các nguy cơ của nó là hữu ích cho người tìm kiếm về tình trạng mệt mỏi kéo dài.",
+        "content_preview": "Thiếu ngủ lâu ngày có thể tăng nguy cơ mắc các bệnh lý nguy hiểm về tim mạch, thần kinh"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document trực tiếp đề cập đến \"Mệt mỏi kéo dài\" và giải thích rằng đây có thể là cảnh báo của các vấn đề liên quan đến tim mạch, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Mệt mỏi kéo dài: Dù đã nghỉ ngơi đầy đủ, người bệnh vẫn cảm thấy kiệt sức. Tình trạng mệt mỏi kéo dài mà không rõ nguyên nhân, có thể là cảnh báo của các vấn đề liên quan đến tim mạch.\nHo kéo dài: Mạc"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập đến \"thiếu ngủ lâu ngày\" và các nguyên nhân gây thiếu ngủ, cũng như tác hại của nó. Thiếu ngủ lâu ngày là một nguyên nhân phổ biến gây ra tình trạng \"mệt mỏi kéo dài\". Do đó, thông tin trong document hữu ích để hiểu về query.",
+        "content_preview": "Bên cạnh đó, một số bệnh lý có thể là nguyên nhân gây mất ngủ, bao gồm:\nChứng ngưng thở khi ngủ.\nRối loạn thoái hóa não (bệnh Alzheimer, Parkinson).\nCác bệnh lý nhiễm trùng ngắn hạn như cảm cúm, sốt s"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document cung cấp các lời khuyên hữu ích về việc ngủ đủ giấc, kiểm soát stress và tránh làm việc quá sức, đây là những yếu tố quan trọng liên quan đến nguyên nhân và cách khắc phục tình trạng mệt mỏi kéo dài.",
+        "content_preview": "Hạn chế thức khuya, nên ngủ đủ giấc, kiểm soát stress bằng cách sắp xếp công việc khoa học, tránh làm việc quá sức, giải tỏa căng thẳng bằng cách nghe nhạc, xem phim, đọc sách, thiền, yoga, hay đi “đổ"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document mô tả mất ngủ, một tình trạng gây ra \"buồn ngủ quá mức vào ban ngày\" và \"suy giảm nhận thức\", đây là những triệu chứng rất liên quan đến \"mệt mỏi kéo dài\". Mất ngủ cũng được đề cập là \"kéo dài\" (mãn tính), phù hợp với yếu tố \"kéo dài\" trong query.",
+        "content_preview": "1. Mất ngủ\nMất ngủ là tình trạng khó đi vào giấc ngủ vào ban đêm, lặp đi lặp lại trong nhiều ngày. Những người bị mất ngủ thường bị buồn ngủ quá mức vào ban ngày cũng như dễ bị các chứng suy giảm nhận"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập đến \"căng thẳng kéo dài\" và \"thiếu ngủ\" là những yếu tố ảnh hưởng xấu đến sức khỏe tổng thể, đây là những nguyên nhân phổ biến gây ra tình trạng mệt mỏi kéo dài.",
+        "content_preview": "Stress, thiếu ngủ: Căng thẳng kéo dài, stress và thiếu ngủ ảnh hưởng xấu đến sức khỏe tổng thể và dạ dày. Khi cơ thể không được nghỉ ngơi đầy đủ, hệ miễn dịch suy yếu và tăng nguy cơ mắc các bệnh lý d"
+      }
+    ]
+  },
+  {
+    "query": "chóng mặt và buồn nôn",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 10,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Mặc dù phần nội dung chính chỉ đề cập đến \"chóng mặt\" cho đột quỵ và u não, nhưng phần \"Xem thêm\" của document chứa một liên kết trực tiếp đến bài viết \"Chóng mặt buồn nôn là bị gì? Nguyên nhân, phòng ngừa và điều trị.\", cung cấp thông tin hữu ích và liên quan trực tiếp đến query.",
+        "content_preview": "Đột quỵ: Triệu chứng phổ biến của bệnh đột quỵ là hoa mắt, chóng mặt, mất thăng bằng, thị lực giảm, cơ thể mệt mỏi, cử động khó, khó phát âm, tê cứng bộ phận cơ thể.\nU não: Các khối u trong não hình t"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document đề cập đến \"Chóng mặt kịch phát tư thế lành tính (BPPV)\" với các triệu chứng bao gồm \"chóng mặt\" và \"buồn nôn\", trực tiếp trả lời được một phần của query.",
+        "content_preview": "Nguyên nhân chóng mặt ngoại biên\nChóng mặt kịch phát tư thế lành tính (BPPV): Bệnh xảy ra khi xuất hiện khi các hạt canxi nhỏ di chuyển lạc chỗ trong các ống bán khuyên của tai trong hay còn gọi là sỏ"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập trực tiếp đến cả \"buồn nôn\" và \"chóng mặt\" như các triệu chứng của hội chứng nôn ói chu kỳ, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Ai dễ mắc hội chứng nôn ói chu kỳ?\nHội chứng nôn ói chu kỳ có thể xảy ra ở mọi lứa tuổi, đối tượng dễ mắc bệnh nhất là trẻ từ 3-7 tuổi. Mặc dù bệnh thường phổ biến ở trẻ em, nhưng ghi nhận về các ca m"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document đề cập trực tiếp đến cả \"chóng mặt\" và \"buồn nôn/nôn\" trong phần mô tả các giai đoạn của hội chứng nôn ói chu kỳ.",
+        "content_preview": "Giai đoạn nôn mửa: Người bệnh nôn liên tục, có thể nôn ngay sau khi ăn, cảm thấy chóng mặt và kiệt sức, da xanh xao.\nGiai đoạn hồi phục: Cảm giác buồn nôn và nôn dần thuyên giảm.\nGiai đoạn không triệu"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document trực tiếp đề cập đến \"chứng chóng mặt và buồn nôn\" và đưa ra các lời khuyên hữu ích như bổ sung vitamin B6 và hạn chế ăn mặn để cải thiện tình trạng này.",
+        "content_preview": "Uống nhiều nước, ngủ đủ giấc, tập thể thao\nTìm hiểu thêm: Hay bị chóng mặt là thiếu chất gì? 5 nhóm vi chất cần bổ sung.\nChế độ dinh dưỡng phù hợp\nDùng thực phẩm giàu vitamin B6: Hiện nay đã có nghiên"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document trực tiếp đề cập đến cụm từ \"Chóng mặt buồn nôn\" trong phần \"Xem thêm\", cho thấy nó chứa thông tin liên quan đến nguyên nhân, phòng ngừa và điều trị cho tình trạng này, phù hợp với query.",
+        "content_preview": "Xem thêm:\nChóng mặt buồn nôn là bị gì? Nguyên nhân, phòng ngừa và điều trị.\nĐau bụng buồn nôn chóng mặt là bệnh gì? Nguyên nhân, phòng ngừa.\n\nHiện tượng chóng mặt thường gặp ở những ai?\nHiện tượng chó"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document đề cập trực tiếp đến các loại thuốc giảm triệu chứng chóng mặt và thuốc chống buồn nôn, cung cấp thông tin hữu ích liên quan đến cả hai triệu chứng trong query.",
+        "content_preview": "Dược phẩm: Một số loại thuốc có thể được chỉ định để giảm các triệu chứng chóng mặt và thuốc phục hồi chức năng tiền đình. Nếu chóng mặt là do nhiễm trùng hoặc viêm, thuốc kháng sinh chữa nhiễm trùng "
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập trực tiếp đến cả hai triệu chứng \"chóng mặt\" và \"buồn nôn\" cùng lúc, và cung cấp thông tin về nguyên nhân (rối loạn tiền đình, thiếu máu não) và đối tượng (người trung niên, cao tuổi) liên quan.",
+        "content_preview": "1. Người lớn tuổi và trung niên\nTheo một nghiên cứu được công bố tại Mỹ cho biết có khoảng 35% số người bị mắc chứng rối loạn tiền đình có độ tuổi trên 40, đây là một trong những nguyên nhân gây chóng"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập \"Viêm dây thần kinh tiền đình là nguyên nhân gây ra các cơn chóng mặt đột ngột kèm theo buồn nôn\", trực tiếp cung cấp thông tin hữu ích về nguyên nhân của hai triệu chứng được hỏi.",
+        "content_preview": "9.3 Viêm dây thần kinh tiền đình\nViêm dây thần kinh tiền đình là nguyên nhân gây ra các cơn chóng mặt đột ngột kèm theo buồn nôn, nôn ói và mất thăng bằng. Nguyên nhân được nghĩ nhiều nhất có thể là d"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập đến \"chóng mặt\" là triệu chứng thường gặp và \"thỉnh thoảng kèm theo nôn ói\" (nôn ói có liên quan mật thiết đến buồn nôn) trong bối cảnh rối loạn tiền đình trung ương, cung cấp thông tin hữu ích liên quan đến cả hai triệu chứng trong query.",
+        "content_preview": "4.2. Rối loạn tiền đình trung ương\nChóng mặt là triệu chứng thường gặp nhất khi rối loạn tiền đình\nThường gặp với những biểu hiện của tình trạng tổn thương hệ thống tiền đình của hệ thần kinh trung ươ"
+      }
+    ]
+  },
+  {
+    "query": "đau bụng dữ dội",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 8,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document trực tiếp đề cập \"đau bụng dữ dội\" là một triệu chứng của tắc ruột và khẳng định tắc ruột có thể gây ra tình trạng này, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Tụ máu: Chấn thương thành bụng, tạng đặc, tạng rỗng, hệ mạch; phình động mạch chủ bụng.\nTổn thương thận hoặc lồng ngực: Nhồi máu cơ tim, gãy xương sườn dưới, viêm thùy dưới phổi…\nThuốc: Một số loại th"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document trực tiếp đề cập và giải thích \"đau bụng dữ dội\" là một triệu chứng thường gặp, có thể là biểu hiện của bệnh, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Đau bụng hoặc đau vùng chậu: Đau bụng dữ dội hoặc đau nhức vùng chậu là những triệu chứng thường gặp ở giai đoạn sau của bệnh khi các khối u phát triển nhanh, gia tăng kích thước và gây áp lực lên các"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document đề cập trực tiếp đến \"đau dữ dội\" và \"đau quặn bụng dữ dội\" như một triệu chứng của chửa ngoài tử cung và khi túi thai vỡ, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Khi chửa ngoài tử cung bạn sẽ thấy đau bụng tại vị trí thai làm tổ, đau bụng dưới. Một số còn bị đau bụng như táo bón. Tình trạng đau bụng âm ỉ kéo dài, đôi lúc đau dữ dội kèm chảy máu âm đạo. Do thai"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document có một phần riêng biệt với tiêu đề \"Đau bụng dữ dội\" và giải thích rằng đây là một triệu chứng có thể cảm thấy bên cạnh lượng máu kinh nhiều, liên quan đến rong kinh. Điều này trực tiếp cung cấp thông tin hữu ích cho query.",
+        "content_preview": "1. Thiếu máu\nBệnh có thể gây thiếu máu do mất máu quá nhiều vào mỗi chu kỳ kinh. Khi bị thiếu máu, chị em sẽ thấy khó thở, cơ thể mệt mỏi, da xanh xao, thiếu sức sống…\nRong kinh nếu không được điều tr"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document trực tiếp đề cập đến \"đau bụng dữ dội\" và cung cấp các triệu chứng liên quan khác, cùng với thông tin về cơ sở y tế chuyên khoa tiêu hóa có thể thăm khám và điều trị, rất hữu ích cho người tìm kiếm.",
+        "content_preview": "Đau bụng dữ dội\nNhững thay đổi trong chức năng tinh thần, chẳng hạn như buồn ngủ, kích động hoặc nhầm lẫn\nĐại tiện phân đen, đỏ\nXu hướng bầm tím hoặc chảy máu dễ dàng, xuất huyết dưới da\nTrung tâm Nội"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document trực tiếp đề cập đến \"Đau bụng dữ dội\" như một triệu chứng nghiêm trọng cần được chẩn đoán y tế, cung cấp thông tin hữu ích liên quan đến query.",
+        "content_preview": "Đặc biệt, người bệnh cần liên hệ ngay với bác sĩ để được chẩn đoán chính xác nếu gặp phải các triệu chứng nghiêm trọng. Cụ thể bao gồm:\nĐau bụng dữ dội và liên tục.\nNhịp tim nhanh.\nHuyết áp thấp.\nĐổ m"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document trực tiếp đề cập đến \"đau bụng dữ dội\" như một triệu chứng và liên kết nó với nguyên nhân tiềm ẩn là \"tắc ruột\", đồng thời cung cấp thông tin hữu ích về chẩn đoán và điều trị tắc ruột.",
+        "content_preview": "Đau bụng dữ dội hoặc đau bụng từng cơn\nChướng bụng\nBuồn nôn, nôn mửa\nTáo bón hoặc không đi cầu được\nKhông xì hơi được\nKhó chịu, mệt mỏi\nRối loạn nhịp tim\nTắc ruột có thể gây nên tình trạng đau bụng dữ"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document mô tả các kiểu đau bụng, trong đó có \"những cơn đau quặn, đau từng cơn\". \"Đau quặn\" là một dạng đau có thể rất dữ dội, do đó cung cấp thông tin hữu ích liên quan đến query \"đau bụng dữ dội\".",
+        "content_preview": "1. Đau bụng\nĐau bụng: Đau không có đặc điểm gì cụ thể, không có vị trí nhất định, đau dọc khung đại tràng, đau nhiều hơn sau khi ăn hoặc đôi khi chưa ăn xong đã có cảm giác đau, khi ăn thức ăn lạ, thứ"
+      }
+    ]
+  },
+  {
+    "query": "sốt cao không rõ nguyên nhân",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 10,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document đề cập trực tiếp đến \"sốt cao\" và \"sốt không rõ nguyên nhân\" như một triệu chứng phổ biến của bệnh Still ở trẻ em, và cũng gián tiếp đề cập đến việc chẩn đoán muộn/không chính xác (nguyên nhân không rõ ràng ban đầu) đối với bệnh Still ở người lớn.",
+        "content_preview": "Bệnh gây ra các cơn đau nhức khớp và cơ\n\n1. Bệnh Still ở người lớn\nBệnh Still ở người lớn không phổ biến. Đối tượng mắc bệnh thường trong độ tuổi 16 – 35 tuổi. Tỷ lệ mắc bệnh Still giữa nam và nữ giới"
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document định nghĩa \"Sốt không rõ nguyên nhân\", đây là thông tin trực tiếp liên quan và hữu ích cho query \"sốt cao không rõ nguyên nhân\".",
+        "content_preview": "Ngứa da: đây là triệu chứng có thể gặp trong bệnh u lympho.\nPhát ban hoặc xuất hiện cục u, nốt sần trên da: các loại u lympho tế bào B ảnh hưởng đến da, như u lympho MALT, có thể gây phát ban, cục u h"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document trực tiếp đề cập đến \"Sốt không rõ nguyên nhân\" như một triệu chứng và sau đó thảo luận về một nguyên nhân tiềm ẩn (u lympho tế bào T) cho tình trạng này, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Dấu hiệu đau ở vùng bụng, xương hoặc vùng ngực.\nKhối u ở hốc mũi, hốc mắt…\nĐổ mồ hôi đêm.\nSốt không rõ nguyên nhân.\nSụt cân không rõ nguyên do.\nMệt mỏi kéo dài, diễn ra liên tục.\nCó các triệu chứng tr"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Mặc dù tài liệu tập trung vào \"sốt siêu vi\", nhưng nó cung cấp thông tin hữu ích về cách điều trị triệu chứng \"sốt cao\" (dùng thuốc hạ sốt, tắm nước ấm) và lưu ý về việc không dùng kháng sinh cho nhiễm trùng do virus, điều này rất liên quan khi nguyên nhân sốt chưa rõ ràng. Thông tin này giúp người dùng có thể xử lý ban đầu trong khi chờ xác định nguyên nhân cụ thể.",
+        "content_preview": "Điều trị bệnh sốt siêu vi\nSốt siêu vi thường không cần điều trị. Không giống như các bệnh nhiễm trùng do vi khuẩn, thuốc kháng sinh không có tác dụng với nhiễm trùng do virus – trừ khi bạn bị nhiễm tr"
+      },
+      {
+        "doc_id": 4,
+        "rank": 5,
+        "reasoning": "Document đề cập đến \"bệnh sốt thấp\" (rheumatic fever), một tình trạng có thể gây sốt cao. Mặc dù sau đó giải thích nguyên nhân là do nhiễm khuẩn streptococcus, nhưng ban đầu nguyên nhân của bệnh thấp tim (liên quan đến sốt thấp) được mô tả là \"chưa được xác định rõ ràng\", phù hợp với khía cạnh \"không rõ nguyên nhân\" của query. Do đó, nó cung cấp một nguyên nhân cụ thể có thể gây sốt mà ban đầu có thể không rõ ràng.",
+        "content_preview": "Nguyên nhân gây bệnh thấp tim\nNguyên nhân gây bệnh cho đến nay vẫn chưa được xác định rõ ràng mặc dù theo các nhà khoa học chứng minh được nhiễm khuẩn do streptococcus ở họng và đường hô hấp trên có v"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document mô tả các triệu chứng ban đầu bao gồm \"sốt cao khoảng 39 – 40℃ và rét run\", sau đó liệt kê các dấu hiệu và kết quả chẩn đoán (X-quang) để xác định nguyên nhân của cơn sốt. Điều này rất hữu ích cho một trường hợp sốt cao mà nguyên nhân chưa rõ ràng, giúp định hướng chẩn đoán.",
+        "content_preview": "Chẩn đoán xác định bệnh:\nNgười bệnh gặp triệu chứng sốt cao khoảng 39 – 40℃ và rét run, thường bị đau ngực, ho khạc ra đờm có màu xanh hoặc màu như rỉ sét, có mủ, môi khô, lưỡi bẩn, bạch cầu trong máu"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document mô tả một trường hợp bệnh nhân sốt cao với nhiều triệu chứng phức tạp và kết quả xét nghiệm bất thường, đòi hỏi quá trình chẩn đoán để tìm ra nguyên nhân. Mặc dù cuối cùng nguyên nhân được gợi ý qua phương pháp điều trị (cắt bỏ tử cung), nhưng phần mô tả ban đầu về các triệu chứng và kết quả cận lâm sàng rất hữu ích cho việc tìm hiểu về \"sốt cao không rõ nguyên nhân\" và các biểu hiện đi kèm.",
+        "content_preview": "Bệnh nhân sốt cao 40 độ C, mạch nhanh, khó thở, nôn, mặt hốc hác, bụng hơi chướng, đau ít, không có phản ứng thành bụng, gõ đục vùng thấp. Thăm âm đạo các cùng đồ đau, xét nghiệm máu thấy bạch cầu tăn"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập đến \"sốt cao\" là triệu chứng thường gặp của bệnh Still, một bệnh lý có thể gây sốt cao không rõ nguyên nhân ban đầu. Thông tin này cung cấp một nguyên nhân tiềm năng cho tình trạng sốt cao không rõ nguyên nhân.",
+        "content_preview": "2. Ở người lớn\nSốt cao: Đây là triệu chứng thường gặp ở người mắc bệnh Still. Bệnh nhân thường sốt cao khoảng 39°C, thường kéo dài liên tục trong nhiều tuần. Ngoài ra, người bệnh cũng có thể bị đau họ"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document giải thích về \"sốt siêu vi\" - một nguyên nhân rất phổ biến gây sốt, bao gồm cả sốt cao, mà ban đầu người bệnh có thể không rõ nguyên nhân. Thông tin này hữu ích cho người tìm kiếm.",
+        "content_preview": "# Sốt siêu vi\n\nSốt siêu vi\n\nNguồn: https://tamanhhospital.vn/benh/sot-sieu-vi/\n\nSốt siêu vi là gì?\nSốt siêu vi (Viral fever – hay sốt vi rút) là tình trạng sốt cấp tính do nhiễm phải loại vi rút hay s"
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document đề cập \"Sốt cao kèm theo chóng mặt, choáng váng, buồn nôn. Tình trạng này có thể dấu hiệu của viêm bao hoạt dịch liên quan tới nhiễm trùng\", cung cấp một nguyên nhân tiềm năng cho tình trạng sốt cao, phù hợp với việc tìm kiếm \"nguyên nhân không rõ\".",
+        "content_preview": "Sốt cao kèm theo chóng mặt, choáng váng, buồn nôn. Tình trạng này có thể dấu hiệu của viêm bao hoạt dịch liên quan tới nhiễm trùng.\nNguyên nhân gây viêm bao hoạt dịch cổ tay\nNguyên nhân viêm màng hoạt"
+      }
+    ]
+  },
+  {
+    "query": "khó thở về đêm",
+    "relevant_doc_ids": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 9,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document trực tiếp đề cập đến \"khó thở kịch phát về đêm\" và \"khó thở xảy ra khi nằm\", là những triệu chứng liên quan đến \"khó thở về đêm\" trong query.",
+        "content_preview": "Ưu tiên điều trị bằng thuốc cùng với các thủ thuật cấy ghép thiết bị và phẫu thuật.\nTriệu chứng suy tim mất bù\nTriệu chứng chính của suy tim mất bù là khó thở, thường kèm theo tức ngực khi người bệnh "
+      },
+      {
+        "doc_id": 1,
+        "rank": 2,
+        "reasoning": "Document đề cập trực tiếp đến triệu chứng \"khó thở cơn chậm... thường xảy ra ban đêm\" trong bệnh hen suyễn, rất liên quan đến query \"khó thở về đêm\".",
+        "content_preview": "Các triệu chứng của bệnh hen khá giống với bệnh phổi tắc nghẽn mạn tính Copd, cần phân biệt rõ 2 bệnh này để có hướng điều trị thích hợp.\n\nCác dấu hiệu và triệu chứng của bệnh hen suyễn bao gồm:\nCơn h"
+      },
+      {
+        "doc_id": 2,
+        "rank": 3,
+        "reasoning": "Document trực tiếp đề cập đến \"khó thở vào ban đêm\" và liệt kê các nguyên nhân như dị ứng, cảm lạnh, nhiễm trùng đường hô hấp, các vấn đề về hô hấp, bệnh tim mạch, bệnh phổi, cung cấp thông tin hữu ích cho query.",
+        "content_preview": "Trong một số trường hợp, các vấn đề sức khỏe tiềm ẩn chính là nguyên nhân gây rối loạn giấc ngủ. Ngoài ra, còn có các nguyên nhân khác như:\n\n1. Đang gặp các tình trạng bệnh lý\nNgười bị dị ứng, cảm lạn"
+      },
+      {
+        "doc_id": 3,
+        "rank": 4,
+        "reasoning": "Document liệt kê \"Khó thở kịch phát về đêm\" là một triệu chứng, đây là thông tin trực tiếp và hữu ích để trả lời query \"khó thở về đêm\".",
+        "content_preview": "Suy tim còn bù\nSuy tim mất bù\nKhi giảm cung lượng tim trong giai đoạn đầu của suy tim, nó gây ra một số thay đổi về cấu trúc và chức năng trong các mô tim như một biện pháp phục hồi cung lượng tim.\nĐế"
+      },
+      {
+        "doc_id": 5,
+        "rank": 6,
+        "reasoning": "Document đề cập đến các bệnh phổi gây khó thở (COPD, bệnh phổi kẽ) và đặc biệt là \"các tình trạng ảnh hưởng đến hô hấp khi đang ngủ sâu, chẳng hạn như hội chứng ngưng thở khi ngủ do tắc nghẽn\", đây là thông tin trực tiếp liên quan đến nguyên nhân gây khó thở về đêm.",
+        "content_preview": "Do bệnh phổi hoặc thiếu oxy\nBác sĩ Oanh cho biết, tăng áp phổi đôi khi cũng liên quan đến các bệnh phổi hoặc thiếu oxy, bao gồm:\nBệnh phổi tắc nghẽn mãn tính (COPD): Đây là tên gọi của một nhóm bệnh v"
+      },
+      {
+        "doc_id": 6,
+        "rank": 7,
+        "reasoning": "Document mô tả về \"ngưng thở khi ngủ\" và \"tắc nghẽn đường hô hấp trên\", là những tình trạng gây ra các vấn đề về hô hấp (ngưng thở/giảm thở) xảy ra vào ban đêm. Đây là thông tin hữu ích và liên quan trực tiếp đến query \"khó thở về đêm\".",
+        "content_preview": "Ngưng thở khi ngủ có thể được phân loại theo mức độ nghiêm trọng:\nNhẹ: 5 đến 15 đợt/giờ;\nTrung bình: 16 đến 30 đợt/giờ;\nNặng: >30 đợt/giờ.\nHội chứng tắc nghẽn đường hô hấp trên có thể gây buồn ngủ ban"
+      },
+      {
+        "doc_id": 7,
+        "rank": 8,
+        "reasoning": "Document đề cập đến \"khó thở bằng mũi\" và các yếu tố nguy cơ của chứng ngưng thở khi ngủ do tắc nghẽn (OSA). OSA là một tình trạng phổ biến gây khó thở hoặc ngừng thở vào ban đêm, do đó thông tin này hữu ích và liên quan đến query \"khó thở về đêm\".",
+        "content_preview": "Nghẹt mũi: Khó thở bằng mũi có liên quan đến khả năng mắc OSA cao hơn.\nSử dụng rượu và một số loại thuốc: Rượu và một số loại thuốc kê đơn và thuốc gây nghiện có liên quan đến nguy cơ cao mắc chứng ng"
+      },
+      {
+        "doc_id": 8,
+        "rank": 9,
+        "reasoning": "Document đề cập đến hội chứng ngưng thở khi ngủ do tắc nghẽn, một tình trạng gây ra các vấn đề về hô hấp vào ban đêm (như ngáy ngủ, tỉnh giấc thường xuyên), rất liên quan đến \"khó thở về đêm\". Document cung cấp thông tin về triệu chứng, chẩn đoán và điều trị.",
+        "content_preview": "Các triệu chứng có thể bao gồm buồn ngủ quá mức vào ban ngày, bồn chồn, ngáy ngủ, tỉnh giấc thường xuyên và đau đầu vào buổi sáng. Chẩn đoán dựa trên việc theo dõi giấc ngủ và đa ký giấc ngủ.\nĐối với "
+      },
+      {
+        "doc_id": 9,
+        "rank": 10,
+        "reasoning": "Document thảo luận về \"chứng ngưng thở khi ngủ trung ương\" (Central Sleep Apnea - CSA) và các yếu tố liên quan đến hô hấp. Ngưng thở khi ngủ là một tình trạng gây ra các vấn đề về hô hấp trong khi ngủ, thường biểu hiện hoặc liên quan đến cảm giác khó thở về đêm. Thông tin về nguyên nhân và chẩn đoán ngưng thở khi ngủ rất hữu ích cho người tìm kiếm về \"khó thở về đêm\".",
+        "content_preview": "Giới tính: Chứng ngưng thở khi ngủ trung ương phổ biến hơn ở nam giới. Điều này có thể liên quan đến mức độ của một số hormone giới tính.\nSử dụng một số loại thuốc: Sử dụng lâu dài thuốc opioid và một"
+      }
+    ]
+  },
+  {
+    "query": "cách điều trị cao huyết áp",
+    "relevant_doc_ids": [
+      0
+    ],
+    "total_retrieved": 20,
+    "num_relevant": 1,
+    "doc_details": [
+      {
+        "doc_id": 0,
+        "rank": 1,
+        "reasoning": "Document cung cấp thông tin về cách điều trị cao huyết áp, cụ thể là ngưỡng huyết áp cần điều trị và việc sử dụng thuốc cho thai phụ có huyết áp cao, đây là thông tin hữu ích liên quan đến query.",
+        "content_preview": "Bên cạnh đó, kiểm soát huyết áp trong thời gian mang thai là rất quan trọng. Trường Cao đẳng Sản phụ khoa Hoa Kỳ khuyến cáo, nên điều trị hạ huyết áp đối với những thai phụ có huyết áp tâm thu > 160mm"
+      }
+    ]
+  },
+  {
+    "query": "thuốc gì cho người tiểu đường",
+    "relevant_doc_ids": [],
+    "total_retrieved": 20,
+    "num_relevant": 0,
+    "doc_details": []
+  },
+  {
+    "query": "điều trị viêm gan B",
+    "relevant_doc_ids": [],
+    "total_retrieved": 20,
+    "num_relevant": 0,
+    "doc_details": []
+  },
+  {
+    "query": "điều trị viêm phổi",
+    "relevant_doc_ids": [],
+    "total_retrieved": 20,
+    "num_relevant": 0,
+    "doc_details": []
+  }
+]
