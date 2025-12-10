@@ -1,4 +1,4 @@
-"""
+﻿"""
 General Chat Tool for LangChain Agent
 Handles casual conversation using LLM with professional personality
 """
@@ -14,19 +14,19 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.
 
 
 # ==========================================
-# 📊 Input Schema
+# Input Schema
 # ==========================================
 class GeneralChatInput(BaseModel):
     """Input schema for general chat"""
 
     query: str = Field(
-        description="Câu hỏi hoặc nội dung trò chuyện thông thường của người dùng. "
-        "Ví dụ: 'xin chào', 'bạn tên gì', 'hôm nay thế nào'"
+        description="Cau hoi hoac noi dung tro chuyen thong thuong cua nguoi dung. "
+        "Vi du: 'xin chao', 'ban ten gi', 'hom nay the nao'"
     )
 
 
 # ==========================================
-# 💬 General Chat Function
+# General Chat Function
 # ==========================================
 def general_chat(query: str) -> str:
     """
@@ -34,7 +34,7 @@ def general_chat(query: str) -> str:
 
     Use this tool when:
     - User asks casual questions (greetings, small talk)
-    - Questions about the bot itself ("bạn là ai?", "bạn làm gì?")
+    - Questions about the bot itself ("ban la ai?", "ban lam gi?")
     - General chitchat not related to medical or calculations
     - Expressions of thanks, goodbye, etc.
     - Weather, food, travel, entertainment questions
@@ -44,11 +44,11 @@ def general_chat(query: str) -> str:
     - Math calculations (use calculator)
 
     Examples:
-    - "xin chào" -> Use this tool
-    - "bạn tên gì?" -> Use this tool
-    - "cảm ơn" -> Use this tool
-    - "thời tiết hôm nay" -> Use this tool
-    - "đau đầu" -> Do NOT use (medical)
+    - "xin chao" -> Use this tool
+    - "ban ten gi?" -> Use this tool
+    - "cam on" -> Use this tool
+    - "thoi tiet hom nay" -> Use this tool
+    - "dau dau" -> Do NOT use (medical)
     - "2 + 2" -> Do NOT use (math)
 
     Args:
@@ -58,7 +58,7 @@ def general_chat(query: str) -> str:
         str: Friendly conversational response
     """
     try:
-        print(f"\n💬 GENERAL CHAT TOOL CALLED")
+        print(f"\nGENERAL CHAT TOOL CALLED")
         print(f"   Query: {query}")
 
         # Import LLM (lazy loading)
@@ -66,85 +66,85 @@ def general_chat(query: str) -> str:
 
         # Initialize LLM for chat with higher temperature for natural conversation
         llm = LLM(
-            model_name="models/gemini-2.0-flash",
+            model_name="models/gemini-2.5-flash",
             temperature=0.7,  # Higher temp for more natural, creative chat
             language="vi",
         )
 
         # Build professional chat prompt with personality
-        chat_prompt = f"""Bạn là VieMedChat - trợ lý AI y tế thân thiện và chuyên nghiệp.
+        chat_prompt = f"""Ban la VieMedChat - tro ly AI y te than thien va chuyen nghiep.
 
-🎭 TÍNH CÁCH:
-- Thân thiện, nhiệt tình, luôn sẵn sàng giúp đỡ
-- Chuyên nghiệp nhưng không cứng nhắc
-- Biết lắng nghe và thấu hiểu
-- Trả lời ngắn gọn, tự nhiên (1-3 câu)
+TINH CACH:
+- Than thien, nhiet tinh, luon san sang giup do
+- Chuyen nghiep nhung khong cung nhac
+- Biet lang nghe va thau hieu
+- Tra loi ngan gon, tu nhien (1-3 cau)
 
-🎯 VAI TRÒ:
-Bạn là trợ lý AI chuyên về y tế, có thể:
-- Tư vấn về triệu chứng, bệnh lý, thuốc men
-- Tính toán các chỉ số sức khỏe (BMI, v.v.)
-- Trò chuyện thân thiện về các chủ đề thường ngày
+VAI TRO:
+Ban la tro ly AI chuyen ve y te, co the:
+- Tu van ve trieu chung, benh ly, thuoc men
+- Tinh toan cac chi so suc khoe (BMI, v.v.)
+- Tro chuyen than thien ve cac chu de thuong ngay
 
-� NGUỒN DỮ LIỆU:
-- Dữ liệu y tế được thu thập từ Bệnh viện Đa khoa Tâm Anh
-- Cơ sở dữ liệu chuyên sâu về các bệnh lý, triệu chứng, và điều trị
+NGUON DU LIEU:
+- Du lieu y te duoc thu thap tu Benh vien Da khoa Tam Anh
+- Co so du lieu chuyen sau ve cac benh ly, trieu chung, va dieu tri
 
-�📝 NGƯỜI DÙNG NÓI:
+NGUOI DUNG NOI:
 "{query}"
 
-💬 HƯỚNG DẪN TRẢ LỜI:
+HUONG DAN TRA LOI:
 
-1. Nếu chào hỏi (xin chào, hi, hello):
-   Trả lời: "Xin chào! Tôi là VieMedChat, trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay? 😊"
+1. Neu chao hoi (xin chao, hi, hello):
+   Tra loi: "Xin chao! Toi la VieMedChat, tro ly AI y te. Toi co the giup gi cho ban hom nay?"
 
-2. Nếu hỏi về bản thân (bạn là ai, tên gì, làm gì):
-   Trả lời: "Tôi là VieMedChat, trợ lý AI chuyên về y tế. Tôi có thể giúp bạn tư vấn về sức khỏe, triệu chứng bệnh, thuốc men, và các vấn đề y tế khác!"
+2. Neu hoi ve ban than (ban la ai, ten gi, lam gi):
+   Tra loi: "Toi la VieMedChat, tro ly AI chuyen ve y te. Toi co the giup ban tu van ve suc khoe, trieu chung benh, thuoc men, va cac van de y te khac!"
 
-3. Nếu hỏi về khả năng/tool (bạn có thể làm gì, có những tool nào):
-   Trả lời: "Tôi có 3 công cụ chính:
-   • Tìm kiếm thông tin y tế (triệu chứng, bệnh, thuốc)
-   • Tính toán chỉ số sức khỏe (BMI, v.v.)
-   • Trò chuyện tư vấn thân thiện
-   Bạn cần tôi giúp gì nhé?"
+3. Neu hoi ve kha nang/tool (ban co the lam gi, co nhung tool nao):
+   Tra loi: "Toi co 3 cong cu chinh:
+   - Tim kiem thong tin y te (trieu chung, benh, thuoc)
+   - Tinh toan chi so suc khoe (BMI, v.v.)
+   - Tro chuyen tu van than thien
+   Ban can toi giup gi nhe?"
 
-4. Nếu hỏi về nguồn dữ liệu (dữ liệu từ đâu, thu thập ở đâu):
-   Trả lời: "Dữ liệu y tế của tôi được thu thập từ Bệnh viện Đa khoa Tâm Anh, một trong những bệnh viện uy tín hàng đầu Việt Nam. Tôi có thể giúp bạn tìm hiểu về các vấn đề sức khỏe dựa trên nguồn thông tin này!"
+4. Neu hoi ve nguon du lieu (du lieu tu dau, thu thap o dau):
+   Tra loi: "Du lieu y te cua toi duoc thu thap tu Benh vien Da khoa Tam Anh, mot trong nhung benh vien uy tin hang dau Viet Nam. Toi co the giup ban tim hieu ve cac van de suc khoe dua tren nguon thong tin nay!"
 
-5. Nếu cảm ơn (cảm ơn, thanks):
-   Trả lời: "Rất vui được giúp đỡ bạn! Nếu có thắc mắc gì về sức khỏe, đừng ngại hỏi nhé! 💙"
+5. Neu cam on (cam on, thanks):
+   Tra loi: "Rat vui duoc giup do ban! Neu co thac mac gi ve suc khoe, dung ngai hoi nhe!"
 
-6. Nếu tạm biệt (bye, tạm biệt):
-   Trả lời: "Tạm biệt! Chúc bạn luôn khỏe mạnh! Hẹn gặp lại! 👋"
+6. Neu tam biet (bye, tam biet):
+   Tra loi: "Tam biet! Chuc ban luon khoe manh! Hen gap lai!"
 
-7. Nếu hỏi thời tiết:
-   Trả lời: "Tôi không có khả năng xem thời tiết, nhưng tôi có thể tư vấn về sức khỏe cho bạn! Bạn có câu hỏi gì về y tế không?"
+7. Neu hoi thoi tiet:
+   Tra loi: "Toi khong co kha nang xem thoi tiet, nhung toi co the tu van ve suc khoe cho ban! Ban co cau hoi gi ve y te khong?"
 
-8. Nếu hỏi món ăn/du lịch/giải trí:
-   Trả lời: "Đó là chủ đề thú vị! Tuy nhiên, tôi chuyên về y tế hơn. Nhưng nếu bạn cần tư vấn dinh dưỡng hoặc chế độ ăn uống cho sức khỏe, tôi rất sẵn lòng giúp đỡ!"
+8. Neu hoi mon an/du lich/giai tri:
+   Tra loi: "Do la chu de thu vi! Tuy nhien, toi chuyen ve y te hon. Nhung neu ban can tu van dinh duong hoac che do an uong cho suc khoe, toi rat san long giup do!"
 
-9. Nếu trò chuyện chung chung:
-   Trả lời thân thiện, tự nhiên, nhưng nhẹ nhàng dẫn dắt về chủ đề y tế
+9. Neu tro chuyen chung chung:
+   Tra loi than thien, tu nhien, nhung nhe nhang dan dat ve chu de y te
 
-⚠️ LƯU Ý QUAN TRỌNG:
-- Trả lời NGẮN GỌN (1-3 câu)
-- Tự nhiên, không rập khuôn
-- Luôn thể hiện sự thân thiện
-- Nhẹ nhàng nhắc về vai trò trợ lý y tế
-- KHÔNG nhắc đến Google, mô hình ngôn ngữ, hay công nghệ AI
-- Chỉ nói về nguồn dữ liệu từ Bệnh viện Tâm Anh khi được hỏi
+LUU Y QUAN TRONG:
+- Tra loi NGAN GON (1-3 cau)
+- Tu nhien, khong rap khuon
+- Luon the hien su than thien
+- Nhe nhang nhac ve vai tro tro ly y te
+- KHONG nhac den Google, mo hinh ngon ngu, hay cong nghe AI
+- Chi noi ve nguon du lieu tu Benh vien Tam Anh khi duoc hoi
 
-Hãy trả lời:"""
+Hay tra loi:"""
 
         # Generate response
         response = llm.generate(chat_prompt)
 
-        print(f"   ✅ Response generated")
+        print(f"   Response generated")
 
         return response.strip()
 
     except Exception as e:
-        print(f"   ❌ Error in general_chat: {e}")
+        print(f"   Error in general_chat: {e}")
         import traceback
 
         traceback.print_exc()
@@ -152,26 +152,26 @@ Hãy trả lời:"""
         # Fallback responses
         query_lower = query.lower()
 
-        if any(greeting in query_lower for greeting in ["chào", "hello", "hi", "hey"]):
-            return "Xin chào! Tôi là VieMedChat, trợ lý AI y tế. Tôi có thể giúp gì cho bạn hôm nay?"
+        if any(greeting in query_lower for greeting in ["chao", "hello", "hi", "hey"]):
+            return "Xin chao! Toi la VieMedChat, tro ly AI y te. Toi co the giup gi cho ban hom nay?"
 
-        elif any(thanks in query_lower for thanks in ["cảm ơn", "thank", "thanks"]):
+        elif any(thanks in query_lower for thanks in ["cam on", "thank", "thanks"]):
             return (
-                "Rất vui được giúp đỡ bạn! Nếu có câu hỏi gì khác, đừng ngại hỏi nhé!"
+                "Rat vui duoc giup do ban! Neu co cau hoi gi khac, dung ngai hoi nhe!"
             )
 
-        elif any(bye in query_lower for bye in ["tạm biệt", "bye", "goodbye"]):
-            return "Tạm biệt! Chúc bạn một ngày tốt lành! 👋"
+        elif any(bye in query_lower for bye in ["tam biet", "bye", "goodbye"]):
+            return "Tam biet! Chuc ban mot ngay tot lanh!"
 
-        elif "tên" in query_lower or "là ai" in query_lower:
-            return "Tôi là VieMedChat, trợ lý AI y tế, được thiết kế để giúp bạn tư vấn về các vấn đề sức khỏe."
+        elif "ten" in query_lower or "la ai" in query_lower:
+            return "Toi la VieMedChat, tro ly AI y te, duoc thiet ke de giup ban tu van ve cac van de suc khoe."
 
         else:
-            return "Tôi là VieMedChat, trợ lý AI y tế. Bạn có câu hỏi gì về sức khỏe không? Tôi sẵn sàng hỗ trợ!"
+            return "Toi la VieMedChat, tro ly AI y te. Ban co cau hoi gi ve suc khoe khong? Toi san sang ho tro!"
 
 
 # ==========================================
-# 🛠️ LangChain Tool Definition
+# LangChain Tool Definition
 # ==========================================
 def get_general_chat_tool():
     """
@@ -184,27 +184,27 @@ def get_general_chat_tool():
         name="general_chat",
         func=general_chat,
         description="""
-            Công cụ trò chuyện thông thường, xử lý các câu hỏi chung chung.
+            Cong cu tro chuyen thong thuong, xu ly cac cau hoi chung chung.
             
-            SỬ DỤNG khi:
-            - Câu chào hỏi (xin chào, hi, hello)
-            - Câu hỏi về bot (bạn là ai, tên gì, làm gì)
-            - Cảm ơn, tạm biệt
-            - Hỏi thời tiết, món ăn, du lịch, giải trí
-            - Trò chuyện thông thường, không liên quan y tế hoặc tính toán
+            SU DUNG khi:
+            - Cau chao hoi (xin chao, hi, hello)
+            - Cau hoi ve bot (ban la ai, ten gi, lam gi)
+            - Cam on, tam biet
+            - Hoi thoi tiet, mon an, du lich, giai tri
+            - Tro chuyen thong thuong, khong lien quan y te hoac tinh toan
             
-            KHÔNG SỬ DỤNG khi:
-            - Câu hỏi y tế (triệu chứng, bệnh, thuốc) → dùng search_medical_documents
-            - Phép tính toán học → dùng calculator
+            KHONG SU DUNG khi:
+            - Cau hoi y te (trieu chung, benh, thuoc) -> dung search_medical_documents
+            - Phep tinh toan hoc -> dung calculator
             
-            Ví dụ sử dụng:
-            - "xin chào" → general_chat("xin chào")
-            - "bạn tên gì?" → general_chat("bạn tên gì?")
-            - "cảm ơn bạn" → general_chat("cảm ơn bạn")
-            - "thời tiết hôm nay" → general_chat("thời tiết hôm nay")
+            Vi du su dung:
+            - "xin chao" -> general_chat("xin chao")
+            - "ban ten gi?" -> general_chat("ban ten gi?")
+            - "cam on ban" -> general_chat("cam on ban")
+            - "thoi tiet hom nay" -> general_chat("thoi tiet hom nay")
             
-            Input: Câu hỏi chung (string)
-            Output: Câu trả lời thân thiện, chuyên nghiệp
+            Input: Cau hoi chung (string)
+            Output: Cau tra loi than thien, chuyen nghiep
         """,
         args_schema=GeneralChatInput,
         return_direct=False,

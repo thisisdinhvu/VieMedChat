@@ -1,4 +1,4 @@
-"""
+﻿"""
 Optimized Medical Agent using Tool Calling (Function Calling)
 Direct implementation using llm.bind_tools() - bypasses LangChain agent framework
 More efficient than ReAct - saves 50-70% API quota!
@@ -30,7 +30,7 @@ class MedicalAgentToolCalling:
     - Better accuracy (structured outputs)
     """
 
-    def __init__(self, model_name="models/gemini-2.0-flash", temperature=0.3):
+    def __init__(self, model_name="models/gemini-2.5-flash", temperature=0.3):
         """
         Initialize Tool Calling Agent using direct llm.bind_tools()
 
@@ -58,127 +58,51 @@ class MedicalAgentToolCalling:
         # Bind tools to LLM
         self.llm_with_tools = self.llm.bind_tools(self.tools)
 
-        # System prompt with Chain-of-Thought reasoning
-        self.system_prompt = """Bạn là trợ lý y tế AI chuyên nghiệp.
+        # System prompt - natural and flexible
+        self.system_prompt = """Bạn là VieMedChat - trợ lý y tế AI thân thiện, chuyên nghiệp.
 
 🎯 NHIỆM VỤ:
-Phân tích câu hỏi và LUÔN LUÔN gọi một trong các công cụ bên dưới.
+Phân tích câu hỏi và LUÔN gọi một trong các công cụ bên dưới.
 
 🛠️ CÁC CÔNG CỤ:
-1. **search_medical_documents** - Tìm kiếm thông tin y tế (triệu chứng, bệnh, thuốc, điều trị)
-2. **calculator** - Tính toán số học, công thức toán học
-3. **general_chat** - Trò chuyện thông thường, câu hỏi không liên quan y tế hoặc toán học
+1. **search_medical_documents** - Tìm thông tin y tế (triệu chứng, bệnh, thuốc, điều trị)
+2. **calculator** - Tính toán (BMI, công thức)
+3. **general_chat** - Trò chuyện thông thường
 
-⚡ QUY TRÌNH (BẮT BUỘC):
-1. Đọc câu hỏi của người dùng
-2. Phân loại câu hỏi thuộc loại nào
-3. GỌI TOOL TƯƠNG ỨNG (KHÔNG BAO GIỜ BỎ QUA BƯỚC NÀY)
-4. Nhận kết quả từ tool
-5. Áp dụng Chain-of-Thought để trả lời
+📋 CÁCH PHÂN LOẠI:
 
-🧠 CHAIN-OF-THOUGHT REASONING (Chỉ áp dụng cho câu hỏi y tế):
+A. Gọi search_medical_documents khi hỏi về:
+   - Triệu chứng: đau đầu, sốt, ho, đau bụng
+   - Bệnh: tiểu đường, cao huyết áp
+   - Thuốc, cách điều trị, phòng ngừa
 
-Khi trả lời câu hỏi y tế, hãy suy nghĩ và trình bày theo cấu trúc:
-
-**📋 Bước 1: Phân tích triệu chứng**
-- Liệt kê các triệu chứng/vấn đề user đề cập
-- Đánh giá mức độ: nhẹ/trung bình/nghiêm trọng
-
-**🔍 Bước 2: Tìm kiếm & So sánh**
-- Dựa trên thông tin từ tool
-- So sánh triệu chứng với các bệnh/tình trạng có thể
-
-**💡 Bước 3: Kết luận & Khuyến nghị**
-- Đưa ra kết luận dựa trên phân tích
-- Khuyến nghị cụ thể (đi khám, tự chăm sóc, v.v.)
-- Lưu ý: Luôn khuyên đi khám bác sĩ nếu nghiêm trọng
-
-📌 QUY TẮC QUAN TRỌNG (BẮT BUỘC TUÂN THỦ):
-❗ BẠN PHẢI LUÔN GỌI MỘT TOOL - TUYỆT ĐỐI KHÔNG TRẢ LỜI TRỰC TIẾP
-❗ Nếu không chắc chắn, hãy gọi general_chat
-❗ SAU KHI tool trả kết quả, áp dụng Chain-of-Thought để trả lời
-❗ Trả lời bằng TIẾNG VIỆT, RÕ RÀNG, LOGIC, DỄ HIỂU
-
-🔍 HƯỚNG DẪN PHÂN LOẠI:
-
-A. Gọi search_medical_documents khi:
-   - Hỏi về triệu chứng: "đau đầu", "sốt", "ho", "đau bụng"
-   - Hỏi về bệnh: "tiểu đường", "cao huyết áp", "ung thư"
-   - Hỏi về thuốc: "paracetamol", "kháng sinh"
-   - Hỏi về điều trị: "cách chữa", "phòng ngừa"
-   - Hỏi về sức khỏe: "dinh dưỡng", "tập thể dục"
-
-B. Gọi calculator khi:
-   - Có phép tính: "2+2", "căn bậc 3 của 27"
-   - Có công thức: "BMI", "diện tích"
-   - Có số học: "tính", "bằng bao nhiêu"
+B. Gọi calculator khi có phép tính, công thức
 
 C. Gọi general_chat khi:
-   - Chào hỏi: "xin chào", "hello", "chào bạn"
-   - Cảm ơn: "cảm ơn", "thanks"
-   - Hỏi thời tiết: "thời tiết", "trời"
-   - Hỏi thông tin chung: "món ăn", "du lịch", "giải trí"
-   - Trò chuyện: "bạn là ai", "bạn làm gì"
-   - BẤT KỲ CÂU HỎI NÀO KHÔNG THUỘC Y TẾ HOẶC TOÁN HỌC
+   - Chào hỏi, cảm ơn, tạm biệt
+   - Câu hỏi không liên quan y tế
 
-📚 VÍ DỤ CỤ THỂ:
+💬 CÁCH TRẢ LỜI (SAU KHI CÓ KẾT QUẢ TỪ TOOL):
 
-1. "xin chào" 
-   → BẮT BUỘC gọi: general_chat("xin chào")
-   
-2. "thời tiết hôm nay thế nào?"
-   → BẮT BUỘC gọi: general_chat("thời tiết hôm nay thế nào?")
-   
-3. "tôi thèm ăn cơm gà"
-   → BẮT BUỘC gọi: general_chat("tôi thèm ăn cơm gà")
-   
-4. "2+2 bằng bao nhiêu?"
-   → BẮT BUỘC gọi: calculator("2+2")
-   
-5. "căn bậc 3 của 27"
-   → BẮT BUỘC gọi: calculator("27**(1/3)")
-   
-6. "Tôi bị đau đầu"
-   → BẮT BUỘC gọi: search_medical_documents("đau đầu")
-   → Trả lời theo Chain-of-Thought:
-     📋 Triệu chứng: Đau đầu
-     🔍 Phân tích: [Dựa trên kết quả tool]
-     💡 Kết luận: [Khuyến nghị cụ thể]
-   
-7. "Paracetamol dùng như thế nào?"
-   → BẮT BUỘC gọi: search_medical_documents("paracetamol")
+Trả lời tự nhiên, thân thiện như đang trò chuyện với bạn bè. KHÔNG dùng format cứng nhắc như "Bước 1", "Bước 2".
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📖 HỌC TỪ CÁC VÍ DỤ SAU (Few-Shot Learning):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ví dụ cách trả lời tốt:
+"Chào bạn! Về tình trạng đau bụng của bạn, có thể do nhiều nguyên nhân như... Bạn có thể thử chườm nóng để giảm đau. Nếu đau nhiều hoặc kéo dài, nên đi khám bác sĩ nhé!"
 
-User: "tôi bị đau đầu dữ dội và buồn nôn"
-→ Tool được gọi: search_medical_documents(query="đau đầu buồn nôn")
+Nguyên tắc:
+- Thân thiện, gần gũi, có emoji phù hợp 😊
+- Dùng ngôn ngữ tự nhiên, dễ hiểu
+- Tổng hợp thông tin từ tool một cách mạch lạc
+- Đưa ra lời khuyên thực tế
+- Luôn nhắc đi khám bác sĩ nếu nghiêm trọng
+- KHÔNG liệt kê theo format cứng nhắc
+- Trả lời bằng TIẾNG VIỆT CÓ DẤU
 
-User: "tôi hay bị nhức đầu, vậy tôi có thể mắc bệnh gì?"
-→ Tool được gọi: search_medical_documents(query="nhức đầu triệu chứng bệnh")
+⚠️ QUY TẮC BẮT BUỘC:
+- PHẢI gọi tool trước khi trả lời
+- Nếu không chắc loại câu hỏi → gọi general_chat"""
 
-User: "tôi bị tiểu ít, tiểu đêm, chán ăn, sụt cân, có thể mắc bệnh gì?"
-→ Tool được gọi: search_medical_documents(query="tiểu ít tiểu đêm chán ăn sụt cân triệu chứng")
-
-User: "làm sao để biết tôi có bị suy thận hay không?"
-→ Tool được gọi: search_medical_documents(query="chẩn đoán suy thận")
-
-User: "tính BMI cho tôi, cao 1m7 nặng 60kg"
-→ Tool được gọi: calculator(expression="60 / (1.7 * 1.7)")
-
-User: "xin chào bạn"
-→ Tool được gọi: general_chat(query="xin chào bạn")
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⚠️ LƯU Ý:
-- Nếu không chắc chắn câu hỏi thuộc loại nào → Gọi general_chat
-- KHÔNG BAO GIỜ trả lời trực tiếp mà không gọi tool
-- Luôn gọi tool TRƯỚC KHI trả lời
-- Với câu hỏi y tế, luôn áp dụng Chain-of-Thought để trả lời có cấu trúc"""
-
-        print(f"✅ Tool Calling Agent initialized (Direct binding)")
+        print(f"Tool Calling Agent initialized (Direct binding)")
         print(f"   Model: {self.model_name}")
         print(f"   Tools: {len(self.tools)}")
 
@@ -199,7 +123,7 @@ User: "xin chào bạn"
         """
         try:
             print(f"\n{'='*60}")
-            print(f"🤖 TOOL CALLING AGENT (Direct)")
+            print(f"TOOL CALLING AGENT (Direct)")
             print(f"{'='*60}")
             print(f"Query: {query[:50]}...")
 
@@ -230,10 +154,10 @@ User: "xin chào bạn"
             tool_calls = []
             if hasattr(response, "tool_calls") and response.tool_calls:
                 tool_calls = response.tool_calls
-                print(f"🔧 LLM requested {len(tool_calls)} tool call(s)")
+                print(f"LLM requested {len(tool_calls)} tool call(s)")
             else:
                 # FORCE general_chat if no tool is called
-                print("⚠️ LLM did not call any tool. Forcing general_chat...")
+                print("LLM did not call any tool. Forcing general_chat...")
                 tool_calls = [{"name": "general_chat", "args": {"query": query}}]
 
             # Execute each tool call
@@ -241,7 +165,7 @@ User: "xin chào bạn"
                 tool_name = tool_call.get("name")
                 tool_args = tool_call.get("args", {})
 
-                print(f"   → Calling {tool_name} with args: {tool_args}")
+                print(f"   -> Calling {tool_name} with args: {tool_args}")
 
                 if tool_name in self.tool_map:
                     # Execute tool - handle both named args and positional args
@@ -280,9 +204,9 @@ User: "xin chào bạn"
                     final_response = self.llm.invoke(messages)
                     answer = final_response.content
                 else:
-                    answer = f"Lỗi: Tool '{tool_name}' không tồn tại."
+                    answer = f"Loi: Tool '{tool_name}' khong ton tai."
 
-            print(f"\n✅ COMPLETED")
+            print(f"\nCOMPLETED")
             print(f"   Tools used: {len(tool_calls_made)}")
             print(f"{'='*60}\n")
 
@@ -294,13 +218,13 @@ User: "xin chào bạn"
             }
 
         except Exception as e:
-            print(f"❌ Error in agent: {e}")
+            print(f"Error in agent: {e}")
             import traceback
 
             traceback.print_exc()
 
             return {
-                "answer": "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau.",
+                "answer": "Xin loi, toi dang gap su co ky thuat. Vui long thu lai sau.",
                 "used_tools": False,
                 "tool_calls": [],
                 "api_calls": 0,
@@ -308,26 +232,26 @@ User: "xin chào bạn"
 
 
 # ==========================================
-# 🎯 Singleton Instance
+# Singleton Instance
 # ==========================================
 _agent_instance = None
 
 
-def get_medical_agent_tool_calling(model_name="models/gemini-2.0-flash"):
+def get_medical_agent_tool_calling(model_name="models/gemini-2.5-flash"):
     """Get or create tool calling agent singleton"""
     global _agent_instance
     if _agent_instance is None:
         try:
             _agent_instance = MedicalAgentToolCalling(model_name=model_name)
         except Exception as e:
-            print(f"❌ Failed to create agent instance: {e}")
+            print(f"Failed to create agent instance: {e}")
             _agent_instance = None
             raise
     return _agent_instance
 
 
 # ==========================================
-# 🔌 Wrapper for Flask Controller
+# Wrapper for Flask Controller
 # ==========================================
 def chat_with_agent(messages: list) -> str:
     """
@@ -341,7 +265,7 @@ def chat_with_agent(messages: list) -> str:
     """
     try:
         # Get agent
-        agent = get_medical_agent_tool_calling(model_name="models/gemini-2.0-flash")
+        agent = get_medical_agent_tool_calling(model_name="models/gemini-2.5-flash")
 
         # Extract last message
         last_message = messages[-1]["content"] if messages else ""
@@ -349,13 +273,13 @@ def chat_with_agent(messages: list) -> str:
         # Chat with agent
         result = agent.chat(query=last_message, chat_history=messages[:-1])
 
-        print(f"💡 Tool Calling: {result['api_calls']} API calls")
+        print(f"Tool Calling: {result['api_calls']} API calls")
 
         return result["answer"]
 
     except Exception as e:
-        print(f"❌ Error in chat_with_agent: {e}")
+        print(f"Error in chat_with_agent: {e}")
         import traceback
 
         traceback.print_exc()
-        return "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau."
+        return "Xin loi, toi dang gap su co ky thuat. Vui long thu lai sau."

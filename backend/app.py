@@ -1,41 +1,67 @@
+﻿# -*- coding: utf-8 -*-
+"""
+VieMedChat Backend - Flask Application
+"""
+
+import os
+import sys
+import traceback
+import logging
+
+# Fix Windows console UTF-8 encoding
+if sys.platform == "win32":
+    import io
+
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+from datetime import timedelta
+from dotenv import load_dotenv
 from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
 from config.database import init_db
 from routes.api.auth_routes import auth_bp
 from routes.api.chat_routes import chat_bp
 
-# ✅ IMPORT PRE-INITIALIZATION
-from backend.utils.start_up import initialize_rag_components
+# IMPORT PRE-INITIALIZATION (relative import)
+from utils.start_up import initialize_rag_components
 
+load_dotenv()
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+# Initialize Flask app
 app = Flask(__name__)
-
-# JWT Configuration
 app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 app.config["JWT_TOKEN_LOCATION"] = ["headers"]
 app.config["JWT_HEADER_NAME"] = "Authorization"
 app.config["JWT_HEADER_TYPE"] = "Bearer"
-app.config["JWT_ACCESS_TOKEN_EXPIRES"] = False
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=7)
 app.config["PROPAGATE_EXCEPTIONS"] = True
+app.config["JSON_AS_ASCII"] = False  # Enable proper UTF-8 in JSON responses
 
-# CORS
+# CORS Configuration
+# NOTE: In production, replace wildcards with specific domains for security
 CORS(
     app,
     resources={
         r"/api/*": {
             "origins": [
                 "http://localhost:3000",
-                "https://*.ngrok.io",  # Cho phép tất cả ngrok URLs
-                "https://*.ngrok-free.app",  # Ngrok free tier mới
-                "https://*.vercel.app",  # ✅ Vercel deployment
+                "https://*.ngrok.io",
+                "https://*.ngrok-free.app",
+                "https://*.vercel.app",
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "allow_headers": ["Content-Type", "Authorization"],
+            "allow_headers": [
+                "Content-Type",
+                "Authorization",
+                "ngrok-skip-browser-warning",
+            ],
         }
     },
 )
@@ -46,100 +72,111 @@ jwt = JWTManager(app)
 # JWT Error Handlers
 @jwt.expired_token_loader
 def expired_token_callback(jwt_header, jwt_payload):
-    print("❌ Token expired!")
-    return jsonify({"message": "Token đã hết hạn", "error": "token_expired"}), 401
+    print("Token expired!")
+    return jsonify({"message": "Token da het han", "error": "token_expired"}), 401
 
 
 @jwt.invalid_token_loader
 def invalid_token_callback(error):
-    print(f"❌ Invalid token: {error}")
-    return jsonify({"message": "Token không hợp lệ", "error": "invalid_token"}), 401
+    print(f"Invalid token: {error}")
+    return jsonify({"message": "Token khong hop le", "error": "invalid_token"}), 401
 
 
 @jwt.unauthorized_loader
 def missing_token_callback(error):
-    print(f"❌ Missing token: {error}")
+    print(f"Missing token: {error}")
     return (
-        jsonify({"message": "Thiếu token xác thực", "error": "authorization_required"}),
+        jsonify({"message": "Thieu token xac thuc", "error": "authorization_required"}),
         401,
     )
 
 
 # Initialize Database
-print("🔄 Initializing database...")
+print("Initializing database...")
 try:
     with app.app_context():
         init_db()
-    print("✅ Database initialized!")
+    print("Database initialized!")
 except Exception as e:
-    print(f"❌ Database init failed: {e}")
-    import traceback
-
+    print(f"Database init failed: {e}")
     traceback.print_exc()
 
 # ==========================================
-# ✅ PRE-INITIALIZE RAG COMPONENTS
+# PRE-INITIALIZE RAG COMPONENTS
 # ==========================================
-# Chạy 1 LẦN khi server khởi động
-with app.app_context():
-    print("\n" + "=" * 60)
-    print("⚡ STARTING PRE-INITIALIZATION...")
-    print("=" * 60)
-    success = initialize_rag_components()
-    if success:
-        print("⚡ Server is now READY for fast responses!")
-    else:
-        print("⚠️ Server will start but responses may be slower")
-    print("=" * 60 + "\n")
+_rag_initialized = False
+_agent_ready = False
+
+logger.info("=" * 60)
+logger.info("STARTING PRE-INITIALIZATION...")
+logger.info("=" * 60)
+
+_initialized = initialize_rag_components()
+_rag_initialized = _initialized
+_agent_ready = _initialized
+
+if _initialized:
+    logger.info("Server is now READY for fast responses!")
+else:
+    logger.warning("Server will start but responses may be slower")
+logger.info("=" * 60)
 
 # Register blueprints
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(chat_bp, url_prefix="/api/chat")
 
-print("\n📝 Registered routes:")
+# Print registered routes
+print("\nRegistered routes:")
 for rule in app.url_map.iter_rules():
-    if not rule.endpoint.startswith("static"):
+    if rule.endpoint != "static":
         print(f"  {rule.endpoint}: {rule.rule}")
 
 
+# Health check endpoint
 @app.route("/")
 def home():
-    return jsonify({"message": "Chatbot API is running! 🐍"})
+    return jsonify({"message": "VieMedChat API is running", "status": "ok"})
 
 
 @app.route("/health")
 def health():
-    """Health check endpoint"""
+    status_code = 200 if (_rag_initialized and _agent_ready) else 503
     return (
-        jsonify({"status": "healthy", "rag_initialized": True, "agent_ready": True}),
-        200,
+        jsonify(
+            {
+                "status": "healthy" if status_code == 200 else "degraded",
+                "rag_initialized": _rag_initialized,
+                "agent_ready": _agent_ready,
+            }
+        ),
+        status_code,
     )
 
 
 @app.errorhandler(500)
 def internal_error(error):
-    print(f"❌ 500 Error: {error}")
+    print(f"500 Error: {error}")
     import traceback
 
     traceback.print_exc()
-    return jsonify({"message": "Lỗi server", "error": str(error)}), 500
+    return jsonify({"message": "Loi server", "error": str(error)}), 500
 
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
 
     print("\n" + "=" * 60)
-    print("🚀 FLASK SERVER STARTING")
+    print("FLASK SERVER STARTING")
     print("=" * 60)
     print(f"Port: {port}")
     print(f"Environment: {os.getenv('FLASK_ENV', 'production')}")
-    print(f"JWT Secret: {'SET ✅' if os.getenv('JWT_SECRET_KEY') else 'MISSING ❌'}")
-    print(f"Database: {os.getenv('DB_HOST', 'MISSING ❌')}")
+    print(f"JWT Secret: {'SET' if os.getenv('JWT_SECRET_KEY') else 'MISSING'}")
+    print(f"Database: {os.getenv('DB_HOST', 'MISSING')}")
     print("=" * 60 + "\n")
 
     app.run(
         host="0.0.0.0",
         port=port,
         debug=True,
-        threaded=True,  # ✅ Enable threading để xử lý nhiều request
+        threaded=True,
     )

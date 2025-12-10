@@ -96,9 +96,15 @@ class Reranker:
             self.reranker = cohere.Client(cohere_api_key)
             self.backend = "cohere"
         else:
-            # Default to BAAI reranker
-            self.reranker = FlagReranker(model_name, use_fp16=True)
-            self.backend = "baai"
+            # Default to BAAI reranker with FP16 fallback
+            try:
+                self.reranker = FlagReranker(model_name, use_fp16=True)
+                self.backend = "baai"
+            except Exception as e:
+                print(f"⚠️ FP16 initialization failed: {e}")
+                print("   Falling back to FP32...")
+                self.reranker = FlagReranker(model_name, use_fp16=False)
+                self.backend = "baai"
 
     def rerank(
         self, query: str, passages: list[str], threshold: float = 0.3

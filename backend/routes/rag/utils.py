@@ -5,7 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from bs4 import BeautifulSoup
 
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+
 
 def load_corpus(corpus_path, chunk_size=800, chunk_overlap=200):
     """
@@ -13,9 +13,7 @@ def load_corpus(corpus_path, chunk_size=800, chunk_overlap=200):
     """
     text_loader_kwargs = {"autodetect_encoding": True}
     loader = DirectoryLoader(
-        corpus_path, 
-        loader_cls=TextLoader, 
-        loader_kwargs=text_loader_kwargs
+        corpus_path, loader_cls=TextLoader, loader_kwargs=text_loader_kwargs
     )
     docs = loader.load()
 
@@ -26,12 +24,11 @@ def load_corpus(corpus_path, chunk_size=800, chunk_overlap=200):
 
     # Chia nhỏ text thành chunks để đưa vào embedding
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-        separators=["\n", "."]
+        chunk_size=chunk_size, chunk_overlap=chunk_overlap, separators=["\n", "."]
     )
     texts = text_splitter.split_documents(docs)
     return docs, texts
+
 
 def get_text_from_html_file(html_path):
     """
@@ -41,6 +38,7 @@ def get_text_from_html_file(html_path):
         html_text = f.read()
     soup = BeautifulSoup(html_text, "html.parser")
     return soup.get_text()
+
 
 def get_text_chunks(raw_text, chunk_size=1000, chunk_overlap=200):
     """
@@ -53,11 +51,12 @@ def get_text_chunks(raw_text, chunk_size=1000, chunk_overlap=200):
     chunks = text_splitter.split_text(raw_text)
     return chunks
 
+
 def preprocess_context(context: list):
     """Làm sạch và chuẩn hóa context."""
     if not context:
         return []
-    
+
     # Làm sạch context
     cleaned_context = []
     for item in context:
@@ -66,6 +65,7 @@ def preprocess_context(context: list):
             if cleaned_item:
                 cleaned_context.append(cleaned_item)
     return cleaned_context
+
 
 if __name__ == "__main__":
     # Ví dụ test thử
